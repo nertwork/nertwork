@@ -1,0 +1,43 @@
+name: Auto-Update Open Source Contributions README
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'scripts/update_readme.py'
+      - '.github/workflows/update-profile.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout profile repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Update README with live GitHub PR & Issue statuses
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 scripts/update_readme.py --output README.md
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "James Farr Gomez"
+          git config user.email "james@nertwork.com"
+          git add README.md
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(profile): auto-update upstream PR and issue statuses [skip ci]"
+            git push
+          fi
