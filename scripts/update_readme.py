@@ -118,7 +118,7 @@ TRACKED_CONTRIBUTIONS: list[dict[str, Any]] = [
         "pr": 704,
         "issue": 703,
         "component": "PlayStation 5 MQTT (`ps5-mqtt`)",
-        "summary": "Use `takeEvery` for per-device Redux sagas (`REGISTER_DEVICE`, `UPDATE_HOME_ASSISTANT`), `continue` past transitioning consoles, and support comma-separated DDP broadcast targets.",
+        "summary": "Use `takeEvery` for per-device Redux sagas (`REGISTER_DEVICE`, `UPDATE_HOME_ASSISTANT`), `continue` past transitioning consoles, and support comma-separated DDP broadcast targets (shipped in `v1.9.0`).",
     },
     {
         "category": "smarthome",
@@ -321,6 +321,8 @@ def fetch_live_contributions(token: str) -> dict[str, Any]:
         head_sha = str((data.get("head") or {}).get("sha") or "")[:7]
         comments = int(data.get("comments", 0)) + int(data.get("review_comments", 0))
         mergeable_state = str(data.get("mergeable_state") or "unknown")
+        if mergeable_state == "unstable" and data.get("mergeable") is True:
+            mergeable_state = "clean (awaiting maintainer CI)"
         if merged:
             status = "MERGED"
             badge = f"![Merged](https://img.shields.io/badge/PR_%23{pr_num}-Merged-8957e5?style=flat-square&logo=github)"
@@ -746,6 +748,49 @@ def add_tracked_contribution(
     }
 
 
+def inspect_pr(repo: str, pr_num: int, token: str) -> None:
+    """Inspect a specific upstream PR's state, check-runs, reviews, and inline comments."""
+    pr = _gh_get(f"https://api.github.com/repos/{repo}/pulls/{pr_num}", token)
+    head_sha = (pr.get("head") or {}).get("sha", "")
+    mergeable = pr.get("mergeable")
+    m_state = pr.get("mergeable_state")
+    if m_state == "unstable" and mergeable is True:
+        m_state = "clean (awaiting maintainer CI)"
+    print(f"=== {repo}#{pr_num}: {pr.get('title')} ===")
+    print(f"State: {pr.get('state')} | Merged: {pr.get('merged')} | Mergeable: {mergeable} ({m_state}) | Head: {head_sha[:7]}")
+    if head_sha:
+        checks = _gh_get(f"https://api.github.com/repos/{repo}/commits/{head_sha}/check-runs", token)
+        runs = checks.get("check_runs", []) if isinstance(checks, dict) else []
+        if runs:
+            print("Check Runs:")
+            for r in runs:
+                print(f"  • {r.get('name')}: status={r.get('status')} conclusion={r.get('conclusion')}")
+    reviews = _gh_get(f"https://api.github.com/repos/{repo}/pulls/{pr_num}/reviews", token)
+    if isinstance(reviews, list) and reviews:
+        print("Reviews:")
+        for rv in reviews:
+            u = (rv.get("user") or {}).get("login")
+            st = rv.get("state")
+            sub = str(rv.get("submitted_at") or "")[:19]
+            print(f"  • [{sub}] @{u} ({st})")
+    inline = _gh_get(f"https://api.github.com/repos/{repo}/pulls/{pr_num}/comments", token)
+    if isinstance(inline, list) and inline:
+        print("Inline Review Comments:")
+        for ic in inline:
+            u = (ic.get("user") or {}).get("login")
+            sub = str(ic.get("created_at") or "")[:19]
+            body = " ".join(str(ic.get("body") or "").split())[:180]
+            print(f"  • [{sub}] @{u} ({ic.get('path')}:{ic.get('line')}): {body}")
+    comments = _gh_get(f"https://api.github.com/repos/{repo}/issues/{pr_num}/comments", token)
+    if isinstance(comments, list) and comments:
+        print("Issue Comments:")
+        for c in comments:
+            u = (c.get("user") or {}).get("login")
+            sub = str(c.get("created_at") or "")[:19]
+            body = " ".join(str(c.get("body") or "").split())[:180]
+            print(f"  • [{sub}] @{u}: {body}")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(
         description="Nertwork GitHub Open Source Attribution & Profile Sync CLI (github-oss)."
@@ -754,7 +799,7 @@ def main() -> int:
         "command",
         nargs="?",
         default="summary",
-        choices=["summary", "prs", "issues", "comments", "sync", "add", "ha-patches"],
+        choices=["summary", "prs", "issues", "comments", "inspect", "sync", "add", "ha-patches"],
         help="Subcommand to execute (default: summary)",
     )
     parser.add_argument("--output", help="Write generated README.md to this file path without pushing")
@@ -796,6 +841,12 @@ def main() -> int:
 
     if args.command == "issues":
         print_detailed_issues(token)
+        return 0
+
+    if args.command == "inspect":
+        if not args.repo or not args.pr:
+            parser.error("`inspect` requires `--repo <owner/repo>` and `--pr <number>`")
+        inspect_pr(args.repo, args.pr, token)
         return 0
 
     if args.command == "comments":
