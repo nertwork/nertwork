@@ -1,14 +1,20 @@
 #!/usr/bin/env python3
-"""Generate and sync the @nertwork GitHub Profile README (https://github.com/nertwork/nertwork).
+"""Nertwork GitHub Open Source Attribution & Profile Sync CLI (`github-oss` / `sync_github_profile.py`).
 
-Queries live status of all upstream Open Source Pull Requests and Issues authored by
-@nertwork (James Farr Gomez) across Home Assistant, Smart Home & Energy libraries,
-Omarchy Linux / Wayland desktop, and Networking/Infrastructure, renders an OPSEC-clean
-executive profile README.md with live status badges, and optionally pushes directly to
-`nertwork/nertwork` (`main`).
+Queries live status of all upstream Open Source Pull Requests and companion Issues authored by
+`@nertwork` (James Farr Gomez <james@nertwork.com>) across Home Assistant, Smart Home & Clean Energy,
+Omarchy Linux / Hyprland / Quickshell, and Cloud/Network Infrastructure:
+
+Subcommands (<150 tokens by default):
+  summary     Compact <150-token summary of @nertwork merged & open upstream PRs and companion Issues
+  prs         Detailed table of tracked upstream PRs (state, head SHA, issue link, comments, merge status)
+  issues      Detailed status of companion upstream GitHub Issues filed by @nertwork
+  sync        Regenerate and push https://github.com/nertwork/nertwork (README.md + 6h GitHub Action)
+  add         Register a new upstream PR/Issue in TRACKED_CONTRIBUTIONS (and optionally link Fixes #<issue> & push)
+  ha-patches  Run ops/smarthome/tools/check_upstream_fixes.py to audit all 14 live HA patches & upstream PRs
 
 Also embedded inside `nertwork/nertwork/scripts/update_readme.py` so GitHub Actions
-(`.github/workflows/update-profile.yml`) auto-updates the profile every 6 hours.
+(`.github/workflows/update-profile.yml`) auto-updates `https://github.com/nertwork` every 6 hours.
 """
 
 from __future__ import annotations
@@ -19,6 +25,7 @@ from datetime import datetime, timezone
 import json
 import os
 from pathlib import Path
+import re
 import subprocess
 import sys
 from typing import Any
@@ -27,9 +34,9 @@ import urllib.parse
 import urllib.request
 
 GITHUB_USER = "nertwork"
-USER_AGENT = "nertwork-profile-sync/1.0"
+USER_AGENT = "nertwork-profile-sync/1.1"
 
-# Curated catalog of @nertwork upstream contributions with companion issues and technical summaries
+# BEGIN_TRACKED_CONTRIBUTIONS
 TRACKED_CONTRIBUTIONS: list[dict[str, Any]] = [
     # --- Category 1: Home Assistant Core Libraries & Energy / Smart Home Ecosystem ---
     {
@@ -205,6 +212,7 @@ TRACKED_CONTRIBUTIONS: list[dict[str, Any]] = [
         "summary": "Add BGP Listen Range support, OSPF distribute lists (`#28`), BGP neighbor timers (`#16`), Ubuntu 18/20 `iproute2` support (`#20`), and check-mode fixes (`#17`) across 9 merged PRs.",
     },
 ]
+# END_TRACKED_CONTRIBUTIONS
 
 PUBLISHED_PROJECTS: list[dict[str, str]] = [
     {
@@ -273,19 +281,32 @@ def _get_github_token() -> str:
     return ""
 
 
-def _gh_get(url: str, token: str) -> dict[str, Any]:
+def _gh_request(
+    url: str,
+    token: str,
+    method: str = "GET",
+    payload: dict[str, Any] | None = None,
+) -> dict[str, Any]:
     headers = {
         "User-Agent": USER_AGENT,
         "Accept": "application/vnd.github.v3+json",
     }
     if token:
         headers["Authorization"] = f"token {token}"
-    req = urllib.request.Request(url, headers=headers)
+    body = None
+    if payload is not None:
+        body = json.dumps(payload).encode("utf-8")
+        headers["Content-Type"] = "application/json"
+    req = urllib.request.Request(url, data=body, headers=headers, method=method)
     try:
         with urllib.request.urlopen(req, timeout=12) as resp:
             return json.loads(resp.read().decode("utf-8", errors="replace"))
     except Exception as exc:
         return {"error": str(exc)}
+
+
+def _gh_get(url: str, token: str) -> dict[str, Any]:
+    return _gh_request(url, token, method="GET")
 
 
 def fetch_live_contributions(token: str) -> dict[str, Any]:
@@ -296,6 +317,9 @@ def fetch_live_contributions(token: str) -> dict[str, Any]:
         data = _gh_get(f"https://api.github.com/repos/{repo}/pulls/{pr_num}", token)
         merged = bool(data.get("merged"))
         raw_state = str(data.get("state", "open")).lower()
+        head_sha = str((data.get("head") or {}).get("sha") or "")[:7]
+        comments = int(data.get("comments", 0)) + int(data.get("review_comments", 0))
+        mergeable_state = str(data.get("mergeable_state") or "unknown")
         if merged:
             status = "MERGED"
             badge = f"![Merged](https://img.shields.io/badge/PR_%23{pr_num}-Merged-8957e5?style=flat-square&logo=github)"
@@ -312,13 +336,18 @@ def fetch_live_contributions(token: str) -> dict[str, Any]:
 
         created_at = str(data.get("created_at") or "")[:10]
         merged_at = str(data.get("merged_at") or "")[:10]
+        updated_at = str(data.get("updated_at") or "")[:10]
         return {
             **item,
             "status": status,
             "badge": badge,
+            "head_sha": head_sha,
+            "comments": comments,
+            "mergeable_state": mergeable_state,
             "title": data.get("title") or item["summary"],
             "created_at": created_at,
             "merged_at": merged_at,
+            "updated_at": updated_at,
             "pr_url": f"https://github.com/{repo}/pull/{pr_num}",
             "issue_url": f"https://github.com/{repo}/issues/{item['issue']}" if item.get("issue") else None,
         }
@@ -487,78 +516,310 @@ def sync_to_github_repo(readme_text: str, script_text: str, token: str) -> dict[
         "GIT_COMMITTER_EMAIL": "james@nertwork.com",
         "GIT_TERMINAL_PROMPT": "0",
     }
-    res = subprocess.run(
-        ["git", "clone", clone_url, str(work_dir)],
-        capture_output=True,
-        text=True,
-        timeout=25,
-        check=False,
-        env=git_env,
-    )
-    if res.returncode != 0:
-        return {"pushed": False, "error": res.stderr.strip()}
+    try:
+        res = subprocess.run(
+            ["git", "clone", clone_url, str(work_dir)],
+            capture_output=True,
+            text=True,
+            timeout=25,
+            check=False,
+            env=git_env,
+        )
+        if res.returncode != 0:
+            return {"pushed": False, "error": res.stderr.strip()}
 
-    (work_dir / "README.md").write_text(readme_text, encoding="utf-8")
-    scripts_dir = work_dir / "scripts"
-    scripts_dir.mkdir(parents=True, exist_ok=True)
-    (scripts_dir / "update_readme.py").write_text(script_text, encoding="utf-8")
-    wf_dir = work_dir / ".github" / "workflows"
-    wf_dir.mkdir(parents=True, exist_ok=True)
-    (wf_dir / "update-profile.yml").write_text(WORKFLOW_YAML, encoding="utf-8")
+        (work_dir / "README.md").write_text(readme_text, encoding="utf-8")
+        scripts_dir = work_dir / "scripts"
+        scripts_dir.mkdir(parents=True, exist_ok=True)
+        (scripts_dir / "update_readme.py").write_text(script_text, encoding="utf-8")
+        wf_dir = work_dir / ".github" / "workflows"
+        wf_dir.mkdir(parents=True, exist_ok=True)
+        (wf_dir / "update-profile.yml").write_text(WORKFLOW_YAML, encoding="utf-8")
 
-    subprocess.run(["git", "-C", str(work_dir), "add", "-A"], check=True, env=git_env)
-    diff_check = subprocess.run(
-        ["git", "-C", str(work_dir), "diff", "--cached", "--quiet"],
-        check=False,
-        env=git_env,
-    )
-    if diff_check.returncode == 0:
-        return {"pushed": False, "status": "up_to_date", "url": f"https://github.com/{GITHUB_USER}"}
+        subprocess.run(["git", "-C", str(work_dir), "add", "-A"], check=True, env=git_env)
+        diff_check = subprocess.run(
+            ["git", "-C", str(work_dir), "diff", "--cached", "--quiet"],
+            check=False,
+            env=git_env,
+        )
+        if diff_check.returncode == 0:
+            return {"pushed": False, "status": "up_to_date", "url": f"https://github.com/{GITHUB_USER}"}
 
-    subprocess.run(
-        [
-            "git",
-            "-C",
-            str(work_dir),
-            "commit",
-            "-m",
-            "feat(profile): sync upstream Open Source PR & issue attribution showcase",
-        ],
-        check=True,
-        env=git_env,
+        subprocess.run(
+            [
+                "git",
+                "-C",
+                str(work_dir),
+                "commit",
+                "-m",
+                "feat(profile): sync upstream Open Source PR & issue attribution showcase",
+            ],
+            check=True,
+            env=git_env,
+        )
+        push_res = subprocess.run(
+            ["git", "-C", str(work_dir), "push", "origin", "HEAD:main"],
+            capture_output=True,
+            text=True,
+            timeout=25,
+            check=False,
+            env=git_env,
+        )
+        return {
+            "pushed": push_res.returncode == 0,
+            "status": "updated" if push_res.returncode == 0 else "push_failed",
+            "url": f"https://github.com/{GITHUB_USER}",
+            "error": None if push_res.returncode == 0 else push_res.stderr.strip(),
+        }
+    finally:
+        subprocess.run(["rm", "-rf", str(work_dir)], check=False)
+
+
+def print_compact_summary(data: dict[str, Any]) -> None:
+    """Print <150-token compact summary of @nertwork upstream contributions."""
+    t = data["totals"]
+    items = data["items"]
+    print(
+        f"@nertwork GitHub OSS Attribution (https://github.com/nertwork | {data['updated_at']}):\n"
+        f"  Totals : {t['total_prs']} PRs Authored ({t['merged_prs']} Merged, {t['open_prs']} Open) | "
+        f"{t['total_issues']} Issues Filed | Tracked Showcase: {t['tracked_merged']} Merged, {t['tracked_open']} Open"
     )
-    push_res = subprocess.run(
-        ["git", "-C", str(work_dir), "push", "origin", "HEAD:main"],
-        capture_output=True,
-        text=True,
-        timeout=25,
-        check=False,
-        env=git_env,
-    )
+    merged_list = [
+        f"{it['repo'].split('/')[-1]}#{it['pr']}"
+        for it in items
+        if it["status"] in ("MERGED", "MERGED_MANUALLY")
+    ]
+    print(f"  Merged : {', '.join(merged_list)}")
+    print("  Open PRs & Companion Issues:")
+    for it in items:
+        if it["status"] == "OPEN":
+            iss_str = f" (Fixes #{it['issue']})" if it.get("issue") else ""
+            print(
+                f"    • {it['repo']}#{it['pr']}{iss_str} [{it['head_sha']}] "
+                f"(mergeable={it['mergeable_state']}, comments={it['comments']})"
+            )
+
+
+def print_detailed_prs(data: dict[str, Any], state_filter: str = "all", cat_filter: str = "all") -> None:
+    """Print detailed table of tracked upstream PRs."""
+    print(f"=== @nertwork Tracked Upstream PRs ({data['updated_at']}) ===")
+    for it in data["items"]:
+        if state_filter != "all" and state_filter.upper() not in it["status"]:
+            continue
+        if cat_filter != "all" and it["category"] != cat_filter:
+            continue
+        iss = f" | Issue #{it['issue']} ({it['issue_url']})" if it.get("issue") else ""
+        print(
+            f"[{it['status']}] {it['repo']}#{it['pr']} ({it['category']}) — {it['component']}\n"
+            f"  URL     : {it['pr_url']}{iss}\n"
+            f"  Head/CI : sha={it['head_sha']} | mergeable={it['mergeable_state']} | comments={it['comments']} | updated={it['updated_at']}\n"
+            f"  Summary : {it['summary']}"
+        )
+
+
+def print_detailed_issues(token: str) -> None:
+    """Fetch and print live status of companion upstream GitHub Issues filed by @nertwork."""
+    issue_items = [it for it in TRACKED_CONTRIBUTIONS if it.get("issue")]
+    print("=== @nertwork Upstream Companion Issues ===")
+    for it in issue_items:
+        repo = it["repo"]
+        iss_num = it["issue"]
+        iss_data = _gh_get(f"https://api.github.com/repos/{repo}/issues/{iss_num}", token)
+        state = str(iss_data.get("state", "unknown")).upper()
+        title = iss_data.get("title") or it["summary"]
+        comments = iss_data.get("comments", 0)
+        print(
+            f"[{state}] {repo}#{iss_num} (linked to PR #{it['pr']}) — comments={comments}\n"
+            f"  Title : {title}\n"
+            f"  URL   : https://github.com/{repo}/issues/{iss_num}"
+        )
+
+
+def add_tracked_contribution(
+    repo: str,
+    pr_num: int,
+    issue_num: int | None,
+    category: str,
+    component: str,
+    summary: str,
+    link_issue: bool,
+    token: str,
+) -> dict[str, Any]:
+    """Add or update an entry in TRACKED_CONTRIBUTIONS in this script file (and mirror copies)."""
+    pr_data = _gh_get(f"https://api.github.com/repos/{repo}/pulls/{pr_num}", token)
+    if not summary:
+        summary = str(pr_data.get("title") or f"Upstream contribution to {repo}#{pr_num}").strip()
+    if not component:
+        component = repo.split("/")[-1]
+
+    if link_issue and issue_num and token:
+        body = str(pr_data.get("body") or "")
+        if f"#{issue_num}" not in body:
+            new_body = f"Fixes #{issue_num}\n\n{body}".strip()
+            _gh_request(
+                f"https://api.github.com/repos/{repo}/pulls/{pr_num}",
+                token,
+                method="PATCH",
+                payload={"body": new_body},
+            )
+
+    # Update in-memory list
+    updated_existing = False
+    for item in TRACKED_CONTRIBUTIONS:
+        if item["repo"].lower() == repo.lower() and int(item["pr"]) == int(pr_num):
+            item["issue"] = issue_num
+            item["category"] = category
+            item["component"] = component
+            item["summary"] = summary
+            updated_existing = True
+            break
+    if not updated_existing:
+        TRACKED_CONTRIBUTIONS.append(
+            {
+                "category": category,
+                "repo": repo,
+                "pr": int(pr_num),
+                "issue": int(issue_num) if issue_num else None,
+                "component": component,
+                "summary": summary,
+            }
+        )
+
+    # Persist into canonical script files so update_readme.py stays 100% self-contained
+    formatted_items = ["TRACKED_CONTRIBUTIONS: list[dict[str, Any]] = ["]
+    for it in TRACKED_CONTRIBUTIONS:
+        formatted_items.append("    {")
+        formatted_items.append(f'        "category": {json.dumps(it["category"])},')
+        formatted_items.append(f'        "repo": {json.dumps(it["repo"])},')
+        formatted_items.append(f'        "pr": {int(it["pr"])},')
+        formatted_items.append(f'        "issue": {json.dumps(it.get("issue"))},')
+        formatted_items.append(f'        "component": {json.dumps(it["component"])},')
+        formatted_items.append(f'        "summary": {json.dumps(it["summary"])},')
+        if it.get("manual_merge_note"):
+            formatted_items.append(f'        "manual_merge_note": {json.dumps(it["manual_merge_note"])},')
+        formatted_items.append("    },")
+    formatted_items.append("]")
+    new_block = "# BEGIN_TRACKED_CONTRIBUTIONS\n" + "\n".join(formatted_items) + "\n# END_TRACKED_CONTRIBUTIONS"
+
+    target_paths = [
+        Path("/home/jfarr/projects/nertwork-ai-ops/tools/github/sync_github_profile.py"),
+        Path("/home/jfarr/projects/nertwork-ai-ops/ops/registry/skills/github-oss/scripts/oss_cli.py"),
+        Path("/home/jfarr/projects/nertwork-ai-registry/skills/github-oss/scripts/oss_cli.py"),
+    ]
+    for p in target_paths:
+        if p.exists() and not p.is_symlink():
+            src = p.read_text(encoding="utf-8")
+            updated_src = re.sub(
+                r"# BEGIN_TRACKED_CONTRIBUTIONS.*?# END_TRACKED_CONTRIBUTIONS",
+                new_block,
+                src,
+                flags=re.DOTALL,
+            )
+            p.write_text(updated_src, encoding="utf-8")
+
     return {
-        "pushed": push_res.returncode == 0,
-        "status": "updated" if push_res.returncode == 0 else "push_failed",
-        "url": f"https://github.com/{GITHUB_USER}",
-        "error": None if push_res.returncode == 0 else push_res.stderr.strip(),
+        "action": "updated" if updated_existing else "added",
+        "repo": repo,
+        "pr": pr_num,
+        "issue": issue_num,
+        "category": category,
     }
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Generate and sync @nertwork GitHub Profile README.")
+    parser = argparse.ArgumentParser(
+        description="Nertwork GitHub Open Source Attribution & Profile Sync CLI (github-oss)."
+    )
+    parser.add_argument(
+        "command",
+        nargs="?",
+        default="summary",
+        choices=["summary", "prs", "issues", "sync", "add", "ha-patches"],
+        help="Subcommand to execute (default: summary)",
+    )
     parser.add_argument("--output", help="Write generated README.md to this file path without pushing")
-    parser.add_argument("--json", action="store_true", help="Output JSON summary")
+    parser.add_argument("--json", action="store_true", help="Output structured JSON")
     parser.add_argument("--push", action="store_true", help="Push updated README and workflow to nertwork/nertwork")
+    parser.add_argument("--state", default="all", choices=["all", "open", "merged"], help="Filter PRs by state")
+    parser.add_argument(
+        "--category",
+        default="all",
+        choices=["all", "smarthome", "omarchy", "infra"],
+        help="Filter or assign category (smarthome, omarchy, infra)",
+    )
+    parser.add_argument("--repo", help="Upstream owner/repo for `add` (e.g. alandtse/tesla)")
+    parser.add_argument("--pr", type=int, help="Upstream PR number for `add`")
+    parser.add_argument("--issue", type=int, help="Companion Issue number for `add`")
+    parser.add_argument("--component", default="", help="Component display name for `add`")
+    parser.add_argument("--summary", default="", help="Technical summary for `add`")
+    parser.add_argument(
+        "--link-issue",
+        action="store_true",
+        help="When running `add`, also prepend `Fixes #<issue>` to the upstream PR body",
+    )
     args = parser.parse_args()
 
     token = _get_github_token()
-    data = fetch_live_contributions(token)
-    readme_md = render_readme(data)
 
+    # Backwards-compatible flags (`--output` or `--push` without explicit subcommand)
+    if args.output or (args.push and args.command == "summary"):
+        args.command = "sync"
+
+    if args.command == "ha-patches":
+        checker = Path("/home/jfarr/projects/nertwork-ai-ops/ops/smarthome/tools/check_upstream_fixes.py")
+        cmd = [sys.executable, str(checker)]
+        if args.push:
+            cmd.append("--sync-profile")
+        if args.json:
+            cmd.append("--json")
+        return subprocess.run(cmd, check=False).returncode
+
+    if args.command == "issues":
+        print_detailed_issues(token)
+        return 0
+
+    if args.command == "add":
+        if not args.repo or not args.pr:
+            parser.error("`add` requires `--repo <owner/repo>` and `--pr <number>`")
+        cat = args.category if args.category != "all" else "smarthome"
+        res = add_tracked_contribution(
+            repo=args.repo,
+            pr_num=args.pr,
+            issue_num=args.issue,
+            category=cat,
+            component=args.component,
+            summary=args.summary,
+            link_issue=args.link_issue,
+            token=token,
+        )
+        print(f"Registered contribution: {json.dumps(res)}")
+        if not args.push:
+            return 0
+        args.command = "sync"
+
+    data = fetch_live_contributions(token)
+
+    if args.command == "summary":
+        if args.json:
+            print(json.dumps(data, indent=2))
+        else:
+            print_compact_summary(data)
+        return 0
+
+    if args.command == "prs":
+        if args.json:
+            print(json.dumps(data["items"], indent=2))
+        else:
+            print_detailed_prs(data, state_filter=args.state, cat_filter=args.category)
+        return 0
+
+    # args.command == "sync"
+    readme_md = render_readme(data)
     if args.output:
         Path(args.output).write_text(readme_md, encoding="utf-8")
 
     push_result = None
-    if args.push:
+    if args.push or not args.output:
         self_src = Path(__file__).read_text(encoding="utf-8")
         push_result = sync_to_github_repo(readme_md, self_src, token)
 
