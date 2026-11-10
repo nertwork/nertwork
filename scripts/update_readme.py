@@ -9,6 +9,7 @@ Subcommands (<150 tokens by default):
   summary     Compact <150-token summary of @nertwork merged & open upstream PRs and companion Issues
   prs         Detailed table of tracked upstream PRs (state, head SHA, issue link, comments, merge status)
   issues      Detailed status of companion upstream GitHub Issues filed by @nertwork
+  comments    Show recent maintainer/bot comments & reviews on tracked PRs and Issues
   sync        Regenerate and push https://github.com/nertwork/nertwork (README.md + 6h GitHub Action)
   add         Register a new upstream PR/Issue in TRACKED_CONTRIBUTIONS (and optionally link Fixes #<issue> & push)
   ha-patches  Run ops/smarthome/tools/check_upstream_fixes.py to audit all 14 live HA patches & upstream PRs
@@ -635,6 +636,25 @@ def print_detailed_issues(token: str) -> None:
         )
 
 
+def print_recent_comments(token: str, repo_filter: str = "") -> None:
+    """Fetch and print recent comments on tracked PRs and companion Issues."""
+    print("=== Recent Comments on @nertwork Upstream PRs & Companion Issues ===")
+    for it in TRACKED_CONTRIBUTIONS:
+        repo = it["repo"]
+        if repo_filter and repo_filter.lower() not in repo.lower():
+            continue
+        pr_num = it["pr"]
+        iss_num = it.get("issue")
+        for kind, num in [("PR", pr_num)] + ([("Issue", iss_num)] if iss_num else []):
+            comments = _gh_get(f"https://api.github.com/repos/{repo}/issues/{num}/comments?per_page=5", token)
+            if isinstance(comments, list) and comments:
+                for c in comments[-3:]:
+                    user = (c.get("user") or {}).get("login", "unknown")
+                    dt = str(c.get("created_at") or "")[:16].replace("T", " ")
+                    body = " ".join(str(c.get("body") or "").strip().splitlines())[:220]
+                    print(f"[{repo} {kind} #{num}] @{user} ({dt}): {body}")
+
+
 def add_tracked_contribution(
     repo: str,
     pr_num: int,
@@ -734,7 +754,7 @@ def main() -> int:
         "command",
         nargs="?",
         default="summary",
-        choices=["summary", "prs", "issues", "sync", "add", "ha-patches"],
+        choices=["summary", "prs", "issues", "comments", "sync", "add", "ha-patches"],
         help="Subcommand to execute (default: summary)",
     )
     parser.add_argument("--output", help="Write generated README.md to this file path without pushing")
@@ -776,6 +796,10 @@ def main() -> int:
 
     if args.command == "issues":
         print_detailed_issues(token)
+        return 0
+
+    if args.command == "comments":
+        print_recent_comments(token, repo_filter=args.repo or "")
         return 0
 
     if args.command == "add":
