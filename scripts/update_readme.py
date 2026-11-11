@@ -215,7 +215,7 @@ TRACKED_CONTRIBUTIONS: list[dict[str, Any]] = [
         "pr": 88,
         "issue": 87,
         "component": "Oma-Cast Launcher (`oma-cast`)",
-        "summary": "Accept numpad digit, operator, and decimal keys (`KP_0`–`KP_9`, `KP_Add`, `KP_Subtract`, `KP_Multiply`, `KP_Divide`, `KP_Decimal`) in launcher search and calculator inputs.",
+        "summary": "Accept numpad keys across `Qt.KeypadModifier`, navigation keysyms, and Wayland scan codes in launcher search, calculator, argument pills, and popup filter inputs.",
     },
 ]
 # END_TRACKED_CONTRIBUTIONS
@@ -238,6 +238,12 @@ PUBLISHED_PROJECTS: list[dict[str, str]] = [
         "plugin_id": "nertwork.network-info",
         "title": "Omarchy Network Intelligence (`nertwork.network-info`)",
         "description": "Unified network intelligence, public/LAN IP telemetry, Wi-Fi RSSI, and live interface bandwidth monitor for Omarchy (`omarchy-shell`).",
+    },
+    {
+        "repo": "nertwork/omarchy-ip-info",
+        "plugin_id": "nertwork.ip-info",
+        "title": "Omarchy IP Telemetry Widget (`nertwork.ip-info`)",
+        "description": "Compact public/LAN IP address and geo-ASN status bar widget for Omarchy (`omarchy-shell`).",
     },
     {
         "repo": "nertwork/omarchy-battery-health",
@@ -467,6 +473,7 @@ def render_readme(data: dict[str, Any]) -> str:
 [![Release v1.0.0](https://img.shields.io/badge/Release-v1.0.0-7aa2f7?style=for-the-badge&logo=github)](https://github.com/nertwork/imsg/releases/tag/v1.0.0)
 [![AUR Package](https://img.shields.io/aur/version/imsg?style=for-the-badge&logo=archlinux&logoColor=white&label=AUR%20%7C%20imsg&color=1793d1)](https://aur.archlinux.org/packages/imsg)
 [![CI Status](https://img.shields.io/github/actions/workflow/status/nertwork/imsg/ci.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white&label=CI%20%26%2049%20Tests)](https://github.com/nertwork/imsg/actions/workflows/ci.yml)
+[![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/nertwork/imsg?utm_source=oss&utm_medium=github&utm_campaign=nertwork%2Fimsg&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews&style=for-the-badge)](https://coderabbit.ai)
 [![License: MIT](https://img.shields.io/badge/License-MIT-9ece6a?style=for-the-badge)](https://github.com/nertwork/imsg/blob/main/LICENSE)
 [![Stack](https://img.shields.io/badge/C%2B%2B20_%E2%80%A2_Qt6%2FQML-Wayland_%2F_Hyprland_%2F_Omarchy-bb9af7?style=for-the-badge&logo=qt&logoColor=white)](https://github.com/nertwork/imsg)
 
