@@ -480,7 +480,7 @@ yay -S imsg
 paru -S imsg
 ```
 
-🔗 [**GitHub Repository (`nertwork/imsg`)**](https://github.com/nertwork/imsg) • [**Arch User Repository (`aur/imsg`)**](https://aur.archlinux.org/packages/imsg) • [**Release `v1.0.0`**](https://github.com/nertwork/imsg/releases/tag/v1.0.0) • [**BlueBubbles macOS Relay Setup Guide**](https://github.com/nertwork/imsg/blob/main/docs/BLUEBUBBLES_SETUP_GUIDE.md) • [**Configuration & CLI Reference**](https://github.com/nertwork/imsg/blob/main/docs/CONFIGURATION_AND_CLI.md) • [**Architecture Deep-Dive**](https://github.com/nertwork/imsg/blob/main/docs/ARCHITECTURE.md)
+🔗 [**GitHub Repository (`nertwork/imsg`)**](https://github.com/nertwork/imsg) • [**Arch User Repository (`aur/imsg`)**](https://aur.archlinux.org/packages/imsg) • [**Omarchy Community Showcase (`#18422`)**](https://github.com/omacom/omarchy/discussions/18422) • [**Release `v1.0.0`**](https://github.com/nertwork/imsg/releases/tag/v1.0.0) • [**BlueBubbles macOS Relay Setup Guide**](https://github.com/nertwork/imsg/blob/main/docs/BLUEBUBBLES_SETUP_GUIDE.md) • [**Configuration & CLI Reference**](https://github.com/nertwork/imsg/blob/main/docs/CONFIGURATION_AND_CLI.md) • [**Architecture Deep-Dive**](https://github.com/nertwork/imsg/blob/main/docs/ARCHITECTURE.md)
 
 <p align="center">
   <a href="https://github.com/nertwork/imsg">
