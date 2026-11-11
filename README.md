@@ -9,10 +9,10 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-James_Gomez-0a66c2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/james-farr/)
 [![X / Twitter](https://img.shields.io/badge/X-nertwork-111827?style=for-the-badge&logo=x&logoColor=white)](https://x.com/nertwork)
 
-[![Total Pull Requests](https://img.shields.io/badge/Pull_Requests_Authored-171-2ea043?style=for-the-badge&logo=github)](https://github.com/pulls?q=is%3Apr+author%3Anertwork)
-[![Merged Pull Requests](https://img.shields.io/badge/Merged_PRs-146-8957e5?style=for-the-badge&logo=git)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Amerged)
-[![Active Open PRs](https://img.shields.io/badge/Open_Upstream_PRs-9-1f6feb?style=for-the-badge&logo=githubactions)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Aopen)
-[![Issues Reported](https://img.shields.io/badge/Upstream_Issues_Filed-45-d29922?style=for-the-badge&logo=github)](https://github.com/issues?q=is%3Aissue+author%3Anertwork)
+[![Total Pull Requests](https://img.shields.io/badge/Pull_Requests_Authored-177-2ea043?style=for-the-badge&logo=github)](https://github.com/pulls?q=is%3Apr+author%3Anertwork)
+[![Merged Pull Requests](https://img.shields.io/badge/Merged_PRs-151-8957e5?style=for-the-badge&logo=git)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Amerged)
+[![Active Open PRs](https://img.shields.io/badge/Open_Upstream_PRs-10-1f6feb?style=for-the-badge&logo=githubactions)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Aopen)
+[![Issues Reported](https://img.shields.io/badge/Upstream_Issues_Filed-49-d29922?style=for-the-badge&logo=github)](https://github.com/issues?q=is%3Aissue+author%3Anertwork)
 
 ---
 
@@ -27,37 +27,35 @@
 | **Zero-Trust Security, SIEM/XDR & SSOT** | `Wazuh` SIEM/XDR (`OpenSearch` CVE Indexing, MITRE ATT&CK, CIS Benchmarks), `HashiCorp Vault` Dynamic Secrets/PKI, `Authentik` SAML/OIDC SSO, Enterprise `RADIUS`/`TACACS+` AAA, Global Factory `IPsec`/`VTI`, `NetBox` SSOT, `Grafana Cloud` (`Prometheus`/`Mimir`/`Loki`) |
 | **Industry Certifications & Education** | **`JNCIP-SEC`** • **`JNCIP-DC`** • **`JNCIP-ENT`** • **`JNCDA`** • **Juniper SE Champion** • **`CCNP`** • **`CCNA`** • **`VMware VCP5-DCV`** • **Mitel CVE** • **Cypress College** (Cisco Network & Security Lab, *Grade: A*) • **Victor Valley College** (Linux Administration, *Grade: A*) |
 
-## 📌 Featured Open-Source Release: [`nertwork/bluepill`](https://github.com/nertwork/bluepill) (`v1.1.0`)
+## 📌 Featured Open-Source Release: [`nertwork/imsg`](https://github.com/nertwork/imsg) (`v1.0.0`)
 
-[![Release v1.1.0](https://img.shields.io/badge/Release-v1.1.0-7aa2f7?style=for-the-badge&logo=github)](https://github.com/nertwork/bluepill/releases/tag/v1.1.0)
-[![AUR Package](https://img.shields.io/aur/version/bluepill?style=for-the-badge&logo=archlinux&logoColor=white&label=AUR%20%7C%20bluepill&color=1793d1)](https://aur.archlinux.org/packages/bluepill)
-[![Homebrew Tap](https://img.shields.io/badge/Homebrew-nertwork%2Ftap%2Fbluepill-FBB040?style=for-the-badge&logo=homebrew&logoColor=white)](https://github.com/nertwork/homebrew-tap)
-[![CI Status](https://img.shields.io/github/actions/workflow/status/nertwork/bluepill/ci.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white&label=CI%20%26%2053%20Tests)](https://github.com/nertwork/bluepill/actions/workflows/ci.yml)
-[![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/nertwork/bluepill?utm_source=oss&utm_medium=github&utm_campaign=nertwork%2Fbluepill&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews&style=for-the-badge)](https://coderabbit.ai)
-[![License: MIT](https://img.shields.io/badge/License-MIT-9ece6a?style=for-the-badge)](https://github.com/nertwork/bluepill/blob/main/LICENSE)
-[![Stack](https://img.shields.io/badge/C%2B%2B20_%E2%80%A2_Qt6%2FQML-Wayland_%2F_Hyprland_%2F_Omarchy-bb9af7?style=for-the-badge&logo=qt&logoColor=white)](https://github.com/nertwork/bluepill)
+[![Release v1.0.0](https://img.shields.io/badge/Release-v1.0.0-7aa2f7?style=for-the-badge&logo=github)](https://github.com/nertwork/imsg/releases/tag/v1.0.0)
+[![AUR Package](https://img.shields.io/aur/version/imsg?style=for-the-badge&logo=archlinux&logoColor=white&label=AUR%20%7C%20imsg&color=1793d1)](https://aur.archlinux.org/packages/imsg)
+[![CI Status](https://img.shields.io/github/actions/workflow/status/nertwork/imsg/ci.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white&label=CI%20%26%2049%20Tests)](https://github.com/nertwork/imsg/actions/workflows/ci.yml)
+[![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/nertwork/imsg?utm_source=oss&utm_medium=github&utm_campaign=nertwork%2Fimsg&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews&style=for-the-badge)](https://coderabbit.ai)
+[![License: MIT](https://img.shields.io/badge/License-MIT-9ece6a?style=for-the-badge)](https://github.com/nertwork/imsg/blob/main/LICENSE)
+[![Stack](https://img.shields.io/badge/C%2B%2B20_%E2%80%A2_Qt6%2FQML-Wayland_%2F_Hyprland_%2F_Omarchy-bb9af7?style=for-the-badge&logo=qt&logoColor=white)](https://github.com/nertwork/imsg)
 
-**[`BluePill` (`bluepill`)](https://github.com/nertwork/bluepill)** is a unified, native **C++20 and Qt6/QML** desktop and CLI client for **Apple iMessage, RCS, and SMS** on Linux (`x86_64` & `aarch64` — Arch Linux, Omarchy, Wayland/Hyprland) paired with a **zero-Electron macOS `chat.db` relay daemon & Web UI** (`bluepill-server`) and 100% backward compatibility with legacy [BlueBubbles](https://bluebubbles.app/) servers:
+**[`imsg`](https://github.com/nertwork/imsg)** is a fast, native **C++20 and Qt6/QML** desktop and CLI client for **Apple iMessage, RCS, and SMS** on Linux (Arch Linux, Omarchy, Wayland/Hyprland, KDE Plasma, GNOME), backed by a macOS [BlueBubbles](https://bluebubbles.app/) relay:
 
-- **Pinned Conversations Avatar Bar & 1-Click 2FA OTP Copy Pill:** Native circular avatar row synced with macOS `com.apple.messages.pinning.plist` plus automatic `🔑 Copy <code>` extraction pills on incoming verification codes.
-- **Zero-Electron macOS Relay (`bluepill-server`) & Built-In Web UI (`/web`):** Single-file Python 3 stdlib macOS daemon (`brew install nertwork/tap/bluepill`) reading `chat.db` WAL, `AddressBook-v22.abcddb`, and binary `NSAttributedString` `streamtyped` blobs directly, with a built-in responsive dark-slate Web UI (`http://localhost:1235/web` or `bluepill --webui`) and Direct SSH (`ssh://user@mac-host`) transport.
-- **Edited, Expressive Send & Delivery Failure Badges:** Inline `· Edited`, `· sent with confetti/slam/lasers`, and `⚠ Not Delivered` badges alongside `Ctrl+V` clipboard screenshot paste.
+- **Zero-Config First-Run GUI Setup (`Ctrl+,` / `⚙ Server`):** Configure Primary & Failover BlueBubbles Server URLs and API Password directly from the UI, `~/.config/imsg/config.json` (`0600`), or `libsecret` (`secret-tool`).
 - **Real-Time Socket.IO v4 Push & Multi-Channel HTTP Isolation:** Dedicated `QNetworkAccessManager` pools (`m_sendNam`, `m_mediaNam`, `m_socketNam`) prevent multi-photo downloads from blocking outbound message sends or typing indicators.
 - **Native HEIC/AVIF Magic-Byte Decoding & Full-Window Photo Viewer:** Automatically detects disguised Apple `ftyp` (`heic`, `heix`, `mif1`, `avif`) attachments and converts them via `libheif` (`heif-convert`) / ImageMagick.
+- **Tapback Reactions, Sticker Overlays & Rich Link Previews:** Interactive `❤️ 👍 👎 😂 !! ?` reaction pills with sender attribution tooltips, sticker overlays, YouTube embeds, and asynchronous OpenGraph cards.
+- **Authoritative SQLite Read-State Sync & Unjoined 2FA SMS Recovery:** Reconciles `message.is_read = 0` directly against macOS `chat.db`, synthesizes threads for unjoined short-code OTP rows, and exposes headless CLI commands (`imsg status`, `imsg recent`, `imsg send`).
 
 ```bash
-# Linux Desktop & CLI Client (Arch Linux / Omarchy — AUR):
-yay -S bluepill
-
-# macOS Headless Relay Daemon + Web UI (Apple Silicon & Intel — Homebrew):
-brew tap nertwork/tap && brew install nertwork/tap/bluepill
+# Install from the official Arch User Repository (AUR):
+yay -S imsg
+# or
+paru -S imsg
 ```
 
-🔗 [**GitHub Repository (`nertwork/bluepill`)**](https://github.com/nertwork/bluepill) • [**Arch User Repository (`aur/bluepill`)**](https://aur.archlinux.org/packages/bluepill) • [**Homebrew Tap (`nertwork/homebrew-tap`)**](https://github.com/nertwork/homebrew-tap) • [**Omarchy Community Showcase (`#18422`)**](https://github.com/omacom/omarchy/discussions/18422) • [**Release `v1.1.0`**](https://github.com/nertwork/bluepill/releases/tag/v1.1.0) • [**macOS Relay & BlueBubbles Setup Guide**](https://github.com/nertwork/bluepill/blob/main/docs/BLUEBUBBLES_SETUP_GUIDE.md) • [**Configuration, Web UI & CLI Reference**](https://github.com/nertwork/bluepill/blob/main/docs/CONFIGURATION_AND_CLI.md) • [**Architecture Deep-Dive**](https://github.com/nertwork/bluepill/blob/main/docs/ARCHITECTURE.md)
+🔗 [**GitHub Repository (`nertwork/imsg`)**](https://github.com/nertwork/imsg) • [**Arch User Repository (`aur/imsg`)**](https://aur.archlinux.org/packages/imsg) • [**Omarchy Community Showcase (`#18422`)**](https://github.com/omacom/omarchy/discussions/18422) • [**Release `v1.0.0`**](https://github.com/nertwork/imsg/releases/tag/v1.0.0) • [**BlueBubbles macOS Relay Setup Guide**](https://github.com/nertwork/imsg/blob/main/docs/BLUEBUBBLES_SETUP_GUIDE.md) • [**Configuration & CLI Reference**](https://github.com/nertwork/imsg/blob/main/docs/CONFIGURATION_AND_CLI.md) • [**Architecture Deep-Dive**](https://github.com/nertwork/imsg/blob/main/docs/ARCHITECTURE.md)
 
 <p align="center">
-  <a href="https://github.com/nertwork/bluepill">
-    <img src="https://raw.githubusercontent.com/nertwork/bluepill/main/docs/screenshots/chat-conversation.png" alt="BluePill v1.1.0 — Native Linux Qt6/QML iMessage, SMS & RCS Client" width="100%" />
+  <a href="https://github.com/nertwork/imsg">
+    <img src="https://raw.githubusercontent.com/nertwork/imsg/main/docs/screenshots/chat-conversation.png" alt="imsg v1.0.0 — Native Linux Qt6/QML iMessage, SMS & RCS Client" width="100%" />
   </a>
 </p>
 
@@ -73,7 +71,7 @@ brew tap nertwork/tap && brew install nertwork/tap/bluepill
 
 ## Upstream Open Source Contributions (Auto-Updated)
 
-> *Automatically synchronized via GitHub Actions (`.github/workflows/update-profile.yml`) and `sync_github_profile.py`. Last verified: **2026-11-11 18:04 UTC***
+> *Automatically synchronized via GitHub Actions (`.github/workflows/update-profile.yml`) and `sync_github_profile.py`. Last verified: **2026-11-11 20:12 UTC***
 
 ### 1. Home Assistant Core Libraries, Smart Home & Clean Energy Integrations
 
@@ -93,6 +91,7 @@ brew tap nertwork/tap && brew install nertwork/tap/bluepill
 | ![Merged](https://img.shields.io/badge/PR_%23828-Merged-8957e5?style=flat-square&logo=github) | **[JeffSteinbok/hass-dreo](https://github.com/JeffSteinbok/hass-dreo)**<br><sub>Dreo Smart Device Integration (`hass-dreo`)</sub> | [`#828`](https://github.com/JeffSteinbok/hass-dreo/pull/828) / [Issue `#22`](https://github.com/JeffSteinbok/hass-dreo/issues/22) | Add support for `001` MCU revision of `DR-HAP003S` Air Purifier (shipped in `v1.11.11`). |
 | ![Merged Manually](https://img.shields.io/badge/PR_%23641-Merged_Manually-8957e5?style=flat-square&logo=github) | **[thomluther/ha-anker-solix](https://github.com/thomluther/ha-anker-solix)**<br><sub>Anker SOLIX HA Integration (`ha-anker-solix`)</sub> | [`#641`](https://github.com/thomluther/ha-anker-solix/pull/641) | Use `SolixPpsBatteryStatus` enum for `SOLARBANK_PPS` `battery_status` sensor (manually merged upstream by maintainer). |
 | ![Incorporated Upstream](https://img.shields.io/badge/PR_%23643-Incorporated_Upstream-8957e5?style=flat-square&logo=github) | **[thomluther/ha-anker-solix](https://github.com/thomluther/ha-anker-solix)**<br><sub>Anker SOLIX HA Integration (`ha-anker-solix`)</sub> | [`#643`](https://github.com/thomluther/ha-anker-solix/pull/643) | Support Storm Guard and backup usage mode entities (`select.py`, `datetime.py`) for `A1782` (`F3000`, incorporated into upstream `SB_PPS` support). |
+| ![Open](https://img.shields.io/badge/PR_%23709-Open-2ea043?style=flat-square&logo=github) | **[FunkeyFlo/ps5-mqtt](https://github.com/FunkeyFlo/ps5-mqtt)**<br><sub>PlayStation 5 MQTT ()</sub> | [`#709`](https://github.com/FunkeyFlo/ps5-mqtt/pull/709) / [Issue `#708`](https://github.com/FunkeyFlo/ps5-mqtt/issues/708) | Debounce single transient UDP  failures during out-of-band console wake, clear  in , and deduplicate offline MQTT state updates. |
 
 ---
 
@@ -112,7 +111,7 @@ brew tap nertwork/tap && brew install nertwork/tap/bluepill
 
 | Status | Upstream Repository & Component | Pull Request & Issue | Technical Summary |
 | :--- | :--- | :--- | :--- |
-| ![Open](https://img.shields.io/badge/PR_%239-Open-2ea043?style=flat-square&logo=github) | **[HappyPathway/github-runner-image](https://github.com/HappyPathway/github-runner-image)**<br><sub>GitHub Actions Runner Image</sub> | [`#9`](https://github.com/HappyPathway/github-runner-image/pull/9) | Add Python `venv` and workflow automation updates for self-hosted GitHub Actions runner image builds. |
+| ![Merged](https://img.shields.io/badge/PR_%239-Merged-8957e5?style=flat-square&logo=github) | **[HappyPathway/github-runner-image](https://github.com/HappyPathway/github-runner-image)**<br><sub>GitHub Actions Runner Image</sub> | [`#9`](https://github.com/HappyPathway/github-runner-image/pull/9) | Add Python `venv` and workflow automation updates for self-hosted GitHub Actions runner image builds. |
 | ![Merged](https://img.shields.io/badge/PR_%23123-Merged-8957e5?style=flat-square&logo=github) | **[jarischaefer/docker-librenms](https://github.com/jarischaefer/docker-librenms)**<br><sub>Docker LibreNMS (`docker-librenms`)</sub> | [`#123`](https://github.com/jarischaefer/docker-librenms/pull/123) / [Issue `#119`](https://github.com/jarischaefer/docker-librenms/issues/119) | Release version bumps (`1.68` / `1.69`) and distributed poller memcached support. |
 | ![Merged](https://img.shields.io/badge/PR_%2356-Merged-8957e5?style=flat-square&logo=github) | **[mrlesmithjr/ansible-frr](https://github.com/mrlesmithjr/ansible-frr)**<br><sub>FRRouting Ansible Role (`ansible-frr`)</sub> | [`#56`](https://github.com/mrlesmithjr/ansible-frr/pull/56) / [Issue `#43`](https://github.com/mrlesmithjr/ansible-frr/issues/43) | Add BGP Listen Range support, OSPF distribute lists (`#28`), BGP neighbor timers (`#16`), Ubuntu 18/20 `iproute2` support (`#20`), and check-mode fixes (`#17`) across 9 merged PRs. |
 
@@ -122,8 +121,7 @@ brew tap nertwork/tap && brew install nertwork/tap/bluepill
 
 | Repository | Category / Plugin ID | Description |
 | :--- | :--- | :--- |
-| **[`nertwork/bluepill`](https://github.com/nertwork/bluepill)** | `Desktop / CLI / macOS Relay (AUR: bluepill | Brew: nertwork/tap/bluepill)` | Native C++20 & Qt6/QML desktop and CLI client for Apple iMessage, RCS, and SMS on Linux (`yay -S bluepill`) + headless zero-Electron macOS `chat.db` relay daemon & Web UI (`brew install nertwork/tap/bluepill`). |
-| **[`nertwork/homebrew-tap`](https://github.com/nertwork/homebrew-tap)** | `macOS Homebrew Tap (nertwork/tap)` | Official macOS Homebrew Tap (`brew install nertwork/tap/bluepill`) providing universal bottles and LaunchAgent services for the BluePill headless macOS relay daemon and Web UI. |
+| **[`nertwork/imsg`](https://github.com/nertwork/imsg)** | `Desktop / CLI (AUR: imsg)` | Native C++20 & Qt6/QML desktop and CLI client for Apple iMessage, RCS, and SMS on Linux (Arch / Omarchy / Wayland / Hyprland) powered by a BlueBubbles macOS relay (`yay -S imsg`). |
 | **[`nertwork/omarchy-ai-agents`](https://github.com/nertwork/omarchy-ai-agents)** | `nertwork.agents` | Real-time status, rate-limit, and token usage bar panel for AI coding assistants (Claude Code, OpenAI Codex, GitHub Copilot, Grok, Antigravity) on Omarchy Linux / Quickshell. |
 | **[`nertwork/omarchy-network-info`](https://github.com/nertwork/omarchy-network-info)** | `nertwork.network-info` | Unified network intelligence, public/LAN IP telemetry, Wi-Fi RSSI, and live interface bandwidth monitor for Omarchy (`omarchy-shell`). |
 | **[`nertwork/omarchy-ip-info`](https://github.com/nertwork/omarchy-ip-info)** | `nertwork.ip-info` | Compact public/LAN IP address and geo-ASN status bar widget for Omarchy (`omarchy-shell`). |
