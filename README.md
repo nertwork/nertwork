@@ -9,8 +9,8 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-James_Gomez-0a66c2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/james-farr/)
 [![X / Twitter](https://img.shields.io/badge/X-nertwork-111827?style=for-the-badge&logo=x&logoColor=white)](https://x.com/nertwork)
 
-[![Total Pull Requests](https://img.shields.io/badge/Pull_Requests_Authored-168-2ea043?style=for-the-badge&logo=github)](https://github.com/pulls?q=is%3Apr+author%3Anertwork)
-[![Merged Pull Requests](https://img.shields.io/badge/Merged_PRs-143-8957e5?style=for-the-badge&logo=git)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Amerged)
+[![Total Pull Requests](https://img.shields.io/badge/Pull_Requests_Authored-173-2ea043?style=for-the-badge&logo=github)](https://github.com/pulls?q=is%3Apr+author%3Anertwork)
+[![Merged Pull Requests](https://img.shields.io/badge/Merged_PRs-148-8957e5?style=for-the-badge&logo=git)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Amerged)
 [![Active Open PRs](https://img.shields.io/badge/Open_Upstream_PRs-9-1f6feb?style=for-the-badge&logo=githubactions)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Aopen)
 [![Issues Reported](https://img.shields.io/badge/Upstream_Issues_Filed-43-d29922?style=for-the-badge&logo=github)](https://github.com/issues?q=is%3Aissue+author%3Anertwork)
 
@@ -27,6 +27,39 @@
 | **Zero-Trust Security, SIEM/XDR & SSOT** | `Wazuh` SIEM/XDR (`OpenSearch` CVE Indexing, MITRE ATT&CK, CIS Benchmarks), `HashiCorp Vault` Dynamic Secrets/PKI, `Authentik` SAML/OIDC SSO, Enterprise `RADIUS`/`TACACS+` AAA, Global Factory `IPsec`/`VTI`, `NetBox` SSOT, `Grafana Cloud` (`Prometheus`/`Mimir`/`Loki`) |
 | **Industry Certifications & Education** | **`JNCIP-SEC`** • **`JNCIP-DC`** • **`JNCIP-ENT`** • **`JNCDA`** • **Juniper SE Champion** • **`CCNP`** • **`CCNA`** • **`VMware VCP5-DCV`** • **Mitel CVE** • **Cypress College** (Cisco Network & Security Lab, *Grade: A*) • **Victor Valley College** (Linux Administration, *Grade: A*) |
 
+## 📌 Featured Open-Source Release: [`nertwork/imsg`](https://github.com/nertwork/imsg) (`v1.0.0`)
+
+[![Release v1.0.0](https://img.shields.io/badge/Release-v1.0.0-7aa2f7?style=for-the-badge&logo=github)](https://github.com/nertwork/imsg/releases/tag/v1.0.0)
+[![AUR Package](https://img.shields.io/aur/version/imsg?style=for-the-badge&logo=archlinux&logoColor=white&label=AUR%20%7C%20imsg&color=1793d1)](https://aur.archlinux.org/packages/imsg)
+[![CI Status](https://img.shields.io/github/actions/workflow/status/nertwork/imsg/ci.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white&label=CI%20%26%2049%20Tests)](https://github.com/nertwork/imsg/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-9ece6a?style=for-the-badge)](https://github.com/nertwork/imsg/blob/main/LICENSE)
+[![Stack](https://img.shields.io/badge/C%2B%2B20_%E2%80%A2_Qt6%2FQML-Wayland_%2F_Hyprland_%2F_Omarchy-bb9af7?style=for-the-badge&logo=qt&logoColor=white)](https://github.com/nertwork/imsg)
+
+**[`imsg`](https://github.com/nertwork/imsg)** is a fast, native **C++20 and Qt6/QML** desktop and CLI client for **Apple iMessage, RCS, and SMS** on Linux (Arch Linux, Omarchy, Wayland/Hyprland, KDE Plasma, GNOME), backed by a macOS [BlueBubbles](https://bluebubbles.app/) relay:
+
+- **Zero-Config First-Run GUI Setup (`Ctrl+,` / `⚙ Server`):** Configure Primary & Failover BlueBubbles Server URLs and API Password directly from the UI, `~/.config/imsg/config.json` (`0600`), or `libsecret` (`secret-tool`).
+- **Real-Time Socket.IO v4 Push & Multi-Channel HTTP Isolation:** Dedicated `QNetworkAccessManager` pools (`m_sendNam`, `m_mediaNam`, `m_socketNam`) prevent multi-photo downloads from blocking outbound message sends or typing indicators.
+- **Native HEIC/AVIF Magic-Byte Decoding & Full-Window Photo Viewer:** Automatically detects disguised Apple `ftyp` (`heic`, `heix`, `mif1`, `avif`) attachments and converts them via `libheif` (`heif-convert`) / ImageMagick.
+- **Tapback Reactions, Sticker Overlays & Rich Link Previews:** Interactive `❤️ 👍 👎 😂 !! ?` reaction pills with sender attribution tooltips, sticker overlays, YouTube embeds, and asynchronous OpenGraph cards.
+- **Authoritative SQLite Read-State Sync & Unjoined 2FA SMS Recovery:** Reconciles `message.is_read = 0` directly against macOS `chat.db`, synthesizes threads for unjoined short-code OTP rows, and exposes headless CLI commands (`imsg status`, `imsg recent`, `imsg send`).
+
+```bash
+# Install from the official Arch User Repository (AUR):
+yay -S imsg
+# or
+paru -S imsg
+```
+
+🔗 [**GitHub Repository (`nertwork/imsg`)**](https://github.com/nertwork/imsg) • [**Arch User Repository (`aur/imsg`)**](https://aur.archlinux.org/packages/imsg) • [**Release `v1.0.0`**](https://github.com/nertwork/imsg/releases/tag/v1.0.0) • [**BlueBubbles macOS Relay Setup Guide**](https://github.com/nertwork/imsg/blob/main/docs/BLUEBUBBLES_SETUP_GUIDE.md) • [**Configuration & CLI Reference**](https://github.com/nertwork/imsg/blob/main/docs/CONFIGURATION_AND_CLI.md) • [**Architecture Deep-Dive**](https://github.com/nertwork/imsg/blob/main/docs/ARCHITECTURE.md)
+
+<p align="center">
+  <a href="https://github.com/nertwork/imsg">
+    <img src="https://raw.githubusercontent.com/nertwork/imsg/main/docs/screenshots/chat-conversation.png" alt="imsg v1.0.0 — Native Linux Qt6/QML iMessage, SMS & RCS Client" width="100%" />
+  </a>
+</p>
+
+---
+
 ### Featured Technical Publications on [`nertwork.com`](https://www.nertwork.com/)
 - [**Autonomous Cloud & Infrastructure SecOps: Integrating Wazuh SIEM/XDR, HashiCorp Vault, and Agentic AI Across AWS, GCP, and Proxmox Fleets**](https://www.nertwork.com/2026/11/10/autonomous-cloud-and-infrastructure-secops-wazuh-siem-xdr-hashicorp-vault-and-agentic-ai/)
 - [**Leveraging AI for a Homelab: Declarative Proxmox VE Infrastructure with Terraform, Pulumi & GitLab CI/CD**](https://www.nertwork.com/2026/11/10/leveraging-ai-for-a-homelab-declarative-proxmox-ve-infrastructure-with-terraform-pulumi-and-gitlab-ci-cd/)
@@ -37,7 +70,7 @@
 
 ## Upstream Open Source Contributions (Auto-Updated)
 
-> *Automatically synchronized via GitHub Actions (`.github/workflows/update-profile.yml`) and `sync_github_profile.py`. Last verified: **2026-11-11 01:07 UTC***
+> *Automatically synchronized via GitHub Actions (`.github/workflows/update-profile.yml`) and `sync_github_profile.py`. Last verified: **2026-11-11 01:14 UTC***
 
 ### 1. Home Assistant Core Libraries, Smart Home & Clean Energy Integrations
 
@@ -75,7 +108,7 @@
 
 | Status | Upstream Repository & Component | Pull Request & Issue | Technical Summary |
 | :--- | :--- | :--- | :--- |
-| ![Open](https://img.shields.io/badge/PR_%239-Open-2ea043?style=flat-square&logo=github) | **[HappyPathway/github-runner-image](https://github.com/HappyPathway/github-runner-image)**<br><sub>GitHub Actions Runner Image</sub> | [`#9`](https://github.com/HappyPathway/github-runner-image/pull/9) | Add Python `venv` and workflow automation updates for self-hosted GitHub Actions runner image builds. |
+| ![Merged](https://img.shields.io/badge/PR_%239-Merged-8957e5?style=flat-square&logo=github) | **[HappyPathway/github-runner-image](https://github.com/HappyPathway/github-runner-image)**<br><sub>GitHub Actions Runner Image</sub> | [`#9`](https://github.com/HappyPathway/github-runner-image/pull/9) | Add Python `venv` and workflow automation updates for self-hosted GitHub Actions runner image builds. |
 | ![Merged](https://img.shields.io/badge/PR_%23123-Merged-8957e5?style=flat-square&logo=github) | **[jarischaefer/docker-librenms](https://github.com/jarischaefer/docker-librenms)**<br><sub>Docker LibreNMS (`docker-librenms`)</sub> | [`#123`](https://github.com/jarischaefer/docker-librenms/pull/123) / [Issue `#119`](https://github.com/jarischaefer/docker-librenms/issues/119) | Release version bumps (`1.68` / `1.69`) and distributed poller memcached support. |
 | ![Merged](https://img.shields.io/badge/PR_%2356-Merged-8957e5?style=flat-square&logo=github) | **[mrlesmithjr/ansible-frr](https://github.com/mrlesmithjr/ansible-frr)**<br><sub>FRRouting Ansible Role (`ansible-frr`)</sub> | [`#56`](https://github.com/mrlesmithjr/ansible-frr/pull/56) / [Issue `#43`](https://github.com/mrlesmithjr/ansible-frr/issues/43) | Add BGP Listen Range support, OSPF distribute lists (`#28`), BGP neighbor timers (`#16`), Ubuntu 18/20 `iproute2` support (`#20`), and check-mode fixes (`#17`) across 9 merged PRs. |
 
@@ -85,6 +118,7 @@
 
 | Repository | Category / Plugin ID | Description |
 | :--- | :--- | :--- |
+| **[`nertwork/imsg`](https://github.com/nertwork/imsg)** | `Desktop / CLI (AUR: imsg)` | Native C++20 & Qt6/QML desktop and CLI client for Apple iMessage, RCS, and SMS on Linux (Arch / Omarchy / Wayland / Hyprland) powered by a BlueBubbles macOS relay (`yay -S imsg`). |
 | **[`nertwork/omarchy-ai-agents`](https://github.com/nertwork/omarchy-ai-agents)** | `nertwork.agents` | Real-time status, rate-limit, and token usage bar panel for AI coding assistants (Claude Code, OpenAI Codex, GitHub Copilot, Grok, Antigravity) on Omarchy Linux / Quickshell. |
 | **[`nertwork/omarchy-network-info`](https://github.com/nertwork/omarchy-network-info)** | `nertwork.network-info` | Unified network intelligence, public/LAN IP telemetry, Wi-Fi RSSI, and live interface bandwidth monitor for Omarchy (`omarchy-shell`). |
 | **[`nertwork/omarchy-battery-health`](https://github.com/nertwork/omarchy-battery-health)** | `nertwork.power` | Battery health diagnostics, 80% charge threshold limiting, and real-time power draw analytics for Omarchy Linux laptops. |

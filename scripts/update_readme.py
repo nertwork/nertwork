@@ -217,6 +217,12 @@ TRACKED_CONTRIBUTIONS: list[dict[str, Any]] = [
 
 PUBLISHED_PROJECTS: list[dict[str, str]] = [
     {
+        "repo": "nertwork/imsg",
+        "plugin_id": "Desktop / CLI (AUR: imsg)",
+        "title": "imsg — Native Linux iMessage, SMS & RCS Client (`v1.0.0`)",
+        "description": "Native C++20 & Qt6/QML desktop and CLI client for Apple iMessage, RCS, and SMS on Linux (Arch / Omarchy / Wayland / Hyprland) powered by a BlueBubbles macOS relay (`yay -S imsg`).",
+    },
+    {
         "repo": "nertwork/omarchy-ai-agents",
         "plugin_id": "nertwork.agents",
         "title": "Omarchy AI Agents (`nertwork.agents`)",
@@ -256,16 +262,13 @@ PUBLISHED_PROJECTS: list[dict[str, str]] = [
 
 
 def _get_github_token() -> str:
-    """Resolve GitHub token from environment (`GH_TOKEN` / `GITHUB_TOKEN`) or HashiCorp Vault."""
-    for env_key in ("GH_TOKEN", "GITHUB_TOKEN", "PAT_TOKEN"):
-        val = os.environ.get(env_key, "").strip()
-        if val:
-            return val
+    """Resolve GitHub token from HashiCorp Vault or environment (`GH_TOKEN` / `GITHUB_TOKEN`)."""
     try:
         env = dict(os.environ)
-        env.setdefault("VAULT_ADDR", "https://vault.nertwork.com")
+        env.pop("VAULT_NAMESPACE", None)
+        env["VAULT_ADDR"] = "https://vault.nertwork.com"
         vt_path = Path.home() / ".vault-token"
-        if "VAULT_TOKEN" not in env and vt_path.exists():
+        if vt_path.exists():
             env["VAULT_TOKEN"] = vt_path.read_text(encoding="utf-8").strip()
         proc = subprocess.run(
             ["vault", "kv", "get", "-field=token", "terraform_keys/github_token"],
@@ -279,6 +282,10 @@ def _get_github_token() -> str:
             return proc.stdout.strip()
     except Exception:
         pass
+    for env_key in ("GH_TOKEN", "GITHUB_TOKEN", "PAT_TOKEN"):
+        val = os.environ.get(env_key, "").strip()
+        if val:
+            return val
     return ""
 
 
@@ -450,6 +457,39 @@ def render_readme(data: dict[str, Any]) -> str:
 | **Zero-Trust Security, SIEM/XDR & SSOT** | `Wazuh` SIEM/XDR (`OpenSearch` CVE Indexing, MITRE ATT&CK, CIS Benchmarks), `HashiCorp Vault` Dynamic Secrets/PKI, `Authentik` SAML/OIDC SSO, Enterprise `RADIUS`/`TACACS+` AAA, Global Factory `IPsec`/`VTI`, `NetBox` SSOT, `Grafana Cloud` (`Prometheus`/`Mimir`/`Loki`) |
 | **Industry Certifications & Education** | **`JNCIP-SEC`** • **`JNCIP-DC`** • **`JNCIP-ENT`** • **`JNCDA`** • **Juniper SE Champion** • **`CCNP`** • **`CCNA`** • **`VMware VCP5-DCV`** • **Mitel CVE** • **Cypress College** (Cisco Network & Security Lab, *Grade: A*) • **Victor Valley College** (Linux Administration, *Grade: A*) |
 
+## 📌 Featured Open-Source Release: [`nertwork/imsg`](https://github.com/nertwork/imsg) (`v1.0.0`)
+
+[![Release v1.0.0](https://img.shields.io/badge/Release-v1.0.0-7aa2f7?style=for-the-badge&logo=github)](https://github.com/nertwork/imsg/releases/tag/v1.0.0)
+[![AUR Package](https://img.shields.io/aur/version/imsg?style=for-the-badge&logo=archlinux&logoColor=white&label=AUR%20%7C%20imsg&color=1793d1)](https://aur.archlinux.org/packages/imsg)
+[![CI Status](https://img.shields.io/github/actions/workflow/status/nertwork/imsg/ci.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white&label=CI%20%26%2049%20Tests)](https://github.com/nertwork/imsg/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-9ece6a?style=for-the-badge)](https://github.com/nertwork/imsg/blob/main/LICENSE)
+[![Stack](https://img.shields.io/badge/C%2B%2B20_%E2%80%A2_Qt6%2FQML-Wayland_%2F_Hyprland_%2F_Omarchy-bb9af7?style=for-the-badge&logo=qt&logoColor=white)](https://github.com/nertwork/imsg)
+
+**[`imsg`](https://github.com/nertwork/imsg)** is a fast, native **C++20 and Qt6/QML** desktop and CLI client for **Apple iMessage, RCS, and SMS** on Linux (Arch Linux, Omarchy, Wayland/Hyprland, KDE Plasma, GNOME), backed by a macOS [BlueBubbles](https://bluebubbles.app/) relay:
+
+- **Zero-Config First-Run GUI Setup (`Ctrl+,` / `⚙ Server`):** Configure Primary & Failover BlueBubbles Server URLs and API Password directly from the UI, `~/.config/imsg/config.json` (`0600`), or `libsecret` (`secret-tool`).
+- **Real-Time Socket.IO v4 Push & Multi-Channel HTTP Isolation:** Dedicated `QNetworkAccessManager` pools (`m_sendNam`, `m_mediaNam`, `m_socketNam`) prevent multi-photo downloads from blocking outbound message sends or typing indicators.
+- **Native HEIC/AVIF Magic-Byte Decoding & Full-Window Photo Viewer:** Automatically detects disguised Apple `ftyp` (`heic`, `heix`, `mif1`, `avif`) attachments and converts them via `libheif` (`heif-convert`) / ImageMagick.
+- **Tapback Reactions, Sticker Overlays & Rich Link Previews:** Interactive `❤️ 👍 👎 😂 !! ?` reaction pills with sender attribution tooltips, sticker overlays, YouTube embeds, and asynchronous OpenGraph cards.
+- **Authoritative SQLite Read-State Sync & Unjoined 2FA SMS Recovery:** Reconciles `message.is_read = 0` directly against macOS `chat.db`, synthesizes threads for unjoined short-code OTP rows, and exposes headless CLI commands (`imsg status`, `imsg recent`, `imsg send`).
+
+```bash
+# Install from the official Arch User Repository (AUR):
+yay -S imsg
+# or
+paru -S imsg
+```
+
+🔗 [**GitHub Repository (`nertwork/imsg`)**](https://github.com/nertwork/imsg) • [**Arch User Repository (`aur/imsg`)**](https://aur.archlinux.org/packages/imsg) • [**Release `v1.0.0`**](https://github.com/nertwork/imsg/releases/tag/v1.0.0) • [**BlueBubbles macOS Relay Setup Guide**](https://github.com/nertwork/imsg/blob/main/docs/BLUEBUBBLES_SETUP_GUIDE.md) • [**Configuration & CLI Reference**](https://github.com/nertwork/imsg/blob/main/docs/CONFIGURATION_AND_CLI.md) • [**Architecture Deep-Dive**](https://github.com/nertwork/imsg/blob/main/docs/ARCHITECTURE.md)
+
+<p align="center">
+  <a href="https://github.com/nertwork/imsg">
+    <img src="https://raw.githubusercontent.com/nertwork/imsg/main/docs/screenshots/chat-conversation.png" alt="imsg v1.0.0 — Native Linux Qt6/QML iMessage, SMS & RCS Client" width="100%" />
+  </a>
+</p>
+
+---
+
 ### Featured Technical Publications on [`nertwork.com`](https://www.nertwork.com/)
 - [**Autonomous Cloud & Infrastructure SecOps: Integrating Wazuh SIEM/XDR, HashiCorp Vault, and Agentic AI Across AWS, GCP, and Proxmox Fleets**](https://www.nertwork.com/2026/11/10/autonomous-cloud-and-infrastructure-secops-wazuh-siem-xdr-hashicorp-vault-and-agentic-ai/)
 - [**Leveraging AI for a Homelab: Declarative Proxmox VE Infrastructure with Terraform, Pulumi & GitLab CI/CD**](https://www.nertwork.com/2026/11/10/leveraging-ai-for-a-homelab-declarative-proxmox-ve-infrastructure-with-terraform-pulumi-and-gitlab-ci-cd/)
@@ -536,7 +576,7 @@ def sync_to_github_repo(readme_text: str, script_text: str, token: str) -> dict[
     """Clone `nertwork/nertwork`, write `README.md`, `scripts/update_readme.py`, and `.github/workflows/update-profile.yml`, and push."""
     work_dir = Path("/tmp/nertwork_profile_repo")
     subprocess.run(["rm", "-rf", str(work_dir)], check=False)
-    clone_url = f"https://{GITHUB_USER}:{token}@github.com/{GITHUB_USER}/{GITHUB_USER}.git"
+    clone_url = f"git@github.com:{GITHUB_USER}/{GITHUB_USER}.git" if Path.home().joinpath(".ssh").exists() else f"https://{GITHUB_USER}:{token}@github.com/{GITHUB_USER}/{GITHUB_USER}.git"
     git_env = {
         **os.environ,
         "GIT_AUTHOR_NAME": "James Farr Gomez",
@@ -547,7 +587,7 @@ def sync_to_github_repo(readme_text: str, script_text: str, token: str) -> dict[
     }
     try:
         res = subprocess.run(
-            ["git", "clone", clone_url, str(work_dir)],
+            ["git", "-c", "credential.helper=", "clone", clone_url, str(work_dir)],
             capture_output=True,
             text=True,
             timeout=25,
@@ -587,7 +627,7 @@ def sync_to_github_repo(readme_text: str, script_text: str, token: str) -> dict[
             env=git_env,
         )
         push_res = subprocess.run(
-            ["git", "-C", str(work_dir), "push", "origin", "HEAD:main"],
+            ["git", "-c", "credential.https://github.com.helper=", "-C", str(work_dir), "push", "origin", "HEAD:main"],
             capture_output=True,
             text=True,
             timeout=25,
