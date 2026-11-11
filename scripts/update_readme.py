@@ -423,7 +423,7 @@ def render_readme(data: dict[str, Any]) -> str:
 
     return f"""# James F. Gomez (`@nertwork`)
 
-**Principal Infrastructure, Network & Agentic AI Architect (`ai-ops`)** • 14+ years architecting global multi-cloud CI/CD & golden-image pipelines (`Terraform Enterprise`, `Ansible`, `Pulumi`, `Packer`, `GitLab CI`, `GitHub Actions`), carrier & data center routing/switching (`1,000+` devices • `BGP`, `OSPF`, `EVPN-VXLAN`, `Juniper Junos`, `Cisco IOS-XE/NX-OS`, `Cumulus Linux`), bare-metal virtualization (`Proxmox VE`, `OpenStack SDN`, `Kubernetes`), and deterministic Agentic AI operations (`MCP`, `Graphify`).
+**Principal Cloud (GCP & AWS), Network Security (`JNCIP-SEC`) & Agentic AI Infrastructure Architect (`ai-ops`)** • **15+ years** of production experience architecting global multi-cloud platforms (`GCP`, `AWS`, `OpenStack`, `Proxmox VE`, `Kubernetes`), global golden-image & IaC CI/CD pipelines (`Terraform Enterprise` across 500+ workspaces, `Ansible`, `Puppet`, `Pulumi`, `Packer`, `GitLab CI`, `GitHub Actions`), carrier & data center routing/switching (`1,000+` devices • `BGP`, `OSPF`, `EVPN-VXLAN`, `Juniper Junos`, `Cisco IOS-XE/NX-OS`, `Cumulus Linux`), and autonomous Zero-Trust SecOps (`Wazuh SIEM/XDR`, `HashiCorp Vault`, `MCP`, `Graphify`).
 
 [![Portfolio & Executive Resume](https://img.shields.io/badge/Architect_Dossier_%26_Resume-nertwork.com%2Fabout-38bdf8?style=for-the-badge&logo=cloudflare&logoColor=white)](https://www.nertwork.com/about/)
 [![Technical Blog](https://img.shields.io/badge/Engineering_Dispatches-nertwork.com-818cf8?style=for-the-badge&logo=rss&logoColor=white)](https://www.nertwork.com/)
@@ -437,21 +437,22 @@ def render_readme(data: dict[str, Any]) -> str:
 
 ---
 
-## Core Architecture Stack & Certifications
+## Core Architecture Stack & Certifications (15+ Years Production Leadership)
 
 | Domain | Technologies & Production Capabilities |
 | :--- | :--- |
-| **Agentic AI & Autonomous Ops (`ai-ops`)** | Two-Tier Orchestrator/Sub-Agent Architecture, Model Context Protocol (`MCP`), `Graphify` Topological Knowledge Graphs (`<150-token` queries), Autonomous CI/CD & Alert Remediation (`Hermes`), Candidate Diff Staging |
-| **Multi-Cloud IaC & Global CI/CD** | Terraform & Terraform Enterprise (`500+` Workspaces), Pulumi (`Python`/`TypeScript`), Ansible, Puppet, Packer, GitLab CI/CD, GitHub Actions, Jenkins across `NA`, `LATAM`, `EU` & `APAC` |
+| **Agentic AI & Autonomous SecOps (`ai-ops`)** | Two-Tier Orchestrator/Sub-Agent Architecture (`Vertex AI`/`Bedrock`/`OpenAI`/`Gemini`), Model Context Protocol (`MCP`), `Graphify` Topological Knowledge Graphs (`<150-token` queries), Autonomous `Wazuh` & CI/CD Remediation (`Hermes`), Candidate Diff Staging |
+| **Google Cloud (GCP) & AWS Architecture** | **GCP:** `GKE`, `Shared VPC`, `Cloud Router` & `NCC` HA BGP/IPsec, `Cloud Armor` WAF, `Workload Identity Federation`, `BigQuery`/`GMP` • **AWS:** `1,000+` VM Migrations, `Transit Gateway (TGW)`, `Direct Connect`, `EKS`/`ECS`, `GuardDuty`, `Security Hub`, `Network Firewall`, Cloud FinOps |
+| **Multi-Cloud IaC & Global CI/CD** | Terraform & Terraform Enterprise (`500+` Workspaces), Pulumi (`Python`/`TypeScript`), Ansible, Puppet, Packer Golden Images, GitLab CI/CD, GitHub Actions, Jenkins across `NA`, `LATAM`, `EU` & `APAC` |
 | **Carrier & Data Center Networking** | `1,000+` Managed Devices • `BGP` (95th-Percentile TE), `OSPF`, `EVPN-VXLAN`, `VRF-Lite`, `ECMP`, `VRRP`, `LACP`; Juniper `Junos` (`MX`/`EX`/`QFX`/`SRX`, `PyEZ`, `NETCONF`), Cisco (`IOS-XE`/`NX-OS`/`ASA`), `Cumulus Linux` (`FRRouting`), `MikroTik RouterOS` |
-| **Virtualization, Cloud & Kubernetes** | `Proxmox VE` (`NVMe`/`ZFS`, Cloud-Init), `OpenStack` (`Neutron SDN`), `GCP`, `AWS` (`1,000+` VM migrations), `Kubernetes` (`ArgoCD`, `MetalLB`, `Traefik`, `Longhorn`), `Docker`, `VMware vSphere` |
-| **Observability, SecOps & SSOT** | `Grafana Cloud`, `Prometheus`/`Mimir`, `Loki`, `LibreNMS`, `Oxidized`, `NetBox` IPAM/DCIM SSOT, `Wazuh` SIEM/XDR, `HashiCorp Vault`, `Authentik` SSO |
-| **Industry Certifications** | **`JNCIP-DC`** • **`JNCIP-ENT`** • **`JNCIP-SEC`** • **`JNCDA`** • **Juniper SE Champion** • **`CCNP`** • **`CCNA`** • **`VMware VCP5-DCV`** • **Mitel CVE** |
+| **Zero-Trust Security, SIEM/XDR & SSOT** | `Wazuh` SIEM/XDR (`OpenSearch` CVE Indexing, MITRE ATT&CK, CIS Benchmarks), `HashiCorp Vault` Dynamic Secrets/PKI, `Authentik` SAML/OIDC SSO, Enterprise `RADIUS`/`TACACS+` AAA, Global Factory `IPsec`/`VTI`, `NetBox` SSOT, `Grafana Cloud` (`Prometheus`/`Mimir`/`Loki`) |
+| **Industry Certifications** | **`JNCIP-SEC`** • **`JNCIP-DC`** • **`JNCIP-ENT`** • **`JNCDA`** • **Juniper SE Champion** • **`CCNP`** • **`CCNA`** • **`VMware VCP5-DCV`** • **Mitel CVE** |
 
 ### Featured Technical Publications on [`nertwork.com`](https://www.nertwork.com/)
+- [**Autonomous Cloud & Infrastructure SecOps: Integrating Wazuh SIEM/XDR, HashiCorp Vault, and Agentic AI Across AWS, GCP, and Proxmox Fleets**](https://www.nertwork.com/2026/11/10/autonomous-cloud-and-infrastructure-secops-wazuh-siem-xdr-hashicorp-vault-and-agentic-ai/)
 - [**Leveraging AI for a Homelab: Declarative Proxmox VE Infrastructure with Terraform, Pulumi & GitLab CI/CD**](https://www.nertwork.com/2026/11/10/leveraging-ai-for-a-homelab-declarative-proxmox-ve-infrastructure-with-terraform-pulumi-and-gitlab-ci-cd/)
 - [**Enforcing Network Standards Across a 1,000+ Device Fleet with Agentic AI**](https://www.nertwork.com/2026/10/30/enforcing-network-standards-across-a-1000-device-fleet-with-agentic-ai/)
-- [**Full Architect Resume, Experience Timeline & All 36 Articles (`/about/`)**](https://www.nertwork.com/about/)
+- [**Full Architect Resume, Experience Timeline & All 37 Articles (`/about/`)**](https://www.nertwork.com/about/)
 
 ---
 
