@@ -39,7 +39,6 @@ USER_AGENT = "nertwork-profile-sync/1.1"
 
 # BEGIN_TRACKED_CONTRIBUTIONS
 TRACKED_CONTRIBUTIONS: list[dict[str, Any]] = [
-    # --- Category 1: Home Assistant Core Libraries & Energy / Smart Home Ecosystem ---
     {
         "category": "smarthome",
         "repo": "home-assistant-libs/aiowebostv",
@@ -154,7 +153,6 @@ TRACKED_CONTRIBUTIONS: list[dict[str, Any]] = [
         "summary": "Support Storm Guard and backup usage mode entities (`select.py`, `datetime.py`) for `A1782` (`F3000`, incorporated into upstream `SB_PPS` support).",
         "manual_merge_note": "Incorporated Upstream",
     },
-    # --- Category 2: Omarchy Linux & Wayland / Hyprland Desktop Ecosystem ---
     {
         "category": "omarchy",
         "repo": "tmn73/omarchy-calendar",
@@ -187,7 +185,6 @@ TRACKED_CONTRIBUTIONS: list[dict[str, Any]] = [
         "component": "OmaSettings (`omasettings`)",
         "summary": "Deduplicate numbered NetworkManager Wi-Fi profiles (`<SSID> 1`), clear stale interface bindings, and unescape colons in SSIDs.",
     },
-    # --- Category 3: Cloud, Networking & Infrastructure Automation ---
     {
         "category": "infra",
         "repo": "HappyPathway/github-runner-image",
@@ -211,6 +208,14 @@ TRACKED_CONTRIBUTIONS: list[dict[str, Any]] = [
         "issue": 43,
         "component": "FRRouting Ansible Role (`ansible-frr`)",
         "summary": "Add BGP Listen Range support, OSPF distribute lists (`#28`), BGP neighbor timers (`#16`), Ubuntu 18/20 `iproute2` support (`#20`), and check-mode fixes (`#17`) across 9 merged PRs.",
+    },
+    {
+        "category": "omarchy",
+        "repo": "typecraft-dev/oma-cast",
+        "pr": 88,
+        "issue": 87,
+        "component": "Oma-Cast Launcher (`oma-cast`)",
+        "summary": "Accept numpad digit, operator, and decimal keys (`KP_0`–`KP_9`, `KP_Add`, `KP_Subtract`, `KP_Multiply`, `KP_Divide`, `KP_Decimal`) in launcher search and calculator inputs.",
     },
 ]
 # END_TRACKED_CONTRIBUTIONS
@@ -576,7 +581,8 @@ def sync_to_github_repo(readme_text: str, script_text: str, token: str) -> dict[
     """Clone `nertwork/nertwork`, write `README.md`, `scripts/update_readme.py`, and `.github/workflows/update-profile.yml`, and push."""
     work_dir = Path("/tmp/nertwork_profile_repo")
     subprocess.run(["rm", "-rf", str(work_dir)], check=False)
-    clone_url = f"git@github.com:{GITHUB_USER}/{GITHUB_USER}.git" if Path.home().joinpath(".ssh").exists() else f"https://{GITHUB_USER}:{token}@github.com/{GITHUB_USER}/{GITHUB_USER}.git"
+    https_url = f"https://{GITHUB_USER}:{token}@github.com/{GITHUB_USER}/{GITHUB_USER}.git"
+    ssh_url = f"git@github.com:{GITHUB_USER}/{GITHUB_USER}.git"
     git_env = {
         **os.environ,
         "GIT_AUTHOR_NAME": "James Farr Gomez",
@@ -584,16 +590,27 @@ def sync_to_github_repo(readme_text: str, script_text: str, token: str) -> dict[
         "GIT_COMMITTER_NAME": "James Farr Gomez",
         "GIT_COMMITTER_EMAIL": "james@nertwork.com",
         "GIT_TERMINAL_PROMPT": "0",
+        "GIT_SSH_COMMAND": "ssh -o BatchMode=yes -o StrictHostKeyChecking=accept-new",
     }
     try:
         res = subprocess.run(
-            ["git", "-c", "credential.helper=", "clone", clone_url, str(work_dir)],
+            ["git", "-c", "credential.helper=", "clone", ssh_url, str(work_dir)],
             capture_output=True,
             text=True,
             timeout=25,
             check=False,
             env=git_env,
         )
+        if res.returncode != 0:
+            subprocess.run(["rm", "-rf", str(work_dir)], check=False)
+            res = subprocess.run(
+                ["git", "-c", "credential.helper=", "clone", https_url, str(work_dir)],
+                capture_output=True,
+                text=True,
+                timeout=25,
+                check=False,
+                env=git_env,
+            )
         if res.returncode != 0:
             return {"pushed": False, "error": res.stderr.strip()}
 
@@ -774,20 +791,23 @@ def add_tracked_contribution(
         )
 
     # Persist into canonical script files so update_readme.py stays 100% self-contained
+    start_marker = "# BEGIN_TRACKED_" + "CONTRIBUTIONS"
+    end_marker = "# END_TRACKED_" + "CONTRIBUTIONS"
     formatted_items = ["TRACKED_CONTRIBUTIONS: list[dict[str, Any]] = ["]
     for it in TRACKED_CONTRIBUTIONS:
+        iss_val = None if it.get("issue") is None else int(it["issue"])
         formatted_items.append("    {")
-        formatted_items.append(f'        "category": {json.dumps(it["category"])},')
-        formatted_items.append(f'        "repo": {json.dumps(it["repo"])},')
+        formatted_items.append(f'        "category": {json.dumps(it["category"], ensure_ascii=False)},')
+        formatted_items.append(f'        "repo": {json.dumps(it["repo"], ensure_ascii=False)},')
         formatted_items.append(f'        "pr": {int(it["pr"])},')
-        formatted_items.append(f'        "issue": {json.dumps(it.get("issue"))},')
-        formatted_items.append(f'        "component": {json.dumps(it["component"])},')
-        formatted_items.append(f'        "summary": {json.dumps(it["summary"])},')
+        formatted_items.append(f'        "issue": {iss_val},')
+        formatted_items.append(f'        "component": {json.dumps(it["component"], ensure_ascii=False)},')
+        formatted_items.append(f'        "summary": {json.dumps(it["summary"], ensure_ascii=False)},')
         if it.get("manual_merge_note"):
-            formatted_items.append(f'        "manual_merge_note": {json.dumps(it["manual_merge_note"])},')
+            formatted_items.append(f'        "manual_merge_note": {json.dumps(it["manual_merge_note"], ensure_ascii=False)},')
         formatted_items.append("    },")
     formatted_items.append("]")
-    new_block = "# BEGIN_TRACKED_CONTRIBUTIONS\n" + "\n".join(formatted_items) + "\n# END_TRACKED_CONTRIBUTIONS"
+    new_block = start_marker + "\n" + "\n".join(formatted_items) + "\n" + end_marker
 
     target_paths = [
         Path("/home/jfarr/projects/nertwork-ai-ops/tools/github/sync_github_profile.py"),
@@ -797,13 +817,11 @@ def add_tracked_contribution(
     for p in target_paths:
         if p.exists() and not p.is_symlink():
             src = p.read_text(encoding="utf-8")
-            updated_src = re.sub(
-                r"# BEGIN_TRACKED_CONTRIBUTIONS.*?# END_TRACKED_CONTRIBUTIONS",
-                new_block,
-                src,
-                flags=re.DOTALL,
-            )
-            p.write_text(updated_src, encoding="utf-8")
+            if start_marker in src and end_marker in src:
+                s_idx = src.index(start_marker)
+                e_idx = src.index(end_marker) + len(end_marker)
+                updated_src = src[:s_idx] + new_block + src[e_idx:]
+                p.write_text(updated_src, encoding="utf-8")
 
     return {
         "action": "updated" if updated_existing else "added",
