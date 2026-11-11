@@ -425,6 +425,8 @@ def render_readme(data: dict[str, Any]) -> str:
 
 **Principal Cloud (GCP & AWS), Network Security (`JNCIP-SEC`) & Agentic AI Infrastructure Architect (`ai-ops`)** • **15+ years** of production experience architecting global multi-cloud platforms (`GCP`, `AWS`, `OpenStack`, `Proxmox VE`, `Kubernetes`), global golden-image & IaC CI/CD pipelines (`Terraform Enterprise` across 500+ workspaces, `Ansible`, `Puppet`, `Pulumi`, `Packer`, `GitLab CI`, `GitHub Actions`), carrier & data center routing/switching (`1,000+` devices • `BGP`, `OSPF`, `EVPN-VXLAN`, `Juniper Junos`, `Cisco IOS-XE/NX-OS`, `Cumulus Linux`), and autonomous Zero-Trust SecOps (`Wazuh SIEM/XDR`, `HashiCorp Vault`, `MCP`, `Graphify`).
 
+📍 **Location & Mobility:** `Remote (US)` • `Los Angeles Metro` • `San Francisco Bay Area` • `Austin, TX` • `New York City Metro` *(Open to Relocation w/ Package)*
+
 [![Portfolio & Executive Resume](https://img.shields.io/badge/Architect_Dossier_%26_Resume-nertwork.com%2Fabout-38bdf8?style=for-the-badge&logo=cloudflare&logoColor=white)](https://www.nertwork.com/about/)
 [![Technical Blog](https://img.shields.io/badge/Engineering_Dispatches-nertwork.com-818cf8?style=for-the-badge&logo=rss&logoColor=white)](https://www.nertwork.com/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-James_Gomez-0a66c2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/james-farr/)
