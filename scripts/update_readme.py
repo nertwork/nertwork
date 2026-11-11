@@ -225,6 +225,14 @@ TRACKED_CONTRIBUTIONS: list[dict[str, Any]] = [
         "component": "PlayStation 5 MQTT (`ps5-mqtt`)",
         "summary": "Debounce single transient UDP `playactor.check` failures during out-of-band console wake, clear `transitioning` in `UPDATE_HOME_ASSISTANT`, and deduplicate offline MQTT state updates.",
     },
+    {
+        "category": "smarthome",
+        "repo": "apetrycki/daikinskyport",
+        "pr": 164,
+        "issue": 163,
+        "component": "Daikin Skyport (`daikinskyport`)",
+        "summary": "Scope `TARGET_TEMPERATURE` vs `TARGET_TEMPERATURE_RANGE` by active `hvac_mode` and implement `turn_on`/`turn_off` on `Thermostat` for Alexa Smart Home compatibility.",
+    },
 ]
 # END_TRACKED_CONTRIBUTIONS
 
