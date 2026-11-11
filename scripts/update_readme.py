@@ -421,14 +421,37 @@ def render_readme(data: dict[str, Any]) -> str:
         )
     proj_table = "\n".join(proj_rows)
 
-    return f"""# James Farr Gomez (`@nertwork`)
+    return f"""# James F. Gomez (`@nertwork`)
 
-**Infrastructure, Network & AI Systems Engineer** • Building autonomous infrastructure, local-first Smart Home & Energy systems, and Wayland/Hyprland desktop tooling.
+**Principal Infrastructure, Network & Agentic AI Architect (`ai-ops`)** • 14+ years architecting global multi-cloud CI/CD & golden-image pipelines (`Terraform Enterprise`, `Ansible`, `Pulumi`, `Packer`, `GitLab CI`, `GitHub Actions`), carrier & data center routing/switching (`1,000+` devices • `BGP`, `OSPF`, `EVPN-VXLAN`, `Juniper Junos`, `Cisco IOS-XE/NX-OS`, `Cumulus Linux`), bare-metal virtualization (`Proxmox VE`, `OpenStack SDN`, `Kubernetes`), and deterministic Agentic AI operations (`MCP`, `Graphify`).
+
+[![Portfolio & Executive Resume](https://img.shields.io/badge/Architect_Dossier_%26_Resume-nertwork.com%2Fabout-38bdf8?style=for-the-badge&logo=cloudflare&logoColor=white)](https://www.nertwork.com/about/)
+[![Technical Blog](https://img.shields.io/badge/Engineering_Dispatches-nertwork.com-818cf8?style=for-the-badge&logo=rss&logoColor=white)](https://www.nertwork.com/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-James_Gomez-0a66c2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/james-farr/)
+[![X / Twitter](https://img.shields.io/badge/X-nertwork-111827?style=for-the-badge&logo=x&logoColor=white)](https://x.com/nertwork)
 
 [![Total Pull Requests](https://img.shields.io/badge/Pull_Requests_Authored-{totals['total_prs']}-2ea043?style=for-the-badge&logo=github)](https://github.com/pulls?q=is%3Apr+author%3Anertwork)
 [![Merged Pull Requests](https://img.shields.io/badge/Merged_PRs-{totals['merged_prs']}-8957e5?style=for-the-badge&logo=git)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Amerged)
 [![Active Open PRs](https://img.shields.io/badge/Open_Upstream_PRs-{totals['open_prs']}-1f6feb?style=for-the-badge&logo=githubactions)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Aopen)
 [![Issues Reported](https://img.shields.io/badge/Upstream_Issues_Filed-{totals['total_issues']}-d29922?style=for-the-badge&logo=github)](https://github.com/issues?q=is%3Aissue+author%3Anertwork)
+
+---
+
+## Core Architecture Stack & Certifications
+
+| Domain | Technologies & Production Capabilities |
+| :--- | :--- |
+| **Agentic AI & Autonomous Ops (`ai-ops`)** | Two-Tier Orchestrator/Sub-Agent Architecture, Model Context Protocol (`MCP`), `Graphify` Topological Knowledge Graphs (`<150-token` queries), Autonomous CI/CD & Alert Remediation (`Hermes`), Candidate Diff Staging |
+| **Multi-Cloud IaC & Global CI/CD** | Terraform & Terraform Enterprise (`500+` Workspaces), Pulumi (`Python`/`TypeScript`), Ansible, Puppet, Packer, GitLab CI/CD, GitHub Actions, Jenkins across `NA`, `LATAM`, `EU` & `APAC` |
+| **Carrier & Data Center Networking** | `1,000+` Managed Devices • `BGP` (95th-Percentile TE), `OSPF`, `EVPN-VXLAN`, `VRF-Lite`, `ECMP`, `VRRP`, `LACP`; Juniper `Junos` (`MX`/`EX`/`QFX`/`SRX`, `PyEZ`, `NETCONF`), Cisco (`IOS-XE`/`NX-OS`/`ASA`), `Cumulus Linux` (`FRRouting`), `MikroTik RouterOS` |
+| **Virtualization, Cloud & Kubernetes** | `Proxmox VE` (`NVMe`/`ZFS`, Cloud-Init), `OpenStack` (`Neutron SDN`), `GCP`, `AWS` (`1,000+` VM migrations), `Kubernetes` (`ArgoCD`, `MetalLB`, `Traefik`, `Longhorn`), `Docker`, `VMware vSphere` |
+| **Observability, SecOps & SSOT** | `Grafana Cloud`, `Prometheus`/`Mimir`, `Loki`, `LibreNMS`, `Oxidized`, `NetBox` IPAM/DCIM SSOT, `Wazuh` SIEM/XDR, `HashiCorp Vault`, `Authentik` SSO |
+| **Industry Certifications** | **`JNCIP-DC`** • **`JNCIP-ENT`** • **`JNCIP-SEC`** • **`JNCDA`** • **Juniper SE Champion** • **`CCNP`** • **`CCNA`** • **`VMware VCP5-DCV`** • **Mitel CVE** |
+
+### Featured Technical Publications on [`nertwork.com`](https://www.nertwork.com/)
+- [**Leveraging AI for a Homelab: Declarative Proxmox VE Infrastructure with Terraform, Pulumi & GitLab CI/CD**](https://www.nertwork.com/2026/11/10/leveraging-ai-for-a-homelab-declarative-proxmox-ve-infrastructure-with-terraform-pulumi-and-gitlab-ci-cd/)
+- [**Enforcing Network Standards Across a 1,000+ Device Fleet with Agentic AI**](https://www.nertwork.com/2026/10/30/enforcing-network-standards-across-a-1000-device-fleet-with-agentic-ai/)
+- [**Full Architect Resume, Experience Timeline & All 36 Articles (`/about/`)**](https://www.nertwork.com/about/)
 
 ---
 

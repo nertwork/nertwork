@@ -1,17 +1,40 @@
-# James Farr Gomez (`@nertwork`)
+# James F. Gomez (`@nertwork`)
 
-**Infrastructure, Network & AI Systems Engineer** • Building autonomous infrastructure, local-first Smart Home & Energy systems, and Wayland/Hyprland desktop tooling.
+**Principal Infrastructure, Network & Agentic AI Architect (`ai-ops`)** • 14+ years architecting global multi-cloud CI/CD & golden-image pipelines (`Terraform Enterprise`, `Ansible`, `Pulumi`, `Packer`, `GitLab CI`, `GitHub Actions`), carrier & data center routing/switching (`1,000+` devices • `BGP`, `OSPF`, `EVPN-VXLAN`, `Juniper Junos`, `Cisco IOS-XE/NX-OS`, `Cumulus Linux`), bare-metal virtualization (`Proxmox VE`, `OpenStack SDN`, `Kubernetes`), and deterministic Agentic AI operations (`MCP`, `Graphify`).
 
-[![Total Pull Requests](https://img.shields.io/badge/Pull_Requests_Authored-168-2ea043?style=for-the-badge&logo=github)](https://github.com/pulls?q=is%3Apr+author%3Anertwork)
-[![Merged Pull Requests](https://img.shields.io/badge/Merged_PRs-143-8957e5?style=for-the-badge&logo=git)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Amerged)
+[![Portfolio & Executive Resume](https://img.shields.io/badge/Architect_Dossier_%26_Resume-nertwork.com%2Fabout-38bdf8?style=for-the-badge&logo=cloudflare&logoColor=white)](https://www.nertwork.com/about/)
+[![Technical Blog](https://img.shields.io/badge/Engineering_Dispatches-nertwork.com-818cf8?style=for-the-badge&logo=rss&logoColor=white)](https://www.nertwork.com/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-James_Gomez-0a66c2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/james-farr/)
+[![X / Twitter](https://img.shields.io/badge/X-nertwork-111827?style=for-the-badge&logo=x&logoColor=white)](https://x.com/nertwork)
+
+[![Total Pull Requests](https://img.shields.io/badge/Pull_Requests_Authored-173-2ea043?style=for-the-badge&logo=github)](https://github.com/pulls?q=is%3Apr+author%3Anertwork)
+[![Merged Pull Requests](https://img.shields.io/badge/Merged_PRs-148-8957e5?style=for-the-badge&logo=git)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Amerged)
 [![Active Open PRs](https://img.shields.io/badge/Open_Upstream_PRs-9-1f6feb?style=for-the-badge&logo=githubactions)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Aopen)
 [![Issues Reported](https://img.shields.io/badge/Upstream_Issues_Filed-43-d29922?style=for-the-badge&logo=github)](https://github.com/issues?q=is%3Aissue+author%3Anertwork)
 
 ---
 
+## Core Architecture Stack & Certifications
+
+| Domain | Technologies & Production Capabilities |
+| :--- | :--- |
+| **Agentic AI & Autonomous Ops (`ai-ops`)** | Two-Tier Orchestrator/Sub-Agent Architecture, Model Context Protocol (`MCP`), `Graphify` Topological Knowledge Graphs (`<150-token` queries), Autonomous CI/CD & Alert Remediation (`Hermes`), Candidate Diff Staging |
+| **Multi-Cloud IaC & Global CI/CD** | Terraform & Terraform Enterprise (`500+` Workspaces), Pulumi (`Python`/`TypeScript`), Ansible, Puppet, Packer, GitLab CI/CD, GitHub Actions, Jenkins across `NA`, `LATAM`, `EU` & `APAC` |
+| **Carrier & Data Center Networking** | `1,000+` Managed Devices • `BGP` (95th-Percentile TE), `OSPF`, `EVPN-VXLAN`, `VRF-Lite`, `ECMP`, `VRRP`, `LACP`; Juniper `Junos` (`MX`/`EX`/`QFX`/`SRX`, `PyEZ`, `NETCONF`), Cisco (`IOS-XE`/`NX-OS`/`ASA`), `Cumulus Linux` (`FRRouting`), `MikroTik RouterOS` |
+| **Virtualization, Cloud & Kubernetes** | `Proxmox VE` (`NVMe`/`ZFS`, Cloud-Init), `OpenStack` (`Neutron SDN`), `GCP`, `AWS` (`1,000+` VM migrations), `Kubernetes` (`ArgoCD`, `MetalLB`, `Traefik`, `Longhorn`), `Docker`, `VMware vSphere` |
+| **Observability, SecOps & SSOT** | `Grafana Cloud`, `Prometheus`/`Mimir`, `Loki`, `LibreNMS`, `Oxidized`, `NetBox` IPAM/DCIM SSOT, `Wazuh` SIEM/XDR, `HashiCorp Vault`, `Authentik` SSO |
+| **Industry Certifications** | **`JNCIP-DC`** • **`JNCIP-ENT`** • **`JNCIP-SEC`** • **`JNCDA`** • **Juniper SE Champion** • **`CCNP`** • **`CCNA`** • **`VMware VCP5-DCV`** • **Mitel CVE** |
+
+### Featured Technical Publications on [`nertwork.com`](https://www.nertwork.com/)
+- [**Leveraging AI for a Homelab: Declarative Proxmox VE Infrastructure with Terraform, Pulumi & GitLab CI/CD**](https://www.nertwork.com/2026/11/10/leveraging-ai-for-a-homelab-declarative-proxmox-ve-infrastructure-with-terraform-pulumi-and-gitlab-ci-cd/)
+- [**Enforcing Network Standards Across a 1,000+ Device Fleet with Agentic AI**](https://www.nertwork.com/2026/10/30/enforcing-network-standards-across-a-1000-device-fleet-with-agentic-ai/)
+- [**Full Architect Resume, Experience Timeline & All 36 Articles (`/about/`)**](https://www.nertwork.com/about/)
+
+---
+
 ## Upstream Open Source Contributions (Auto-Updated)
 
-> *Automatically synchronized via GitHub Actions (`.github/workflows/update-profile.yml`) and `sync_github_profile.py`. Last verified: **2026-11-10 23:22 UTC***
+> *Automatically synchronized via GitHub Actions (`.github/workflows/update-profile.yml`) and `sync_github_profile.py`. Last verified: **2026-11-11 00:05 UTC***
 
 ### 1. Home Assistant Core Libraries, Smart Home & Clean Energy Integrations
 
@@ -49,7 +72,7 @@
 
 | Status | Upstream Repository & Component | Pull Request & Issue | Technical Summary |
 | :--- | :--- | :--- | :--- |
-| ![Open](https://img.shields.io/badge/PR_%239-Open-2ea043?style=flat-square&logo=github) | **[HappyPathway/github-runner-image](https://github.com/HappyPathway/github-runner-image)**<br><sub>GitHub Actions Runner Image</sub> | [`#9`](https://github.com/HappyPathway/github-runner-image/pull/9) | Add Python `venv` and workflow automation updates for self-hosted GitHub Actions runner image builds. |
+| ![Merged](https://img.shields.io/badge/PR_%239-Merged-8957e5?style=flat-square&logo=github) | **[HappyPathway/github-runner-image](https://github.com/HappyPathway/github-runner-image)**<br><sub>GitHub Actions Runner Image</sub> | [`#9`](https://github.com/HappyPathway/github-runner-image/pull/9) | Add Python `venv` and workflow automation updates for self-hosted GitHub Actions runner image builds. |
 | ![Merged](https://img.shields.io/badge/PR_%23123-Merged-8957e5?style=flat-square&logo=github) | **[jarischaefer/docker-librenms](https://github.com/jarischaefer/docker-librenms)**<br><sub>Docker LibreNMS (`docker-librenms`)</sub> | [`#123`](https://github.com/jarischaefer/docker-librenms/pull/123) / [Issue `#119`](https://github.com/jarischaefer/docker-librenms/issues/119) | Release version bumps (`1.68` / `1.69`) and distributed poller memcached support. |
 | ![Merged](https://img.shields.io/badge/PR_%2356-Merged-8957e5?style=flat-square&logo=github) | **[mrlesmithjr/ansible-frr](https://github.com/mrlesmithjr/ansible-frr)**<br><sub>FRRouting Ansible Role (`ansible-frr`)</sub> | [`#56`](https://github.com/mrlesmithjr/ansible-frr/pull/56) / [Issue `#43`](https://github.com/mrlesmithjr/ansible-frr/issues/43) | Add BGP Listen Range support, OSPF distribute lists (`#28`), BGP neighbor timers (`#16`), Ubuntu 18/20 `iproute2` support (`#20`), and check-mode fixes (`#17`) across 9 merged PRs. |
 
