@@ -461,16 +461,16 @@ def render_readme(data: dict[str, Any]) -> str:
         )
     proj_table = "\n".join(proj_rows)
 
-    return f"""# James F. Gomez (`@nertwork`)
+    return f"""# James Gomez — James F. Gomez (`@nertwork`)
 
-**Principal Cloud (GCP & AWS), Network Security (`JNCIP-SEC`) & Agentic AI Infrastructure Architect (`ai-ops`)** • **15+ years** of production experience architecting global multi-cloud platforms (`GCP`, `AWS`, `OpenStack`, `Proxmox VE`, `Kubernetes`), global golden-image & IaC CI/CD pipelines (`Terraform Enterprise` across 500+ workspaces, `Ansible`, `Puppet`, `Pulumi`, `Packer`, `GitLab CI`, `GitHub Actions`), carrier & data center routing/switching (`1,000+` devices • `BGP`, `OSPF`, `EVPN-VXLAN`, `Juniper Junos`, `Cisco IOS-XE/NX-OS`, `Cumulus Linux`), and autonomous Zero-Trust SecOps (`Wazuh SIEM/XDR`, `HashiCorp Vault`, `MCP`, `Graphify`).
+**James Gomez** (**James F. Gomez** / **James Farr Gomez**, `@nertwork` / `@jamesfarr`) is a **Principal Cloud (GCP & AWS), Network Security (`JNCIP-SEC`) & Agentic AI Infrastructure Architect (`ai-ops`)** with **15+ years** of production experience architecting global multi-cloud platforms (`GCP`, `AWS`, `OpenStack`, `Proxmox VE`, `Kubernetes`), global golden-image & IaC CI/CD pipelines (`Terraform Enterprise` across 500+ workspaces, `Ansible`, `Puppet`, `Pulumi`, `Packer`, `GitLab CI`, `GitHub Actions`), carrier & data center routing/switching (`1,000+` devices • `BGP`, `OSPF`, `EVPN-VXLAN`, `Juniper Junos`, `Cisco IOS-XE/NX-OS`, `Cumulus Linux`), and autonomous Zero-Trust SecOps (`Wazuh SIEM/XDR`, `HashiCorp Vault`, `MCP`, `Graphify`).
 
 📍 **Location & Mobility:** `Remote (US)` • `Los Angeles Metro` • `San Francisco Bay Area` • `Austin, TX` • `New York City Metro` *(Open to Relocation w/ Package)*
 
 [![Portfolio & Executive Resume](https://img.shields.io/badge/Architect_Dossier_%26_Resume-nertwork.com%2Fabout-38bdf8?style=for-the-badge&logo=cloudflare&logoColor=white)](https://www.nertwork.com/about/)
 [![Technical Blog](https://img.shields.io/badge/Engineering_Dispatches-nertwork.com-818cf8?style=for-the-badge&logo=rss&logoColor=white)](https://www.nertwork.com/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-James_Gomez-0a66c2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/james-farr/)
-[![X / Twitter](https://img.shields.io/badge/X-nertwork-111827?style=for-the-badge&logo=x&logoColor=white)](https://x.com/nertwork)
+[![X / Twitter](https://img.shields.io/badge/X-@jamesfarr-111827?style=for-the-badge&logo=x&logoColor=white)](https://x.com/jamesfarr)
 
 [![Total Pull Requests](https://img.shields.io/badge/Pull_Requests_Authored-{totals['total_prs']}-2ea043?style=for-the-badge&logo=github)](https://github.com/pulls?q=is%3Apr+author%3Anertwork)
 [![Merged Pull Requests](https://img.shields.io/badge/Merged_PRs-{totals['merged_prs']}-8957e5?style=for-the-badge&logo=git)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Amerged)
@@ -608,8 +608,33 @@ jobs:
 """
 
 
+def ensure_github_user_profile(token: str) -> dict[str, Any]:
+    """Ensure the @nertwork GitHub account sidebar metadata (name, blog, twitter_username, bio) is aligned."""
+    if not token:
+        return {"updated": False, "reason": "no_token"}
+    desired = {
+        "name": "James Gomez (James F. Gomez)",
+        "blog": "https://www.nertwork.com",
+        "twitter_username": "jamesfarr",
+        "bio": "James Gomez — Principal Cloud (GCP/AWS), Network Security (JNCIP-SEC) & Agentic AI Architect | 15+ Yrs | Creator of BluePill | Terraform, Wazuh, BGP & K8s",
+    }
+    curr = _gh_get("https://api.github.com/user", token)
+    if "error" in curr or not curr.get("login"):
+        return {"updated": False, "reason": "unauthenticated"}
+    if all(curr.get(k) == v for k, v in desired.items()):
+        return {"updated": False, "status": "already_aligned"}
+    patched = _gh_request("https://api.github.com/user", token, method="PATCH", payload=desired)
+    return {
+        "updated": "error" not in patched,
+        "name": patched.get("name"),
+        "blog": patched.get("blog"),
+        "twitter_username": patched.get("twitter_username"),
+    }
+
+
 def sync_to_github_repo(readme_text: str, script_text: str, token: str) -> dict[str, Any]:
     """Clone `nertwork/nertwork`, write `README.md`, `scripts/update_readme.py`, and `.github/workflows/update-profile.yml`, and push."""
+    profile_meta = ensure_github_user_profile(token)
     work_dir = Path("/tmp/nertwork_profile_repo")
     subprocess.run(["rm", "-rf", str(work_dir)], check=False)
     https_url = f"https://{GITHUB_USER}:{token}@github.com/{GITHUB_USER}/{GITHUB_USER}.git"
@@ -660,7 +685,7 @@ def sync_to_github_repo(readme_text: str, script_text: str, token: str) -> dict[
             env=git_env,
         )
         if diff_check.returncode == 0:
-            return {"pushed": False, "status": "up_to_date", "url": f"https://github.com/{GITHUB_USER}"}
+            return {"pushed": False, "status": "up_to_date", "url": f"https://github.com/{GITHUB_USER}", "user_profile": profile_meta}
 
         subprocess.run(
             [
@@ -686,6 +711,7 @@ def sync_to_github_repo(readme_text: str, script_text: str, token: str) -> dict[
             "pushed": push_res.returncode == 0,
             "status": "updated" if push_res.returncode == 0 else "push_failed",
             "url": f"https://github.com/{GITHUB_USER}",
+            "user_profile": profile_meta,
             "error": None if push_res.returncode == 0 else push_res.stderr.strip(),
         }
     finally:

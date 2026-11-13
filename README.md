@@ -1,13 +1,13 @@
-# James F. Gomez (`@nertwork`)
+# James Gomez — James F. Gomez (`@nertwork`)
 
-**Principal Cloud (GCP & AWS), Network Security (`JNCIP-SEC`) & Agentic AI Infrastructure Architect (`ai-ops`)** • **15+ years** of production experience architecting global multi-cloud platforms (`GCP`, `AWS`, `OpenStack`, `Proxmox VE`, `Kubernetes`), global golden-image & IaC CI/CD pipelines (`Terraform Enterprise` across 500+ workspaces, `Ansible`, `Puppet`, `Pulumi`, `Packer`, `GitLab CI`, `GitHub Actions`), carrier & data center routing/switching (`1,000+` devices • `BGP`, `OSPF`, `EVPN-VXLAN`, `Juniper Junos`, `Cisco IOS-XE/NX-OS`, `Cumulus Linux`), and autonomous Zero-Trust SecOps (`Wazuh SIEM/XDR`, `HashiCorp Vault`, `MCP`, `Graphify`).
+**James Gomez** (**James F. Gomez** / **James Farr Gomez**, `@nertwork` / `@jamesfarr`) is a **Principal Cloud (GCP & AWS), Network Security (`JNCIP-SEC`) & Agentic AI Infrastructure Architect (`ai-ops`)** with **15+ years** of production experience architecting global multi-cloud platforms (`GCP`, `AWS`, `OpenStack`, `Proxmox VE`, `Kubernetes`), global golden-image & IaC CI/CD pipelines (`Terraform Enterprise` across 500+ workspaces, `Ansible`, `Puppet`, `Pulumi`, `Packer`, `GitLab CI`, `GitHub Actions`), carrier & data center routing/switching (`1,000+` devices • `BGP`, `OSPF`, `EVPN-VXLAN`, `Juniper Junos`, `Cisco IOS-XE/NX-OS`, `Cumulus Linux`), and autonomous Zero-Trust SecOps (`Wazuh SIEM/XDR`, `HashiCorp Vault`, `MCP`, `Graphify`).
 
 📍 **Location & Mobility:** `Remote (US)` • `Los Angeles Metro` • `San Francisco Bay Area` • `Austin, TX` • `New York City Metro` *(Open to Relocation w/ Package)*
 
 [![Portfolio & Executive Resume](https://img.shields.io/badge/Architect_Dossier_%26_Resume-nertwork.com%2Fabout-38bdf8?style=for-the-badge&logo=cloudflare&logoColor=white)](https://www.nertwork.com/about/)
 [![Technical Blog](https://img.shields.io/badge/Engineering_Dispatches-nertwork.com-818cf8?style=for-the-badge&logo=rss&logoColor=white)](https://www.nertwork.com/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-James_Gomez-0a66c2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/james-farr/)
-[![X / Twitter](https://img.shields.io/badge/X-nertwork-111827?style=for-the-badge&logo=x&logoColor=white)](https://x.com/nertwork)
+[![X / Twitter](https://img.shields.io/badge/X-@jamesfarr-111827?style=for-the-badge&logo=x&logoColor=white)](https://x.com/jamesfarr)
 
 [![Total Pull Requests](https://img.shields.io/badge/Pull_Requests_Authored-180-2ea043?style=for-the-badge&logo=github)](https://github.com/pulls?q=is%3Apr+author%3Anertwork)
 [![Merged Pull Requests](https://img.shields.io/badge/Merged_PRs-155-8957e5?style=for-the-badge&logo=git)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Amerged)
@@ -73,7 +73,7 @@ brew tap nertwork/tap && brew install nertwork/tap/bluepill
 
 ## Upstream Open Source Contributions (Auto-Updated)
 
-> *Automatically synchronized via GitHub Actions (`.github/workflows/update-profile.yml`) and `sync_github_profile.py`. Last verified: **2026-11-13 23:38 UTC***
+> *Automatically synchronized via GitHub Actions (`.github/workflows/update-profile.yml`) and `sync_github_profile.py`. Last verified: **2026-11-13 23:54 UTC***
 
 ### 1. Home Assistant Core Libraries, Smart Home & Clean Energy Integrations
 
