@@ -10,8 +10,8 @@
 [![X / Twitter](https://img.shields.io/badge/X-nertwork-111827?style=for-the-badge&logo=x&logoColor=white)](https://x.com/nertwork)
 
 [![Total Pull Requests](https://img.shields.io/badge/Pull_Requests_Authored-180-2ea043?style=for-the-badge&logo=github)](https://github.com/pulls?q=is%3Apr+author%3Anertwork)
-[![Merged Pull Requests](https://img.shields.io/badge/Merged_PRs-154-8957e5?style=for-the-badge&logo=git)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Amerged)
-[![Active Open PRs](https://img.shields.io/badge/Open_Upstream_PRs-10-1f6feb?style=for-the-badge&logo=githubactions)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Aopen)
+[![Merged Pull Requests](https://img.shields.io/badge/Merged_PRs-155-8957e5?style=for-the-badge&logo=git)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Amerged)
+[![Active Open PRs](https://img.shields.io/badge/Open_Upstream_PRs-9-1f6feb?style=for-the-badge&logo=githubactions)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Aopen)
 [![Issues Reported](https://img.shields.io/badge/Upstream_Issues_Filed-50-d29922?style=for-the-badge&logo=github)](https://github.com/issues?q=is%3Aissue+author%3Anertwork)
 
 ---
@@ -73,7 +73,7 @@ brew tap nertwork/tap && brew install nertwork/tap/bluepill
 
 ## Upstream Open Source Contributions (Auto-Updated)
 
-> *Automatically synchronized via GitHub Actions (`.github/workflows/update-profile.yml`) and `sync_github_profile.py`. Last verified: **2026-11-13 18:39 UTC***
+> *Automatically synchronized via GitHub Actions (`.github/workflows/update-profile.yml`) and `sync_github_profile.py`. Last verified: **2026-11-13 21:37 UTC***
 
 ### 1. Home Assistant Core Libraries, Smart Home & Clean Energy Integrations
 
@@ -86,7 +86,7 @@ brew tap nertwork/tap && brew install nertwork/tap/bluepill
 | ![Merged](https://img.shields.io/badge/PR_%231247-Merged-8957e5?style=flat-square&logo=github) | **[alandtse/tesla](https://github.com/alandtse/tesla)**<br><sub>Tesla Custom Integration (`tesla_custom`)</sub> | [`#1247`](https://github.com/alandtse/tesla/pull/1247) | Add Tesla Powerwall Storm Watch switch entity (`StormWatchSwitch`). |
 | ![Open](https://img.shields.io/badge/PR_%231256-Open-2ea043?style=flat-square&logo=github) | **[alandtse/tesla](https://github.com/alandtse/tesla)**<br><sub>Tesla Custom Integration (`tesla_custom`)</sub> | [`#1256`](https://github.com/alandtse/tesla/pull/1256) / [Issue `#1255`](https://github.com/alandtse/tesla/issues/1255) | Guard `teslamate.py` against empty/float MQTT payloads (`cast_int`) and validate `TeslaCarShiftState` enum options during concurrent streaming. |
 | ![Open](https://img.shields.io/badge/PR_%23135-Open-2ea043?style=flat-square&logo=github) | **[home-assistant-libs/aioeagle](https://github.com/home-assistant-libs/aioeagle)**<br><sub>Rainforest EAGLE-3 / EAGLE-200 (`aioeagle`)</sub> | [`#135`](https://github.com/home-assistant-libs/aioeagle/pull/135) / [Issue `#136`](https://github.com/home-assistant-libs/aioeagle/issues/136) | Handle empty `<Device/>` XML responses and omitted component/variable fields in `ElectricMeter` during Zigbee HAN congestion. |
-| ![Open](https://img.shields.io/badge/PR_%23367-Open-2ea043?style=flat-square&logo=github) | **[jbergler/hass-ttlock](https://github.com/jbergler/hass-ttlock)**<br><sub>TTLock Integration (`hass-ttlock`)</sub> | [`#367`](https://github.com/jbergler/hass-ttlock/pull/367) / [Issue `#366`](https://github.com/jbergler/hass-ttlock/issues/366) | Extend `REVERIFY_GRACE` to locks with an online G2 Wi-Fi gateway (`gateway_online`), reset retry grace on webhook push, and restore `Lock` state on startup via `RestoreEntity`. |
+| ![Merged](https://img.shields.io/badge/PR_%23367-Merged-8957e5?style=flat-square&logo=github) | **[jbergler/hass-ttlock](https://github.com/jbergler/hass-ttlock)**<br><sub>TTLock Integration (`hass-ttlock`)</sub> | [`#367`](https://github.com/jbergler/hass-ttlock/pull/367) / [Issue `#366`](https://github.com/jbergler/hass-ttlock/issues/366) | Extend `REVERIFY_GRACE` to locks with an online G2 Wi-Fi gateway (`gateway_online`), reset retry grace on webhook push, and restore `Lock` state on startup via `RestoreEntity`. |
 | ![Open](https://img.shields.io/badge/PR_%23904-Open-2ea043?style=flat-square&logo=github) | **[xZetsubou/hass-localtuya](https://github.com/xZetsubou/hass-localtuya)**<br><sub>LocalTuya Integration (`hass-localtuya`)</sub> | [`#904`](https://github.com/xZetsubou/hass-localtuya/pull/904) / [Issue `#909`](https://github.com/xZetsubou/hass-localtuya/issues/909) | Fix `UnboundLocalError` (`prefix`) and `AffixData` set hashability in `pytuya/parser.py` when logging unknown 4-byte header prefixes. |
 | ![Merged](https://img.shields.io/badge/PR_%23704-Merged-8957e5?style=flat-square&logo=github) | **[FunkeyFlo/ps5-mqtt](https://github.com/FunkeyFlo/ps5-mqtt)**<br><sub>PlayStation 5 MQTT (`ps5-mqtt`)</sub> | [`#704`](https://github.com/FunkeyFlo/ps5-mqtt/pull/704) / [Issue `#703`](https://github.com/FunkeyFlo/ps5-mqtt/issues/703) | Use `takeEvery` for per-device Redux sagas (`REGISTER_DEVICE`, `UPDATE_HOME_ASSISTANT`), `continue` past transitioning consoles, and support comma-separated DDP broadcast targets (shipped in `v1.9.0`). |
 | ![Open](https://img.shields.io/badge/PR_%23128-Open-2ea043?style=flat-square&logo=github) | **[tsightler/ring-mqtt-ha-addon](https://github.com/tsightler/ring-mqtt-ha-addon)**<br><sub>Ring-MQTT Add-on (`ring-mqtt-ha-addon`)</sub> | [`#128`](https://github.com/tsightler/ring-mqtt-ha-addon/pull/128) | Use `str` schema for `disarm_code` in `config.yaml` so Home Assistant Supervisor's `addon_pwned` check does not flag 4-digit keypad PINs against HaveIBeenPwned. |
