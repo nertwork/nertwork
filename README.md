@@ -4,9 +4,15 @@
 
 📍 **Location & Mobility:** `Remote (US)` • `Los Angeles Metro` • `San Francisco Bay Area` • `Austin, TX` • `New York City Metro` *(Open to Relocation w/ Package)*
 
+🤝 **Available For:** `Staff / Principal Cloud, Network Security & AI Infrastructure Roles` • `Technical Advisory & Architecture Consulting` • `Speaking & Open Source`
+
 [![Portfolio & Executive Resume](https://img.shields.io/badge/Architect_Dossier_%26_Resume-nertwork.com%2Fabout-38bdf8?style=for-the-badge&logo=cloudflare&logoColor=white)](https://www.nertwork.com/about/)
 [![Technical Blog](https://img.shields.io/badge/Engineering_Dispatches-nertwork.com-818cf8?style=for-the-badge&logo=rss&logoColor=white)](https://www.nertwork.com/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-James_Farr_Gomez-0a66c2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/james-farr/)
+[![DEV Community](https://img.shields.io/badge/DEV.to-@nertwork-0A0A0A?style=for-the-badge&logo=devdotto&logoColor=white)](https://dev.to/nertwork)
+[![Hashnode](https://img.shields.io/badge/Hashnode-nertwork.hashnode.dev-2962FF?style=for-the-badge&logo=hashnode&logoColor=white)](https://nertwork.hashnode.dev/)
+[![Gravatar](https://img.shields.io/badge/Gravatar-Verified_Profile-1D4FC4?style=for-the-badge&logo=gravatar&logoColor=white)](https://gravatar.com/a05district30)
+[![Wikidata](https://img.shields.io/badge/Wikidata-Q142189612-006699?style=for-the-badge&logo=wikidata&logoColor=white)](https://www.wikidata.org/wiki/Q142189612)
 [![X / Twitter](https://img.shields.io/badge/X-@nertwork-111827?style=for-the-badge&logo=x&logoColor=white)](https://x.com/nertwork)
 
 [![Total Pull Requests](https://img.shields.io/badge/Pull_Requests_Authored-180-2ea043?style=for-the-badge&logo=github)](https://github.com/pulls?q=is%3Apr+author%3Anertwork)
