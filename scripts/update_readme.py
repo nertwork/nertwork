@@ -295,14 +295,15 @@ PUBLISHED_PROJECTS: list[dict[str, str]] = [
 
 
 def _get_github_token() -> str:
-    """Resolve GitHub token from HashiCorp Vault or environment (`GH_TOKEN` / `GITHUB_TOKEN`)."""
+    """Resolve GitHub token from HashiCorp Vault, `gh auth token`, or environment."""
     try:
         env = dict(os.environ)
         env.pop("VAULT_NAMESPACE", None)
-        env["VAULT_ADDR"] = "https://vault.nertwork.com"
-        vt_path = Path.home() / ".vault-token"
-        if vt_path.exists():
-            env["VAULT_TOKEN"] = vt_path.read_text(encoding="utf-8").strip()
+        env["VAULT_ADDR"] = os.environ.get("VAULT_ADDR_NERTWORK", "https://vault.nertwork.com")
+        for vt in (Path.home() / ".vault-token.nertwork", Path.home() / ".vault-token"):
+            if vt.exists():
+                env["VAULT_TOKEN"] = vt.read_text(encoding="utf-8").strip()
+                break
         proc = subprocess.run(
             ["vault", "kv", "get", "-field=token", "terraform_keys/github_token"],
             capture_output=True,
@@ -313,6 +314,20 @@ def _get_github_token() -> str:
         )
         if proc.returncode == 0 and proc.stdout.strip():
             return proc.stdout.strip()
+    except Exception:
+        pass
+    try:
+        gh_env = {k: v for k, v in os.environ.items() if k not in ("GITHUB_TOKEN", "GH_TOKEN")}
+        gh_proc = subprocess.run(
+            ["gh", "auth", "token", "--hostname", "github.com"],
+            capture_output=True,
+            text=True,
+            timeout=5,
+            check=False,
+            env=gh_env,
+        )
+        if gh_proc.returncode == 0 and gh_proc.stdout.strip():
+            return gh_proc.stdout.strip()
     except Exception:
         pass
     for env_key in ("GH_TOKEN", "GITHUB_TOKEN", "PAT_TOKEN"):
@@ -467,9 +482,15 @@ def render_readme(data: dict[str, Any]) -> str:
 
 📍 **Location & Mobility:** `Remote (US)` • `Los Angeles Metro` • `San Francisco Bay Area` • `Austin, TX` • `New York City Metro` *(Open to Relocation w/ Package)*
 
+🤝 **Available For:** `Staff / Principal Cloud, Network Security & AI Infrastructure Roles` • `Technical Advisory & Architecture Consulting` • `Speaking & Open Source`
+
 [![Portfolio & Executive Resume](https://img.shields.io/badge/Architect_Dossier_%26_Resume-nertwork.com%2Fabout-38bdf8?style=for-the-badge&logo=cloudflare&logoColor=white)](https://www.nertwork.com/about/)
 [![Technical Blog](https://img.shields.io/badge/Engineering_Dispatches-nertwork.com-818cf8?style=for-the-badge&logo=rss&logoColor=white)](https://www.nertwork.com/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-James_Farr_Gomez-0a66c2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/james-farr/)
+[![DEV Community](https://img.shields.io/badge/DEV.to-@nertwork-0A0A0A?style=for-the-badge&logo=devdotto&logoColor=white)](https://dev.to/nertwork)
+[![Hashnode](https://img.shields.io/badge/Hashnode-nertwork.hashnode.dev-2962FF?style=for-the-badge&logo=hashnode&logoColor=white)](https://nertwork.hashnode.dev/)
+[![Gravatar](https://img.shields.io/badge/Gravatar-Verified_Profile-1D4FC4?style=for-the-badge&logo=gravatar&logoColor=white)](https://gravatar.com/jamesfarrgomez)
+[![Wikidata](https://img.shields.io/badge/Wikidata-Q142189612-006699?style=for-the-badge&logo=wikidata&logoColor=white)](https://www.wikidata.org/wiki/Q142189612)
 [![X / Twitter](https://img.shields.io/badge/X-@nertwork-111827?style=for-the-badge&logo=x&logoColor=white)](https://x.com/nertwork)
 
 [![Total Pull Requests](https://img.shields.io/badge/Pull_Requests_Authored-{totals['total_prs']}-2ea043?style=for-the-badge&logo=github)](https://github.com/pulls?q=is%3Apr+author%3Anertwork)
@@ -527,10 +548,11 @@ brew tap nertwork/tap && brew install nertwork/tap/bluepill
 ---
 
 ### Featured Technical Publications on [`nertwork.com`](https://www.nertwork.com/)
+- [**Introducing BluePill (v1.1.0): Native Linux/Wayland C++20 & Qt6 iMessage Client + Zero-Electron macOS Relay**](https://www.nertwork.com/2026/11/11/introducing-bluepill-imessage-linux/)
 - [**Autonomous Cloud & Infrastructure SecOps: Integrating Wazuh SIEM/XDR, HashiCorp Vault, and Agentic AI Across AWS, GCP, and Proxmox Fleets**](https://www.nertwork.com/2026/11/10/autonomous-cloud-and-infrastructure-secops-wazuh-siem-xdr-hashicorp-vault-and-agentic-ai/)
-- [**Leveraging AI for a Homelab: Declarative Proxmox VE Infrastructure with Terraform, Pulumi & GitLab CI/CD**](https://www.nertwork.com/2026/11/10/leveraging-ai-for-a-homelab-declarative-proxmox-ve-infrastructure-with-terraform-pulumi-and-gitlab-ci-cd/)
+- [**Leveraging AI for a Homelab: Declarative Proxmox VE Infrastructure with Terraform, Pulumi & GitLab CI/CD**](https://www.nertwork.com/2026/11/10/leveraging-ai-for-a-homelab-proxmox-terraform-gitlab-pulumi/)
 - [**Enforcing Network Standards Across a 1,000+ Device Fleet with Agentic AI**](https://www.nertwork.com/2026/10/30/enforcing-network-standards-across-a-1000-device-fleet-with-agentic-ai/)
-- [**Full Architect Resume, Experience Timeline & All 37 Articles (`/about/`)**](https://www.nertwork.com/about/)
+- [**Full Architect Resume, Experience Timeline & Full Publication Archive (`/about/`)**](https://www.nertwork.com/about/)
 
 ---
 
@@ -609,14 +631,16 @@ jobs:
 
 
 def ensure_github_user_profile(token: str) -> dict[str, Any]:
-    """Ensure the @nertwork GitHub account sidebar metadata (name, blog, twitter_username, bio) is aligned."""
+    """Ensure the @nertwork GitHub account sidebar metadata (name, company, blog, bio, hireable, twitter_username) is aligned."""
     if not token:
         return {"updated": False, "reason": "no_token"}
     desired = {
         "name": "James Farr Gomez",
-        "blog": "https://www.nertwork.com",
+        "company": "Nertwork · Advisory & Architecture",
+        "blog": "https://www.nertwork.com/about/",
         "twitter_username": "nertwork",
-        "bio": "James Farr Gomez — Principal Cloud (GCP/AWS), Network Security (JNCIP-SEC) & Agentic AI Architect | 15+ Yrs | Creator of BluePill | Terraform, Wazuh, BGP & K8s",
+        "hireable": True,
+        "bio": "James Farr Gomez — Principal Cloud, Network Security & Agentic AI Architect | Advisory & Consulting | Creator of BluePill | nertwork.com",
     }
     curr = _gh_get("https://api.github.com/user", token)
     if "error" in curr or not curr.get("login"):

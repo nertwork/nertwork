@@ -11,14 +11,14 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-James_Farr_Gomez-0a66c2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/james-farr/)
 [![DEV Community](https://img.shields.io/badge/DEV.to-@nertwork-0A0A0A?style=for-the-badge&logo=devdotto&logoColor=white)](https://dev.to/nertwork)
 [![Hashnode](https://img.shields.io/badge/Hashnode-nertwork.hashnode.dev-2962FF?style=for-the-badge&logo=hashnode&logoColor=white)](https://nertwork.hashnode.dev/)
-[![Gravatar](https://img.shields.io/badge/Gravatar-Verified_Profile-1D4FC4?style=for-the-badge&logo=gravatar&logoColor=white)](https://gravatar.com/a05district30)
+[![Gravatar](https://img.shields.io/badge/Gravatar-Verified_Profile-1D4FC4?style=for-the-badge&logo=gravatar&logoColor=white)](https://gravatar.com/jamesfarrgomez)
 [![Wikidata](https://img.shields.io/badge/Wikidata-Q142189612-006699?style=for-the-badge&logo=wikidata&logoColor=white)](https://www.wikidata.org/wiki/Q142189612)
 [![X / Twitter](https://img.shields.io/badge/X-@nertwork-111827?style=for-the-badge&logo=x&logoColor=white)](https://x.com/nertwork)
 
-[![Total Pull Requests](https://img.shields.io/badge/Pull_Requests_Authored-180-2ea043?style=for-the-badge&logo=github)](https://github.com/pulls?q=is%3Apr+author%3Anertwork)
-[![Merged Pull Requests](https://img.shields.io/badge/Merged_PRs-156-8957e5?style=for-the-badge&logo=git)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Amerged)
+[![Total Pull Requests](https://img.shields.io/badge/Pull_Requests_Authored-183-2ea043?style=for-the-badge&logo=github)](https://github.com/pulls?q=is%3Apr+author%3Anertwork)
+[![Merged Pull Requests](https://img.shields.io/badge/Merged_PRs-159-8957e5?style=for-the-badge&logo=git)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Amerged)
 [![Active Open PRs](https://img.shields.io/badge/Open_Upstream_PRs-8-1f6feb?style=for-the-badge&logo=githubactions)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Aopen)
-[![Issues Reported](https://img.shields.io/badge/Upstream_Issues_Filed-50-d29922?style=for-the-badge&logo=github)](https://github.com/issues?q=is%3Aissue+author%3Anertwork)
+[![Issues Reported](https://img.shields.io/badge/Upstream_Issues_Filed-54-d29922?style=for-the-badge&logo=github)](https://github.com/issues?q=is%3Aissue+author%3Anertwork)
 
 ---
 
@@ -70,16 +70,17 @@ brew tap nertwork/tap && brew install nertwork/tap/bluepill
 ---
 
 ### Featured Technical Publications on [`nertwork.com`](https://www.nertwork.com/)
+- [**Introducing BluePill (v1.1.0): Native Linux/Wayland C++20 & Qt6 iMessage Client + Zero-Electron macOS Relay**](https://www.nertwork.com/2026/11/11/introducing-bluepill-imessage-linux/)
 - [**Autonomous Cloud & Infrastructure SecOps: Integrating Wazuh SIEM/XDR, HashiCorp Vault, and Agentic AI Across AWS, GCP, and Proxmox Fleets**](https://www.nertwork.com/2026/11/10/autonomous-cloud-and-infrastructure-secops-wazuh-siem-xdr-hashicorp-vault-and-agentic-ai/)
-- [**Leveraging AI for a Homelab: Declarative Proxmox VE Infrastructure with Terraform, Pulumi & GitLab CI/CD**](https://www.nertwork.com/2026/11/10/leveraging-ai-for-a-homelab-declarative-proxmox-ve-infrastructure-with-terraform-pulumi-and-gitlab-ci-cd/)
+- [**Leveraging AI for a Homelab: Declarative Proxmox VE Infrastructure with Terraform, Pulumi & GitLab CI/CD**](https://www.nertwork.com/2026/11/10/leveraging-ai-for-a-homelab-proxmox-terraform-gitlab-pulumi/)
 - [**Enforcing Network Standards Across a 1,000+ Device Fleet with Agentic AI**](https://www.nertwork.com/2026/10/30/enforcing-network-standards-across-a-1000-device-fleet-with-agentic-ai/)
-- [**Full Architect Resume, Experience Timeline & All 37 Articles (`/about/`)**](https://www.nertwork.com/about/)
+- [**Full Architect Resume, Experience Timeline & Full Publication Archive (`/about/`)**](https://www.nertwork.com/about/)
 
 ---
 
 ## Upstream Open Source Contributions (Auto-Updated)
 
-> *Automatically synchronized via GitHub Actions (`.github/workflows/update-profile.yml`) and `sync_github_profile.py`. Last verified: **2026-11-17 00:03 UTC***
+> *Automatically synchronized via GitHub Actions (`.github/workflows/update-profile.yml`) and `sync_github_profile.py`. Last verified: **2026-11-17 16:52 UTC***
 
 ### 1. Home Assistant Core Libraries, Smart Home & Clean Energy Integrations
 
