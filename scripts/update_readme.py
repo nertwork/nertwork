@@ -616,7 +616,7 @@ def ensure_github_user_profile(token: str) -> dict[str, Any]:
         "name": "James Farr Gomez",
         "blog": "https://www.nertwork.com",
         "twitter_username": "nertwork",
-        "bio": "James Farr Gomez (@nertwork) — Principal Cloud (GCP/AWS), Network Security (JNCIP-SEC) & Agentic AI Architect | 15+ Yrs | Creator of BluePill | Terraform, Wazuh, BGP & K8s",
+        "bio": "James Farr Gomez — Principal Cloud (GCP/AWS), Network Security (JNCIP-SEC) & Agentic AI Architect | 15+ Yrs | Creator of BluePill | Terraform, Wazuh, BGP & K8s",
     }
     curr = _gh_get("https://api.github.com/user", token)
     if "error" in curr or not curr.get("login"):
