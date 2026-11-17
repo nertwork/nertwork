@@ -70,17 +70,18 @@ brew tap nertwork/tap && brew install nertwork/tap/bluepill
 ---
 
 ### Featured Technical Publications on [`nertwork.com`](https://www.nertwork.com/)
-- [**Introducing BluePill (v1.1.0): Native Linux/Wayland C++20 & Qt6 iMessage Client + Zero-Electron macOS Relay**](https://www.nertwork.com/2026/11/11/introducing-bluepill-imessage-linux/)
+- [**Introducing BluePill v1.1.0: Native Qt6 C++/QML iMessage Client for Linux & Zero-Electron macOS Relay**](https://www.nertwork.com/2026/11/11/introducing-bluepill-imessage-linux/)
 - [**Autonomous Cloud & Infrastructure SecOps: Integrating Wazuh SIEM/XDR, HashiCorp Vault, and Agentic AI Across AWS, GCP, and Proxmox Fleets**](https://www.nertwork.com/2026/11/10/autonomous-cloud-and-infrastructure-secops-wazuh-siem-xdr-hashicorp-vault-and-agentic-ai/)
-- [**Leveraging AI for a Homelab: Declarative Proxmox VE Infrastructure with Terraform, Pulumi & GitLab CI/CD**](https://www.nertwork.com/2026/11/10/leveraging-ai-for-a-homelab-proxmox-terraform-gitlab-pulumi/)
+- [**Leveraging AI for a Homelab: Declarative Proxmox VE Infrastructure with Terraform, Pulumi, and GitLab CI/CD**](https://www.nertwork.com/2026/11/10/leveraging-ai-for-a-homelab-proxmox-terraform-gitlab-pulumi/)
 - [**Enforcing Network Standards Across a 1,000+ Device Fleet with Agentic AI**](https://www.nertwork.com/2026/10/30/enforcing-network-standards-across-a-1000-device-fleet-with-agentic-ai/)
+- [**Enterprise Networking Trends: SASE, Multi-Cloud, Private 5G, and AI Network Management**](https://www.nertwork.com/2023/12/07/current-networking-trends-in-2023-an-in-depth-analysis/)
 - [**Full Architect Resume, Experience Timeline & Full Publication Archive (`/about/`)**](https://www.nertwork.com/about/)
 
 ---
 
 ## Upstream Open Source Contributions (Auto-Updated)
 
-> *Automatically synchronized via GitHub Actions (`.github/workflows/update-profile.yml`) and `sync_github_profile.py`. Last verified: **2026-11-17 16:52 UTC***
+> *Automatically synchronized via GitHub Actions (`.github/workflows/update-profile.yml`) and `sync_github_profile.py`. Last verified: **2026-11-17 17:33 UTC***
 
 ### 1. Home Assistant Core Libraries, Smart Home & Clean Energy Integrations
 

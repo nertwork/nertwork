@@ -23,6 +23,7 @@ from __future__ import annotations
 import argparse
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
+import html
 import json
 import os
 from pathlib import Path
@@ -365,6 +366,47 @@ def _gh_get(url: str, token: str) -> dict[str, Any]:
     return _gh_request(url, token, method="GET")
 
 
+DEFAULT_FEATURED_POSTS: list[dict[str, str]] = [
+    {
+        "title": "Introducing BluePill (v1.1.0): Native Linux/Wayland C++20 & Qt6 iMessage Client + Zero-Electron macOS Relay",
+        "link": "https://www.nertwork.com/2026/11/11/introducing-bluepill-imessage-linux/",
+    },
+    {
+        "title": "Autonomous Cloud & Infrastructure SecOps: Integrating Wazuh SIEM/XDR, HashiCorp Vault, and Agentic AI Across AWS, GCP, and Proxmox Fleets",
+        "link": "https://www.nertwork.com/2026/11/10/autonomous-cloud-and-infrastructure-secops-wazuh-siem-xdr-hashicorp-vault-and-agentic-ai/",
+    },
+    {
+        "title": "Leveraging AI for a Homelab: Declarative Proxmox VE Infrastructure with Terraform, Pulumi & GitLab CI/CD",
+        "link": "https://www.nertwork.com/2026/11/10/leveraging-ai-for-a-homelab-proxmox-terraform-gitlab-pulumi/",
+    },
+    {
+        "title": "Enforcing Network Standards Across a 1,000+ Device Fleet with Agentic AI",
+        "link": "https://www.nertwork.com/2026/10/30/enforcing-network-standards-across-a-1000-device-fleet-with-agentic-ai/",
+    },
+]
+
+
+def fetch_latest_nertwork_posts(limit: int = 5) -> list[dict[str, str]]:
+    """Fetch latest published posts from www.nertwork.com REST API, falling back to curated defaults."""
+    url = f"https://www.nertwork.com/wp-json/wp/v2/posts?per_page={limit}&status=publish&_fields=title,link,date"
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/json"})
+    try:
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            items = json.loads(resp.read().decode("utf-8"))
+        posts: list[dict[str, str]] = []
+        for item in items:
+            raw_t = item.get("title", {}).get("rendered") if isinstance(item.get("title"), dict) else str(item.get("title", ""))
+            title = html.unescape(re.sub(r"<[^>]+>", "", raw_t or "")).strip()
+            link = str(item.get("link") or "").strip()
+            if title and link:
+                posts.append({"title": title, "link": link})
+        if posts:
+            return posts
+    except Exception:
+        pass
+    return list(DEFAULT_FEATURED_POSTS)
+
+
 def fetch_live_contributions(token: str) -> dict[str, Any]:
     """Query GitHub API in parallel for all tracked PRs plus overall @nertwork search counts."""
     def _fetch_one(item: dict[str, Any]) -> dict[str, Any]:
@@ -432,6 +474,7 @@ def fetch_live_contributions(token: str) -> dict[str, Any]:
 
     return {
         "updated_at": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
+        "featured_posts": fetch_latest_nertwork_posts(limit=5),
         "totals": {
             "total_prs": int(all_prs.get("total_count", len(enriched))),
             "merged_prs": int(merged_prs.get("total_count", 0)),
@@ -548,10 +591,7 @@ brew tap nertwork/tap && brew install nertwork/tap/bluepill
 ---
 
 ### Featured Technical Publications on [`nertwork.com`](https://www.nertwork.com/)
-- [**Introducing BluePill (v1.1.0): Native Linux/Wayland C++20 & Qt6 iMessage Client + Zero-Electron macOS Relay**](https://www.nertwork.com/2026/11/11/introducing-bluepill-imessage-linux/)
-- [**Autonomous Cloud & Infrastructure SecOps: Integrating Wazuh SIEM/XDR, HashiCorp Vault, and Agentic AI Across AWS, GCP, and Proxmox Fleets**](https://www.nertwork.com/2026/11/10/autonomous-cloud-and-infrastructure-secops-wazuh-siem-xdr-hashicorp-vault-and-agentic-ai/)
-- [**Leveraging AI for a Homelab: Declarative Proxmox VE Infrastructure with Terraform, Pulumi & GitLab CI/CD**](https://www.nertwork.com/2026/11/10/leveraging-ai-for-a-homelab-proxmox-terraform-gitlab-pulumi/)
-- [**Enforcing Network Standards Across a 1,000+ Device Fleet with Agentic AI**](https://www.nertwork.com/2026/10/30/enforcing-network-standards-across-a-1000-device-fleet-with-agentic-ai/)
+{chr(10).join(f"- [**{p['title']}**]({p['link']})" for p in (data.get("featured_posts") or DEFAULT_FEATURED_POSTS))}
 - [**Full Architect Resume, Experience Timeline & Full Publication Archive (`/about/`)**](https://www.nertwork.com/about/)
 
 ---
