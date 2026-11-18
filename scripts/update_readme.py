@@ -245,6 +245,12 @@ PUBLISHED_PROJECTS: list[dict[str, str]] = [
         "description": "Native C++20 & Qt6/QML desktop and CLI client for Apple iMessage, RCS, and SMS on Linux (`yay -S bluepill`) + headless zero-Electron macOS `chat.db` relay daemon & Web UI (`brew install nertwork/tap/bluepill`).",
     },
     {
+        "repo": "nertwork/nxtflow",
+        "plugin_id": "Kubernetes / Helm / CLI / MCP (oci://ghcr.io/nertwork/charts/nxtflow)",
+        "title": "Nxtflow — Multi-Protocol NetFlow v5/v9, IPFIX & sFlow v5 Observability Platform",
+        "description": "Open-source multi-protocol NetFlow v5/v9, IPFIX, and sFlow v5 observability platform for Kubernetes (`standalone`, `integrated`, and `collector` Helm modes) with GoFlow2, Python DNS/Geo/NetBox enricher, Loki, Prometheus, Grafana Sankey dashboards, CLI, and FastMCP server.",
+    },
+    {
         "repo": "nertwork/homebrew-tap",
         "plugin_id": "macOS Homebrew Tap (nertwork/tap)",
         "title": "Nertwork Homebrew Tap (`nertwork/tap`)",

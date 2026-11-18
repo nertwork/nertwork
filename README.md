@@ -81,7 +81,7 @@ brew tap nertwork/tap && brew install nertwork/tap/bluepill
 
 ## Upstream Open Source Contributions (Auto-Updated)
 
-> *Automatically synchronized via GitHub Actions (`.github/workflows/update-profile.yml`) and `sync_github_profile.py`. Last verified: **2026-11-17 22:19 UTC***
+> *Automatically synchronized via GitHub Actions (`.github/workflows/update-profile.yml`) and `sync_github_profile.py`. Last verified: **2026-11-18 01:42 UTC***
 
 ### 1. Home Assistant Core Libraries, Smart Home & Clean Energy Integrations
 
@@ -133,6 +133,7 @@ brew tap nertwork/tap && brew install nertwork/tap/bluepill
 | Repository | Category / Plugin ID | Description |
 | :--- | :--- | :--- |
 | **[`nertwork/bluepill`](https://github.com/nertwork/bluepill)** | `Desktop / CLI / macOS Relay (AUR: bluepill | Brew: nertwork/tap/bluepill)` | Native C++20 & Qt6/QML desktop and CLI client for Apple iMessage, RCS, and SMS on Linux (`yay -S bluepill`) + headless zero-Electron macOS `chat.db` relay daemon & Web UI (`brew install nertwork/tap/bluepill`). |
+| **[`nertwork/nxtflow`](https://github.com/nertwork/nxtflow)** | `Kubernetes / Helm / CLI / MCP (oci://ghcr.io/nertwork/charts/nxtflow)` | Open-source multi-protocol NetFlow v5/v9, IPFIX, and sFlow v5 observability platform for Kubernetes (`standalone`, `integrated`, and `collector` Helm modes) with GoFlow2, Python DNS/Geo/NetBox enricher, Loki, Prometheus, Grafana Sankey dashboards, CLI, and FastMCP server. |
 | **[`nertwork/homebrew-tap`](https://github.com/nertwork/homebrew-tap)** | `macOS Homebrew Tap (nertwork/tap)` | Official macOS Homebrew Tap (`brew install nertwork/tap/bluepill`) providing universal bottles and LaunchAgent services for the BluePill headless macOS relay daemon and Web UI. |
 | **[`nertwork/omarchy-ai-agents`](https://github.com/nertwork/omarchy-ai-agents)** | `nertwork.agents` | Real-time status, rate-limit, and token usage bar panel for AI coding assistants (Claude Code, OpenAI Codex, GitHub Copilot, Grok, Antigravity) on Omarchy Linux / Quickshell. |
 | **[`nertwork/omarchy-network-info`](https://github.com/nertwork/omarchy-network-info)** | `nertwork.network-info` | Unified network intelligence, public/LAN IP telemetry, Wi-Fi RSSI, and live interface bandwidth monitor for Omarchy (`omarchy-shell`). |
