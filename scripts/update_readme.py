@@ -241,7 +241,7 @@ PUBLISHED_PROJECTS: list[dict[str, str]] = [
     {
         "repo": "nertwork/bluepill",
         "plugin_id": "Desktop / CLI / macOS Relay (AUR: bluepill | Brew: nertwork/tap/bluepill)",
-        "title": "BluePill — Native Linux/Wayland iMessage, SMS & RCS Client + macOS Relay (`v1.1.0`)",
+        "title": "BluePill — Native Linux/Wayland iMessage, SMS & RCS Client + macOS Relay",
         "description": "Native C++20 & Qt6/QML desktop and CLI client for Apple iMessage, RCS, and SMS on Linux (`yay -S bluepill`) + headless zero-Electron macOS `chat.db` relay daemon & Web UI (`brew install nertwork/tap/bluepill`).",
     },
     {
@@ -478,9 +478,91 @@ def fetch_live_contributions(token: str) -> dict[str, Any]:
         token,
     )
 
+    bluepill_rel = _gh_get("https://api.github.com/repos/nertwork/bluepill/releases/latest", token)
+    bluepill_version = str(bluepill_rel.get("tag_name") or "v1.2.2").strip() or "v1.2.2"
+    bluepill_tests = 68
+    try:
+        t_req = urllib.request.Request(
+            "https://raw.githubusercontent.com/nertwork/bluepill/main/tests/imsg_tests.cpp",
+            headers={"User-Agent": USER_AGENT},
+        )
+        with urllib.request.urlopen(t_req, timeout=10) as resp:
+            cnt = len(re.findall(r"^\s*void\s+test[A-Za-z0-9_]+\s*\(", resp.read().decode("utf-8", errors="ignore"), re.M))
+            if cnt > 0:
+                bluepill_tests = cnt
+    except Exception:
+        pass
+
+    tracked_keys = {(it["repo"].lower(), int(it["pr"])) for it in TRACKED_CONTRIBUTIONS}
+    discovered_prs: list[dict[str, Any]] = []
+    search_prs = _gh_get(
+        f"https://api.github.com/search/issues?q=author:{GITHUB_USER}+is:pr+-user:{GITHUB_USER}&sort=updated&per_page=100",
+        token,
+    )
+    for raw in search_prs.get("items") or []:
+        repo_url = str(raw.get("repository_url") or "")
+        parts = repo_url.rstrip("/").split("/")
+        if len(parts) < 2:
+            continue
+        repo_name = f"{parts[-2]}/{parts[-1]}"
+        pr_num = int(raw.get("number") or 0)
+        if not pr_num or (repo_name.lower(), pr_num) in tracked_keys:
+            continue
+        pr_info = raw.get("pull_request") or {}
+        is_merged = bool(pr_info.get("merged_at"))
+        is_open = str(raw.get("state") or "").lower() == "open"
+        if not is_merged and not is_open:
+            continue
+        badge = (
+            f"![Merged](https://img.shields.io/badge/PR_%23{pr_num}-Merged-8957e5?style=flat-square&logo=github)"
+            if is_merged
+            else f"![Open](https://img.shields.io/badge/PR_%23{pr_num}-Open-2ea043?style=flat-square&logo=github)"
+        )
+        discovered_prs.append(
+            {
+                "repo": repo_name,
+                "pr": pr_num,
+                "pr_url": str(raw.get("html_url") or f"https://github.com/{repo_name}/pull/{pr_num}"),
+                "title": str(raw.get("title") or "").strip(),
+                "badge": badge,
+                "updated_at": str(raw.get("updated_at") or "")[:10],
+            }
+        )
+
+    curated_repos = {p["repo"].lower() for p in PUBLISHED_PROJECTS}
+    curated_repos.add(f"{GITHUB_USER}/{GITHUB_USER}".lower())
+    discovered_projects: list[dict[str, str]] = []
+    owned_repos = _gh_get(
+        f"https://api.github.com/users/{GITHUB_USER}/repos?type=owner&per_page=100&sort=pushed",
+        token,
+    )
+    if isinstance(owned_repos, list):
+        for r in owned_repos:
+            if r.get("fork") or r.get("archived") or r.get("private"):
+                continue
+            full_name = str(r.get("full_name") or "")
+            if not full_name or full_name.lower() in curated_repos:
+                continue
+            desc = str(r.get("description") or "").strip()
+            if not desc:
+                continue
+            lang = str(r.get("language") or "Infra / Automation").strip()
+            discovered_projects.append(
+                {
+                    "repo": full_name,
+                    "language": lang,
+                    "description": desc,
+                    "pushed_at": str(r.get("pushed_at") or "")[:10],
+                }
+            )
+
     return {
         "updated_at": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
         "featured_posts": fetch_latest_nertwork_posts(limit=5),
+        "bluepill_version": bluepill_version,
+        "bluepill_tests": bluepill_tests,
+        "discovered_prs": discovered_prs,
+        "discovered_projects": discovered_projects,
         "totals": {
             "total_prs": int(all_prs.get("total_count", len(enriched))),
             "merged_prs": int(merged_prs.get("total_count", 0)),
@@ -498,6 +580,8 @@ def render_readme(data: dict[str, Any]) -> str:
     """Render the complete Markdown for `nertwork/nertwork/README.md`."""
     totals = data["totals"]
     items = data["items"]
+    bp_ver = str(data.get("bluepill_version") or "v1.2.2")
+    bp_tests = int(data.get("bluepill_tests") or 68)
 
     def _render_table(cat: str) -> str:
         rows = [
@@ -520,10 +604,39 @@ def render_readme(data: dict[str, Any]) -> str:
         "| :--- | :--- | :--- |",
     ]
     for p in PUBLISHED_PROJECTS:
+        desc = p["description"]
         proj_rows.append(
-            f"| **[`{p['repo']}`](https://github.com/{p['repo']})** | `{p['plugin_id']}` | {p['description']} |"
+            f"| **[`{p['repo']}`](https://github.com/{p['repo']})** | `{p['plugin_id']}` | {desc} |"
         )
     proj_table = "\n".join(proj_rows)
+
+    discovered_prs = data.get("discovered_prs") or []
+    discovered_pr_section = ""
+    if discovered_prs:
+        dp_rows = [
+            "| Status | Upstream Repository | Pull Request | Title | Updated |",
+            "| :--- | :--- | :--- | :--- | :--- |",
+        ]
+        for dp in discovered_prs:
+            title_clean = dp["title"].replace("|", "\\|")
+            dp_rows.append(
+                f"| {dp['badge']} | **[{dp['repo']}](https://github.com/{dp['repo']})** | [`#{dp['pr']}`]({dp['pr_url']}) | {title_clean} | `{dp['updated_at']}` |"
+            )
+        discovered_pr_section = "\n---\n\n### 4. Additional Upstream Pull Requests (Auto-Discovered)\n\n" + "\n".join(dp_rows) + "\n"
+
+    discovered_projects = data.get("discovered_projects") or []
+    discovered_proj_section = ""
+    if discovered_projects:
+        dproj_rows = [
+            "| Repository | Stack | Description | Last Updated |",
+            "| :--- | :--- | :--- | :--- |",
+        ]
+        for dp in discovered_projects:
+            desc_clean = dp["description"].replace("|", "\\|")
+            dproj_rows.append(
+                f"| **[`{dp['repo']}`](https://github.com/{dp['repo']})** | `{dp['language']}` | {desc_clean} | `{dp['pushed_at']}` |"
+            )
+        discovered_proj_section = "\n### Additional Public Projects & Tooling (Auto-Discovered)\n\n" + "\n".join(dproj_rows) + "\n"
 
     return f"""# James Farr Gomez (`@nertwork`)
 
@@ -560,12 +673,12 @@ def render_readme(data: dict[str, Any]) -> str:
 | **Zero-Trust Security, SIEM/XDR & SSOT** | `Wazuh` SIEM/XDR (`OpenSearch` CVE Indexing, MITRE ATT&CK, CIS Benchmarks), `HashiCorp Vault` Dynamic Secrets/PKI, `Authentik` SAML/OIDC SSO, Enterprise `RADIUS`/`TACACS+` AAA, Global Factory `IPsec`/`VTI`, `NetBox` SSOT, `Grafana Cloud` (`Prometheus`/`Mimir`/`Loki`) |
 | **Industry Certifications & Education** | **`JNCIP-SEC`** • **`JNCIP-DC`** • **`JNCIP-ENT`** • **`JNCDA`** • **Juniper SE Champion** • **`CCNP`** • **`CCNA`** • **`VMware VCP5-DCV`** • **Mitel CVE** • **Cypress College** (Cisco Network & Security Lab, *Grade: A*) • **Victor Valley College** (Linux Administration, *Grade: A*) |
 
-## 📌 Featured Open-Source Release: [`nertwork/bluepill`](https://github.com/nertwork/bluepill) (`v1.1.0`)
+## 📌 Featured Open-Source Release: [`nertwork/bluepill`](https://github.com/nertwork/bluepill) (`{bp_ver}`)
 
-[![Release v1.1.0](https://img.shields.io/badge/Release-v1.1.0-7aa2f7?style=for-the-badge&logo=github)](https://github.com/nertwork/bluepill/releases/tag/v1.1.0)
+[![Release {bp_ver}](https://img.shields.io/badge/Release-{bp_ver}-7aa2f7?style=for-the-badge&logo=github)](https://github.com/nertwork/bluepill/releases/tag/{bp_ver})
 [![AUR Package](https://img.shields.io/aur/version/bluepill?style=for-the-badge&logo=archlinux&logoColor=white&label=AUR%20%7C%20bluepill&color=1793d1)](https://aur.archlinux.org/packages/bluepill)
 [![Homebrew Tap](https://img.shields.io/badge/Homebrew-nertwork%2Ftap%2Fbluepill-FBB040?style=for-the-badge&logo=homebrew&logoColor=white)](https://github.com/nertwork/homebrew-tap)
-[![CI Status](https://img.shields.io/github/actions/workflow/status/nertwork/bluepill/ci.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white&label=CI%20%26%2053%20Tests)](https://github.com/nertwork/bluepill/actions/workflows/ci.yml)
+[![CI Status](https://img.shields.io/github/actions/workflow/status/nertwork/bluepill/ci.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white&label=CI%20%26%20{bp_tests}%20Tests)](https://github.com/nertwork/bluepill/actions/workflows/ci.yml)
 [![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/nertwork/bluepill?utm_source=oss&utm_medium=github&utm_campaign=nertwork%2Fbluepill&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews&style=for-the-badge)](https://coderabbit.ai)
 [![License: MIT](https://img.shields.io/badge/License-MIT-9ece6a?style=for-the-badge)](https://github.com/nertwork/bluepill/blob/main/LICENSE)
 [![Stack](https://img.shields.io/badge/C%2B%2B20_%E2%80%A2_Qt6%2FQML-Wayland_%2F_Hyprland_%2F_Omarchy-bb9af7?style=for-the-badge&logo=qt&logoColor=white)](https://github.com/nertwork/bluepill)
@@ -586,11 +699,11 @@ yay -S bluepill
 brew tap nertwork/tap && brew install nertwork/tap/bluepill
 ```
 
-🔗 [**GitHub Repository (`nertwork/bluepill`)**](https://github.com/nertwork/bluepill) • [**Arch User Repository (`aur/bluepill`)**](https://aur.archlinux.org/packages/bluepill) • [**Homebrew Tap (`nertwork/homebrew-tap`)**](https://github.com/nertwork/homebrew-tap) • [**Omarchy Community Showcase (`#18422`)**](https://github.com/omacom/omarchy/discussions/18422) • [**Release `v1.1.0`**](https://github.com/nertwork/bluepill/releases/tag/v1.1.0) • [**macOS Relay & BlueBubbles Setup Guide**](https://github.com/nertwork/bluepill/blob/main/docs/BLUEBUBBLES_SETUP_GUIDE.md) • [**Configuration, Web UI & CLI Reference**](https://github.com/nertwork/bluepill/blob/main/docs/CONFIGURATION_AND_CLI.md) • [**Architecture Deep-Dive**](https://github.com/nertwork/bluepill/blob/main/docs/ARCHITECTURE.md)
+🔗 [**GitHub Repository (`nertwork/bluepill`)**](https://github.com/nertwork/bluepill) • [**Arch User Repository (`aur/bluepill`)**](https://aur.archlinux.org/packages/bluepill) • [**Homebrew Tap (`nertwork/homebrew-tap`)**](https://github.com/nertwork/homebrew-tap) • [**Omarchy Community Showcase (`#18422`)**](https://github.com/omacom/omarchy/discussions/18422) • [**Release `{bp_ver}`**](https://github.com/nertwork/bluepill/releases/tag/{bp_ver}) • [**macOS Relay & BlueBubbles Setup Guide**](https://github.com/nertwork/bluepill/blob/main/docs/BLUEBUBBLES_SETUP_GUIDE.md) • [**Configuration, Web UI & CLI Reference**](https://github.com/nertwork/bluepill/blob/main/docs/CONFIGURATION_AND_CLI.md) • [**Architecture Deep-Dive**](https://github.com/nertwork/bluepill/blob/main/docs/ARCHITECTURE.md)
 
 <p align="center">
   <a href="https://github.com/nertwork/bluepill">
-    <img src="https://raw.githubusercontent.com/nertwork/bluepill/main/docs/screenshots/chat-conversation.png" alt="BluePill v1.1.0 — Native Linux Qt6/QML iMessage, SMS & RCS Client" width="100%" />
+    <img src="https://raw.githubusercontent.com/nertwork/bluepill/main/docs/screenshots/chat-conversation.png" alt="BluePill {bp_ver} — Native Linux Qt6/QML iMessage, SMS & RCS Client" width="100%" />
   </a>
 </p>
 
@@ -621,13 +734,13 @@ brew tap nertwork/tap && brew install nertwork/tap/bluepill
 ### 3. Cloud, Routing (`FRRouting` / BGP) & Network Monitoring (`LibreNMS`)
 
 {_render_table("infra")}
-
+{discovered_pr_section}
 ---
 
 ## Published Open Source Projects & Omarchy Plugins
 
 {proj_table}
-"""
+{discovered_proj_section}"""
 
 
 WORKFLOW_YAML = """name: Auto-Update Open Source Contributions README
@@ -643,6 +756,10 @@ on:
       - 'scripts/update_readme.py'
       - '.github/workflows/update-profile.yml'
 
+concurrency:
+  group: update-profile-readme
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
@@ -651,10 +768,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout profile repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: '3.12'
 
@@ -671,6 +788,7 @@ jobs:
           git add README.md
           if ! git diff --cached --quiet; then
             git commit -m "chore(profile): auto-update upstream PR and issue statuses [skip ci]"
+            git pull --rebase --autostash origin main || true
             git push
           fi
 """

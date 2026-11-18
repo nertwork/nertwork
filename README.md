@@ -15,9 +15,9 @@
 [![Wikidata](https://img.shields.io/badge/Wikidata-Q142189612-006699?style=for-the-badge&logo=wikidata&logoColor=white)](https://www.wikidata.org/wiki/Q142189612)
 [![X / Twitter](https://img.shields.io/badge/X-@nertwork-111827?style=for-the-badge&logo=x&logoColor=white)](https://x.com/nertwork)
 
-[![Total Pull Requests](https://img.shields.io/badge/Pull_Requests_Authored-181-2ea043?style=for-the-badge&logo=github)](https://github.com/pulls?q=is%3Apr+author%3Anertwork)
-[![Merged Pull Requests](https://img.shields.io/badge/Merged_PRs-157-8957e5?style=for-the-badge&logo=git)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Amerged)
-[![Active Open PRs](https://img.shields.io/badge/Open_Upstream_PRs-8-1f6feb?style=for-the-badge&logo=githubactions)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Aopen)
+[![Total Pull Requests](https://img.shields.io/badge/Pull_Requests_Authored-193-2ea043?style=for-the-badge&logo=github)](https://github.com/pulls?q=is%3Apr+author%3Anertwork)
+[![Merged Pull Requests](https://img.shields.io/badge/Merged_PRs-168-8957e5?style=for-the-badge&logo=git)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Amerged)
+[![Active Open PRs](https://img.shields.io/badge/Open_Upstream_PRs-9-1f6feb?style=for-the-badge&logo=githubactions)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Aopen)
 [![Issues Reported](https://img.shields.io/badge/Upstream_Issues_Filed-57-d29922?style=for-the-badge&logo=github)](https://github.com/issues?q=is%3Aissue+author%3Anertwork)
 
 ---
@@ -33,12 +33,12 @@
 | **Zero-Trust Security, SIEM/XDR & SSOT** | `Wazuh` SIEM/XDR (`OpenSearch` CVE Indexing, MITRE ATT&CK, CIS Benchmarks), `HashiCorp Vault` Dynamic Secrets/PKI, `Authentik` SAML/OIDC SSO, Enterprise `RADIUS`/`TACACS+` AAA, Global Factory `IPsec`/`VTI`, `NetBox` SSOT, `Grafana Cloud` (`Prometheus`/`Mimir`/`Loki`) |
 | **Industry Certifications & Education** | **`JNCIP-SEC`** • **`JNCIP-DC`** • **`JNCIP-ENT`** • **`JNCDA`** • **Juniper SE Champion** • **`CCNP`** • **`CCNA`** • **`VMware VCP5-DCV`** • **Mitel CVE** • **Cypress College** (Cisco Network & Security Lab, *Grade: A*) • **Victor Valley College** (Linux Administration, *Grade: A*) |
 
-## 📌 Featured Open-Source Release: [`nertwork/bluepill`](https://github.com/nertwork/bluepill) (`v1.1.0`)
+## 📌 Featured Open-Source Release: [`nertwork/bluepill`](https://github.com/nertwork/bluepill) (`v1.2.2`)
 
-[![Release v1.1.0](https://img.shields.io/badge/Release-v1.1.0-7aa2f7?style=for-the-badge&logo=github)](https://github.com/nertwork/bluepill/releases/tag/v1.1.0)
+[![Release v1.2.2](https://img.shields.io/badge/Release-v1.2.2-7aa2f7?style=for-the-badge&logo=github)](https://github.com/nertwork/bluepill/releases/tag/v1.2.2)
 [![AUR Package](https://img.shields.io/aur/version/bluepill?style=for-the-badge&logo=archlinux&logoColor=white&label=AUR%20%7C%20bluepill&color=1793d1)](https://aur.archlinux.org/packages/bluepill)
 [![Homebrew Tap](https://img.shields.io/badge/Homebrew-nertwork%2Ftap%2Fbluepill-FBB040?style=for-the-badge&logo=homebrew&logoColor=white)](https://github.com/nertwork/homebrew-tap)
-[![CI Status](https://img.shields.io/github/actions/workflow/status/nertwork/bluepill/ci.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white&label=CI%20%26%2053%20Tests)](https://github.com/nertwork/bluepill/actions/workflows/ci.yml)
+[![CI Status](https://img.shields.io/github/actions/workflow/status/nertwork/bluepill/ci.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white&label=CI%20%26%2065%20Tests)](https://github.com/nertwork/bluepill/actions/workflows/ci.yml)
 [![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/nertwork/bluepill?utm_source=oss&utm_medium=github&utm_campaign=nertwork%2Fbluepill&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews&style=for-the-badge)](https://coderabbit.ai)
 [![License: MIT](https://img.shields.io/badge/License-MIT-9ece6a?style=for-the-badge)](https://github.com/nertwork/bluepill/blob/main/LICENSE)
 [![Stack](https://img.shields.io/badge/C%2B%2B20_%E2%80%A2_Qt6%2FQML-Wayland_%2F_Hyprland_%2F_Omarchy-bb9af7?style=for-the-badge&logo=qt&logoColor=white)](https://github.com/nertwork/bluepill)
@@ -59,11 +59,11 @@ yay -S bluepill
 brew tap nertwork/tap && brew install nertwork/tap/bluepill
 ```
 
-🔗 [**GitHub Repository (`nertwork/bluepill`)**](https://github.com/nertwork/bluepill) • [**Arch User Repository (`aur/bluepill`)**](https://aur.archlinux.org/packages/bluepill) • [**Homebrew Tap (`nertwork/homebrew-tap`)**](https://github.com/nertwork/homebrew-tap) • [**Omarchy Community Showcase (`#18422`)**](https://github.com/omacom/omarchy/discussions/18422) • [**Release `v1.1.0`**](https://github.com/nertwork/bluepill/releases/tag/v1.1.0) • [**macOS Relay & BlueBubbles Setup Guide**](https://github.com/nertwork/bluepill/blob/main/docs/BLUEBUBBLES_SETUP_GUIDE.md) • [**Configuration, Web UI & CLI Reference**](https://github.com/nertwork/bluepill/blob/main/docs/CONFIGURATION_AND_CLI.md) • [**Architecture Deep-Dive**](https://github.com/nertwork/bluepill/blob/main/docs/ARCHITECTURE.md)
+🔗 [**GitHub Repository (`nertwork/bluepill`)**](https://github.com/nertwork/bluepill) • [**Arch User Repository (`aur/bluepill`)**](https://aur.archlinux.org/packages/bluepill) • [**Homebrew Tap (`nertwork/homebrew-tap`)**](https://github.com/nertwork/homebrew-tap) • [**Omarchy Community Showcase (`#18422`)**](https://github.com/omacom/omarchy/discussions/18422) • [**Release `v1.2.2`**](https://github.com/nertwork/bluepill/releases/tag/v1.2.2) • [**macOS Relay & BlueBubbles Setup Guide**](https://github.com/nertwork/bluepill/blob/main/docs/BLUEBUBBLES_SETUP_GUIDE.md) • [**Configuration, Web UI & CLI Reference**](https://github.com/nertwork/bluepill/blob/main/docs/CONFIGURATION_AND_CLI.md) • [**Architecture Deep-Dive**](https://github.com/nertwork/bluepill/blob/main/docs/ARCHITECTURE.md)
 
 <p align="center">
   <a href="https://github.com/nertwork/bluepill">
-    <img src="https://raw.githubusercontent.com/nertwork/bluepill/main/docs/screenshots/chat-conversation.png" alt="BluePill v1.1.0 — Native Linux Qt6/QML iMessage, SMS & RCS Client" width="100%" />
+    <img src="https://raw.githubusercontent.com/nertwork/bluepill/main/docs/screenshots/chat-conversation.png" alt="BluePill v1.2.2 — Native Linux Qt6/QML iMessage, SMS & RCS Client" width="100%" />
   </a>
 </p>
 
@@ -81,7 +81,7 @@ brew tap nertwork/tap && brew install nertwork/tap/bluepill
 
 ## Upstream Open Source Contributions (Auto-Updated)
 
-> *Automatically synchronized via GitHub Actions (`.github/workflows/update-profile.yml`) and `sync_github_profile.py`. Last verified: **2026-11-18 21:44 UTC***
+> *Automatically synchronized via GitHub Actions (`.github/workflows/update-profile.yml`) and `sync_github_profile.py`. Last verified: **2026-11-18 21:48 UTC***
 
 ### 1. Home Assistant Core Libraries, Smart Home & Clean Energy Integrations
 
@@ -122,9 +122,77 @@ brew tap nertwork/tap && brew install nertwork/tap/bluepill
 
 | Status | Upstream Repository & Component | Pull Request & Issue | Technical Summary |
 | :--- | :--- | :--- | :--- |
-| ![Open](https://img.shields.io/badge/PR_%239-Open-2ea043?style=flat-square&logo=github) | **[HappyPathway/github-runner-image](https://github.com/HappyPathway/github-runner-image)**<br><sub>GitHub Actions Runner Image</sub> | [`#9`](https://github.com/HappyPathway/github-runner-image/pull/9) | Add Python `venv` and workflow automation updates for self-hosted GitHub Actions runner image builds. |
+| ![Merged](https://img.shields.io/badge/PR_%239-Merged-8957e5?style=flat-square&logo=github) | **[HappyPathway/github-runner-image](https://github.com/HappyPathway/github-runner-image)**<br><sub>GitHub Actions Runner Image</sub> | [`#9`](https://github.com/HappyPathway/github-runner-image/pull/9) | Add Python `venv` and workflow automation updates for self-hosted GitHub Actions runner image builds. |
 | ![Merged](https://img.shields.io/badge/PR_%23123-Merged-8957e5?style=flat-square&logo=github) | **[jarischaefer/docker-librenms](https://github.com/jarischaefer/docker-librenms)**<br><sub>Docker LibreNMS (`docker-librenms`)</sub> | [`#123`](https://github.com/jarischaefer/docker-librenms/pull/123) / [Issue `#119`](https://github.com/jarischaefer/docker-librenms/issues/119) | Release version bumps (`1.68` / `1.69`) and distributed poller memcached support. |
 | ![Merged](https://img.shields.io/badge/PR_%2356-Merged-8957e5?style=flat-square&logo=github) | **[mrlesmithjr/ansible-frr](https://github.com/mrlesmithjr/ansible-frr)**<br><sub>FRRouting Ansible Role (`ansible-frr`)</sub> | [`#56`](https://github.com/mrlesmithjr/ansible-frr/pull/56) / [Issue `#43`](https://github.com/mrlesmithjr/ansible-frr/issues/43) | Add BGP Listen Range support, OSPF distribute lists (`#28`), BGP neighbor timers (`#16`), Ubuntu 18/20 `iproute2` support (`#20`), and check-mode fixes (`#17`) across 9 merged PRs. |
+
+---
+
+### 4. Additional Upstream Pull Requests (Auto-Discovered)
+
+| Status | Upstream Repository | Pull Request | Title | Updated |
+| :--- | :--- | :--- | :--- | :--- |
+| ![Merged](https://img.shields.io/badge/PR_%238-Merged-8957e5?style=flat-square&logo=github) | **[HappyPathway/github-runner-image](https://github.com/HappyPathway/github-runner-image)** | [`#8`](https://github.com/HappyPathway/github-runner-image/pull/8) | add python venv | `2024-10-01` |
+| ![Merged](https://img.shields.io/badge/PR_%2355-Merged-8957e5?style=flat-square&logo=github) | **[mrlesmithjr/ansible-frr](https://github.com/mrlesmithjr/ansible-frr)** | [`#55`](https://github.com/mrlesmithjr/ansible-frr/pull/55) | Merge pull request #58 from mrlesmithjr/master | `2020-11-18` |
+| ![Merged](https://img.shields.io/badge/PR_%23122-Merged-8957e5?style=flat-square&logo=github) | **[jarischaefer/docker-librenms](https://github.com/jarischaefer/docker-librenms)** | [`#122`](https://github.com/jarischaefer/docker-librenms/pull/122) | version 1.68 | `2020-10-05` |
+| ![Merged](https://img.shields.io/badge/PR_%2344-Merged-8957e5?style=flat-square&logo=github) | **[mrlesmithjr/ansible-frr](https://github.com/mrlesmithjr/ansible-frr)** | [`#44`](https://github.com/mrlesmithjr/ansible-frr/pull/44) | Make debug option for verbose loggin | `2020-09-25` |
+| ![Merged](https://img.shields.io/badge/PR_%2336-Merged-8957e5?style=flat-square&logo=github) | **[mrlesmithjr/ansible-frr](https://github.com/mrlesmithjr/ansible-frr)** | [`#36`](https://github.com/mrlesmithjr/ansible-frr/pull/36) | Combining Repos | `2020-08-06` |
+| ![Merged](https://img.shields.io/badge/PR_%2328-Merged-8957e5?style=flat-square&logo=github) | **[mrlesmithjr/ansible-frr](https://github.com/mrlesmithjr/ansible-frr)** | [`#28`](https://github.com/mrlesmithjr/ansible-frr/pull/28) | OSPF Distribute List | `2019-08-28` |
+| ![Merged](https://img.shields.io/badge/PR_%2323-Merged-8957e5?style=flat-square&logo=github) | **[mrlesmithjr/ansible-frr](https://github.com/mrlesmithjr/ansible-frr)** | [`#23`](https://github.com/mrlesmithjr/ansible-frr/pull/23) | Multiple Fixes, Code Cleanup and Additional V6 Support | `2019-08-01` |
+| ![Merged](https://img.shields.io/badge/PR_%2320-Merged-8957e5?style=flat-square&logo=github) | **[mrlesmithjr/ansible-frr](https://github.com/mrlesmithjr/ansible-frr)** | [`#20`](https://github.com/mrlesmithjr/ansible-frr/pull/20) | ubuntu 18 needs iproute2 | `2019-06-24` |
+| ![Merged](https://img.shields.io/badge/PR_%2318-Merged-8957e5?style=flat-square&logo=github) | **[mrlesmithjr/ansible-frr](https://github.com/mrlesmithjr/ansible-frr)** | [`#18`](https://github.com/mrlesmithjr/ansible-frr/pull/18) | Multiple Fixes | `2019-06-23` |
+| ![Merged](https://img.shields.io/badge/PR_%23537-Merged-8957e5?style=flat-square&logo=github) | **[ytti/oxidized](https://github.com/ytti/oxidized)** | [`#537`](https://github.com/ytti/oxidized/pull/537) | This PR is to fix the cumulus | `2019-05-29` |
+| ![Merged](https://img.shields.io/badge/PR_%2317-Merged-8957e5?style=flat-square&logo=github) | **[mrlesmithjr/ansible-frr](https://github.com/mrlesmithjr/ansible-frr)** | [`#17`](https://github.com/mrlesmithjr/ansible-frr/pull/17) | Fixing check mode | `2019-04-17` |
+| ![Merged](https://img.shields.io/badge/PR_%2316-Merged-8957e5?style=flat-square&logo=github) | **[mrlesmithjr/ansible-frr](https://github.com/mrlesmithjr/ansible-frr)** | [`#16`](https://github.com/mrlesmithjr/ansible-frr/pull/16) | BGP Timer configuration | `2019-03-21` |
+| ![Merged](https://img.shields.io/badge/PR_%2313-Merged-8957e5?style=flat-square&logo=github) | **[mrlesmithjr/ansible-frr](https://github.com/mrlesmithjr/ansible-frr)** | [`#13`](https://github.com/mrlesmithjr/ansible-frr/pull/13) | Fixing role to allow for connectivity and defaults for frr_reload | `2019-02-12` |
+| ![Merged](https://img.shields.io/badge/PR_%236-Merged-8957e5?style=flat-square&logo=github) | **[mrlesmithjr/ansible-frr](https://github.com/mrlesmithjr/ansible-frr)** | [`#6`](https://github.com/mrlesmithjr/ansible-frr/pull/6) | Static prefix route | `2019-02-11` |
+| ![Merged](https://img.shields.io/badge/PR_%237-Merged-8957e5?style=flat-square&logo=github) | **[mrlesmithjr/ansible-frr](https://github.com/mrlesmithjr/ansible-frr)** | [`#7`](https://github.com/mrlesmithjr/ansible-frr/pull/7) | Syntax | `2019-02-11` |
+| ![Merged](https://img.shields.io/badge/PR_%239-Merged-8957e5?style=flat-square&logo=github) | **[mrlesmithjr/ansible-frr](https://github.com/mrlesmithjr/ansible-frr)** | [`#9`](https://github.com/mrlesmithjr/ansible-frr/pull/9) | fixing version for ubuntu 18 default | `2019-02-11` |
+| ![Merged](https://img.shields.io/badge/PR_%2311-Merged-8957e5?style=flat-square&logo=github) | **[mrlesmithjr/ansible-frr](https://github.com/mrlesmithjr/ansible-frr)** | [`#11`](https://github.com/mrlesmithjr/ansible-frr/pull/11) | adding more bgp options and to readme | `2019-02-11` |
+| ![Merged](https://img.shields.io/badge/PR_%2310-Merged-8957e5?style=flat-square&logo=github) | **[mrlesmithjr/ansible-frr](https://github.com/mrlesmithjr/ansible-frr)** | [`#10`](https://github.com/mrlesmithjr/ansible-frr/pull/10) | Ospf changes | `2019-02-11` |
+| ![Merged](https://img.shields.io/badge/PR_%234-Merged-8957e5?style=flat-square&logo=github) | **[mrlesmithjr/ansible-frr](https://github.com/mrlesmithjr/ansible-frr)** | [`#4`](https://github.com/mrlesmithjr/ansible-frr/pull/4) | Ubuntu 18 support | `2019-01-08` |
+| ![Merged](https://img.shields.io/badge/PR_%235-Merged-8957e5?style=flat-square&logo=github) | **[mrlesmithjr/ansible-frr](https://github.com/mrlesmithjr/ansible-frr)** | [`#5`](https://github.com/mrlesmithjr/ansible-frr/pull/5) | Reload support | `2019-01-08` |
+| ![Merged](https://img.shields.io/badge/PR_%2320-Merged-8957e5?style=flat-square&logo=github) | **[dreamhost/cumulus-switch](https://github.com/dreamhost/cumulus-switch)** | [`#20`](https://github.com/dreamhost/cumulus-switch/pull/20) | VXLAN Ageing | `2018-11-27` |
+| ![Merged](https://img.shields.io/badge/PR_%2319-Merged-8957e5?style=flat-square&logo=github) | **[dreamhost/cumulus-switch](https://github.com/dreamhost/cumulus-switch)** | [`#19`](https://github.com/dreamhost/cumulus-switch/pull/19) | ruby doesn't like - | `2018-11-26` |
+| ![Merged](https://img.shields.io/badge/PR_%2318-Merged-8957e5?style=flat-square&logo=github) | **[dreamhost/cumulus-switch](https://github.com/dreamhost/cumulus-switch)** | [`#18`](https://github.com/dreamhost/cumulus-switch/pull/18) | Fixing to allow for sub-interfaces for glob | `2018-04-30` |
+| ![Merged](https://img.shields.io/badge/PR_%2344-Merged-8957e5?style=flat-square&logo=github) | **[floored1585/pixel](https://github.com/floored1585/pixel)** | [`#44`](https://github.com/floored1585/pixel/pull/44) | pushing device list path into settings | `2018-03-15` |
+| ![Merged](https://img.shields.io/badge/PR_%2343-Merged-8957e5?style=flat-square&logo=github) | **[floored1585/pixel](https://github.com/floored1585/pixel)** | [`#43`](https://github.com/floored1585/pixel/pull/43) | pushing device list path into settings | `2018-03-15` |
+| ![Merged](https://img.shields.io/badge/PR_%2317-Merged-8957e5?style=flat-square&logo=github) | **[dreamhost/cumulus-switch](https://github.com/dreamhost/cumulus-switch)** | [`#17`](https://github.com/dreamhost/cumulus-switch/pull/17) | Adding in vxrd-anycast support for l2gw with routing. | `2018-02-05` |
+| ![Merged](https://img.shields.io/badge/PR_%2316-Merged-8957e5?style=flat-square&logo=github) | **[dreamhost/cumulus-switch](https://github.com/dreamhost/cumulus-switch)** | [`#16`](https://github.com/dreamhost/cumulus-switch/pull/16) | adding in changes for clagd and vxlan | `2018-01-26` |
+| ![Merged](https://img.shields.io/badge/PR_%2315-Merged-8957e5?style=flat-square&logo=github) | **[dreamhost/cumulus-switch](https://github.com/dreamhost/cumulus-switch)** | [`#15`](https://github.com/dreamhost/cumulus-switch/pull/15) | Adding in switchd options | `2018-01-25` |
+| ![Merged](https://img.shields.io/badge/PR_%2334-Merged-8957e5?style=flat-square&logo=github) | **[floored1585/quagga-cookbook](https://github.com/floored1585/quagga-cookbook)** | [`#34`](https://github.com/floored1585/quagga-cookbook/pull/34) | PR for quagga CB used in prod | `2017-12-21` |
+| ![Merged](https://img.shields.io/badge/PR_%2314-Merged-8957e5?style=flat-square&logo=github) | **[dreamhost/cumulus-switch](https://github.com/dreamhost/cumulus-switch)** | [`#14`](https://github.com/dreamhost/cumulus-switch/pull/14) | Updating README and CHANGELOG | `2017-11-15` |
+| ![Merged](https://img.shields.io/badge/PR_%2313-Merged-8957e5?style=flat-square&logo=github) | **[dreamhost/cumulus-switch](https://github.com/dreamhost/cumulus-switch)** | [`#13`](https://github.com/dreamhost/cumulus-switch/pull/13) | Cumulus Switch Updates | `2017-11-15` |
+| ![Merged](https://img.shields.io/badge/PR_%2333-Merged-8957e5?style=flat-square&logo=github) | **[floored1585/quagga-cookbook](https://github.com/floored1585/quagga-cookbook)** | [`#33`](https://github.com/floored1585/quagga-cookbook/pull/33) | README merge | `2017-08-10` |
+| ![Merged](https://img.shields.io/badge/PR_%2312-Merged-8957e5?style=flat-square&logo=github) | **[dreamhost/cumulus-switch](https://github.com/dreamhost/cumulus-switch)** | [`#12`](https://github.com/dreamhost/cumulus-switch/pull/12) | fixing skipping unchanged interfaces | `2017-08-04` |
+| ![Merged](https://img.shields.io/badge/PR_%2320-Merged-8957e5?style=flat-square&logo=github) | **[ytti/oxidized-script](https://github.com/ytti/oxidized-script)** | [`#20`](https://github.com/ytti/oxidized-script/pull/20) | adding in sync for stdout giving more control over individual changes | `2017-07-01` |
+| ![Merged](https://img.shields.io/badge/PR_%2325-Merged-8957e5?style=flat-square&logo=github) | **[floored1585/quagga-cookbook](https://github.com/floored1585/quagga-cookbook)** | [`#25`](https://github.com/floored1585/quagga-cookbook/pull/25) | Support for stub areas and version bump | `2017-05-26` |
+| ![Merged](https://img.shields.io/badge/PR_%2324-Merged-8957e5?style=flat-square&logo=github) | **[floored1585/quagga-cookbook](https://github.com/floored1585/quagga-cookbook)** | [`#24`](https://github.com/floored1585/quagga-cookbook/pull/24) | Adding in default originate in quagga for ipv6 | `2017-05-12` |
+| ![Merged](https://img.shields.io/badge/PR_%2310-Merged-8957e5?style=flat-square&logo=github) | **[dreamhost/cumulus-switch](https://github.com/dreamhost/cumulus-switch)** | [`#10`](https://github.com/dreamhost/cumulus-switch/pull/10) | Fixing cookbook to use bracket notation | `2017-05-10` |
+| ![Merged](https://img.shields.io/badge/PR_%2323-Merged-8957e5?style=flat-square&logo=github) | **[floored1585/quagga-cookbook](https://github.com/floored1585/quagga-cookbook)** | [`#23`](https://github.com/floored1585/quagga-cookbook/pull/23) | Removing old way of accessing variables | `2017-05-10` |
+| ![Merged](https://img.shields.io/badge/PR_%2322-Merged-8957e5?style=flat-square&logo=github) | **[floored1585/quagga-cookbook](https://github.com/floored1585/quagga-cookbook)** | [`#22`](https://github.com/floored1585/quagga-cookbook/pull/22) | Adding in support for compare router-id with BGP | `2017-05-09` |
+| ![Merged](https://img.shields.io/badge/PR_%2320-Merged-8957e5?style=flat-square&logo=github) | **[floored1585/quagga-cookbook](https://github.com/floored1585/quagga-cookbook)** | [`#20`](https://github.com/floored1585/quagga-cookbook/pull/20) | adding in the ability to have multipath-relax | `2017-04-28` |
+| ![Merged](https://img.shields.io/badge/PR_%2319-Merged-8957e5?style=flat-square&logo=github) | **[floored1585/quagga-cookbook](https://github.com/floored1585/quagga-cookbook)** | [`#19`](https://github.com/floored1585/quagga-cookbook/pull/19) | Adding in support for max-paths under different address-families | `2017-04-26` |
+| ![Merged](https://img.shields.io/badge/PR_%2316-Merged-8957e5?style=flat-square&logo=github) | **[floored1585/quagga-cookbook](https://github.com/floored1585/quagga-cookbook)** | [`#16`](https://github.com/floored1585/quagga-cookbook/pull/16) | IPv6 support for bgp and static routes. | `2017-04-14` |
+| ![Merged](https://img.shields.io/badge/PR_%237-Merged-8957e5?style=flat-square&logo=github) | **[mrlesmithjr/ansible-powerdns-authoritative](https://github.com/mrlesmithjr/ansible-powerdns-authoritative)** | [`#7`](https://github.com/mrlesmithjr/ansible-powerdns-authoritative/pull/7) | Added several abilities that I used in my deployment | `2017-02-25` |
+| ![Merged](https://img.shields.io/badge/PR_%23687-Merged-8957e5?style=flat-square&logo=github) | **[ytti/oxidized](https://github.com/ytti/oxidized)** | [`#687`](https://github.com/ytti/oxidized/pull/687) | Node - Cumulus additional params | `2017-02-20` |
+| ![Merged](https://img.shields.io/badge/PR_%2314-Merged-8957e5?style=flat-square&logo=github) | **[floored1585/quagga-cookbook](https://github.com/floored1585/quagga-cookbook)** | [`#14`](https://github.com/floored1585/quagga-cookbook/pull/14) | Ability to use ospf6 | `2017-02-01` |
+| ![Merged](https://img.shields.io/badge/PR_%2342-Merged-8957e5?style=flat-square&logo=github) | **[floored1585/pixel](https://github.com/floored1585/pixel)** | [`#42`](https://github.com/floored1585/pixel/pull/42) | Changes to core.rb | `2016-12-28` |
+| ![Merged](https://img.shields.io/badge/PR_%233-Merged-8957e5?style=flat-square&logo=github) | **[nlgotz/acsclient](https://github.com/nlgotz/acsclient)** | [`#3`](https://github.com/nlgotz/acsclient/pull/3) | Added in Radius support as well as User support for ACS 5.8+ | `2016-10-18` |
+| ![Merged](https://img.shields.io/badge/PR_%2311-Merged-8957e5?style=flat-square&logo=github) | **[ytti/oxidized-script](https://github.com/ytti/oxidized-script)** | [`#11`](https://github.com/ytti/oxidized-script/pull/11) | adding in --dryrun and fixing threading to forking | `2016-08-24` |
+| ![Merged](https://img.shields.io/badge/PR_%2310-Merged-8957e5?style=flat-square&logo=github) | **[ytti/oxidized-script](https://github.com/ytti/oxidized-script)** | [`#10`](https://github.com/ytti/oxidized-script/pull/10) | Adding in regexp config pushes | `2016-08-22` |
+| ![Merged](https://img.shields.io/badge/PR_%239-Merged-8957e5?style=flat-square&logo=github) | **[ytti/oxidized-script](https://github.com/ytti/oxidized-script)** | [`#9`](https://github.com/ytti/oxidized-script/pull/9) | Adding in group config pushes | `2016-08-22` |
+| ![Merged](https://img.shields.io/badge/PR_%2311-Merged-8957e5?style=flat-square&logo=github) | **[floored1585/quagga-cookbook](https://github.com/floored1585/quagga-cookbook)** | [`#11`](https://github.com/floored1585/quagga-cookbook/pull/11) | fixing route_maps | `2016-05-19` |
+| ![Merged](https://img.shields.io/badge/PR_%2310-Merged-8957e5?style=flat-square&logo=github) | **[floored1585/quagga-cookbook](https://github.com/floored1585/quagga-cookbook)** | [`#10`](https://github.com/floored1585/quagga-cookbook/pull/10) | fixing prefix_list spacing | `2016-05-18` |
+| ![Merged](https://img.shields.io/badge/PR_%239-Merged-8957e5?style=flat-square&logo=github) | **[floored1585/quagga-cookbook](https://github.com/floored1585/quagga-cookbook)** | [`#9`](https://github.com/floored1585/quagga-cookbook/pull/9) | Removing Whitespace | `2016-05-18` |
+| ![Merged](https://img.shields.io/badge/PR_%238-Merged-8957e5?style=flat-square&logo=github) | **[floored1585/quagga-cookbook](https://github.com/floored1585/quagga-cookbook)** | [`#8`](https://github.com/floored1585/quagga-cookbook/pull/8) | Adding in Changelog | `2016-05-18` |
+| ![Merged](https://img.shields.io/badge/PR_%237-Merged-8957e5?style=flat-square&logo=github) | **[floored1585/quagga-cookbook](https://github.com/floored1585/quagga-cookbook)** | [`#7`](https://github.com/floored1585/quagga-cookbook/pull/7) | Adding in route-maps and Travis CI test | `2016-05-18` |
+| ![Merged](https://img.shields.io/badge/PR_%2333-Merged-8957e5?style=flat-square&logo=github) | **[floored1585/pixel](https://github.com/floored1585/pixel)** | [`#33`](https://github.com/floored1585/pixel/pull/33) | adding in different interface types | `2016-03-03` |
+| ![Merged](https://img.shields.io/badge/PR_%233-Merged-8957e5?style=flat-square&logo=github) | **[dreamhost/cumulus-switch](https://github.com/dreamhost/cumulus-switch)** | [`#3`](https://github.com/dreamhost/cumulus-switch/pull/3) | adding in stp for bonds and interfaces | `2015-11-03` |
+| ![Merged](https://img.shields.io/badge/PR_%233-Merged-8957e5?style=flat-square&logo=github) | **[floored1585/quagga-cookbook](https://github.com/floored1585/quagga-cookbook)** | [`#3`](https://github.com/floored1585/quagga-cookbook/pull/3) | adding in multiple instances and fixing vtysh integrated config | `2015-11-03` |
+| ![Merged](https://img.shields.io/badge/PR_%232-Merged-8957e5?style=flat-square&logo=github) | **[dreamhost/cumulus-switch](https://github.com/dreamhost/cumulus-switch)** | [`#2`](https://github.com/dreamhost/cumulus-switch/pull/2) | adding in dhcp-relay and additional options to bridging and bonding -… | `2015-11-02` |
+| ![Merged](https://img.shields.io/badge/PR_%231-Merged-8957e5?style=flat-square&logo=github) | **[dreamhost/cumulus-switch](https://github.com/dreamhost/cumulus-switch)** | [`#1`](https://github.com/dreamhost/cumulus-switch/pull/1) | adding in changes for bonding and clagd | `2015-10-29` |
+| ![Merged](https://img.shields.io/badge/PR_%232-Merged-8957e5?style=flat-square&logo=github) | **[floored1585/quagga-cookbook](https://github.com/floored1585/quagga-cookbook)** | [`#2`](https://github.com/floored1585/quagga-cookbook/pull/2) | removing ospf2.rb | `2015-10-26` |
 
 ---
 
@@ -142,3 +210,20 @@ brew tap nertwork/tap && brew install nertwork/tap/bluepill
 | **[`nertwork/omarchy-drawer`](https://github.com/nertwork/omarchy-drawer)** | `nertwork.drawer` | Foldable status bar drawer container for Omarchy widgets with smooth expand/collapse animations. |
 | **[`nertwork/proxmox-image`](https://github.com/nertwork/proxmox-image)** | `Infrastructure` | Automated Ubuntu & Rocky Linux Cloud-Init VM template builder for Proxmox VE clusters. |
 | **[`nertwork/change-acs-password`](https://github.com/nertwork/change-acs-password)** | `Network Automation` | Python automation toolkit and library for managing enterprise Cisco ACS appliances. |
+
+### Additional Public Projects & Tooling (Auto-Discovered)
+
+| Repository | Stack | Description | Last Updated |
+| :--- | :--- | :--- | :--- |
+| **[`nertwork/nextcloud-containerized`](https://github.com/nertwork/nextcloud-containerized)** | `Jinja` | Nextcloud install using ansible and docker | `2026-11-18` |
+| **[`nertwork/quick-opnsense-HA-hack`](https://github.com/nertwork/quick-opnsense-HA-hack)** | `Shell` | OpnSense HA hack for dynamic IPs | `2026-11-12` |
+| **[`nertwork/morpheus-catalog-plugin`](https://github.com/nertwork/morpheus-catalog-plugin)** | `Infra / Automation` | Morpheus Data custom catalog item plugin | `2026-11-12` |
+| **[`nertwork/minute_mtr`](https://github.com/nertwork/minute_mtr)** | `Ruby` | This will print out text files of MTRs using Ruby | `2026-11-12` |
+| **[`nertwork/librenms_containerized`](https://github.com/nertwork/librenms_containerized)** | `HTML` | LibreNMS containerized deployment | `2026-11-12` |
+| **[`nertwork/homeassistant-configs`](https://github.com/nertwork/homeassistant-configs)** | `Python` | Home Assistant Configs | `2026-11-12` |
+| **[`nertwork/frr-cookbook`](https://github.com/nertwork/frr-cookbook)** | `Ruby` | FRR Cookbook for Cumulus forked from Quagga Cookbook | `2026-11-12` |
+| **[`nertwork/cypresspl`](https://github.com/nertwork/cypresspl)** | `Perl` | Cypress Perl CIS 245 | `2026-11-12` |
+| **[`nertwork/ansible-openvpnas`](https://github.com/nertwork/ansible-openvpnas)** | `Python` | OpenvpnAS stack using ansible | `2026-11-12` |
+| **[`nertwork/ansible-cumulus-switch`](https://github.com/nertwork/ansible-cumulus-switch)** | `Infra / Automation` | A simple role for cumulus and ansible | `2026-11-12` |
+| **[`nertwork/text_analyzer`](https://github.com/nertwork/text_analyzer)** | `Ruby` | Ruby text analysis and lexical statistics utility | `2026-11-12` |
+| **[`nertwork/aa-org-daily-reflection-parser`](https://github.com/nertwork/aa-org-daily-reflection-parser)** | `Python` | Simple Python Script to get AA Org Daily Reflection as text | `2024-03-28` |
