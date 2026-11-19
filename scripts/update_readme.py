@@ -655,6 +655,7 @@ def render_readme(data: dict[str, Any]) -> str:
 [![Gravatar](https://img.shields.io/badge/Gravatar-Verified_Profile-1D4FC4?style=for-the-badge&logo=gravatar&logoColor=white)](https://gravatar.com/jamesfarrgomez)
 [![Wikidata](https://img.shields.io/badge/Wikidata-Q142189612-006699?style=for-the-badge&logo=wikidata&logoColor=white)](https://www.wikidata.org/wiki/Q142189612)
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0005--2123--9648-A6CE39?style=for-the-badge&logo=orcid&logoColor=white)](https://orcid.org/0009-0005-2123-9648)
+[![Crunchbase](https://img.shields.io/badge/Crunchbase-James_Farr_Gomez-0288D1?style=for-the-badge&logo=crunchbase&logoColor=white)](https://www.crunchbase.com/person/james-farr-gomez)
 [![X / Twitter](https://img.shields.io/badge/X-@nertwork-111827?style=for-the-badge&logo=x&logoColor=white)](https://x.com/nertwork)
 
 [![Total Pull Requests](https://img.shields.io/badge/Pull_Requests_Authored-{totals['total_prs']}-2ea043?style=for-the-badge&logo=github)](https://github.com/pulls?q=is%3Apr+author%3Anertwork)

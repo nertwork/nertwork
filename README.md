@@ -15,11 +15,12 @@
 [![Gravatar](https://img.shields.io/badge/Gravatar-Verified_Profile-1D4FC4?style=for-the-badge&logo=gravatar&logoColor=white)](https://gravatar.com/jamesfarrgomez)
 [![Wikidata](https://img.shields.io/badge/Wikidata-Q142189612-006699?style=for-the-badge&logo=wikidata&logoColor=white)](https://www.wikidata.org/wiki/Q142189612)
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0005--2123--9648-A6CE39?style=for-the-badge&logo=orcid&logoColor=white)](https://orcid.org/0009-0005-2123-9648)
+[![Crunchbase](https://img.shields.io/badge/Crunchbase-James_Farr_Gomez-0288D1?style=for-the-badge&logo=crunchbase&logoColor=white)](https://www.crunchbase.com/person/james-farr-gomez)
 [![X / Twitter](https://img.shields.io/badge/X-@nertwork-111827?style=for-the-badge&logo=x&logoColor=white)](https://x.com/nertwork)
 
-[![Total Pull Requests](https://img.shields.io/badge/Pull_Requests_Authored-194-2ea043?style=for-the-badge&logo=github)](https://github.com/pulls?q=is%3Apr+author%3Anertwork)
-[![Merged Pull Requests](https://img.shields.io/badge/Merged_PRs-169-8957e5?style=for-the-badge&logo=git)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Amerged)
-[![Active Open PRs](https://img.shields.io/badge/Open_Upstream_PRs-9-1f6feb?style=for-the-badge&logo=githubactions)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Aopen)
+[![Total Pull Requests](https://img.shields.io/badge/Pull_Requests_Authored-199-2ea043?style=for-the-badge&logo=github)](https://github.com/pulls?q=is%3Apr+author%3Anertwork)
+[![Merged Pull Requests](https://img.shields.io/badge/Merged_PRs-175-8957e5?style=for-the-badge&logo=git)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Amerged)
+[![Active Open PRs](https://img.shields.io/badge/Open_Upstream_PRs-8-1f6feb?style=for-the-badge&logo=githubactions)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Aopen)
 [![Issues Reported](https://img.shields.io/badge/Upstream_Issues_Filed-64-d29922?style=for-the-badge&logo=github)](https://github.com/issues?q=is%3Aissue+author%3Anertwork)
 
 ---
@@ -40,7 +41,7 @@
 [![Release v1.2.3](https://img.shields.io/badge/Release-v1.2.3-7aa2f7?style=for-the-badge&logo=github)](https://github.com/nertwork/bluepill/releases/tag/v1.2.3)
 [![AUR Package](https://img.shields.io/aur/version/bluepill?style=for-the-badge&logo=archlinux&logoColor=white&label=AUR%20%7C%20bluepill&color=1793d1)](https://aur.archlinux.org/packages/bluepill)
 [![Homebrew Tap](https://img.shields.io/badge/Homebrew-nertwork%2Ftap%2Fbluepill-FBB040?style=for-the-badge&logo=homebrew&logoColor=white)](https://github.com/nertwork/homebrew-tap)
-[![CI Status](https://img.shields.io/github/actions/workflow/status/nertwork/bluepill/ci.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white&label=CI%20%26%20111%20Tests)](https://github.com/nertwork/bluepill/actions/workflows/ci.yml)
+[![CI Status](https://img.shields.io/github/actions/workflow/status/nertwork/bluepill/ci.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white&label=CI%20%26%20112%20Tests)](https://github.com/nertwork/bluepill/actions/workflows/ci.yml)
 [![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/nertwork/bluepill?utm_source=oss&utm_medium=github&utm_campaign=nertwork%2Fbluepill&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews&style=for-the-badge)](https://coderabbit.ai)
 [![License: MIT](https://img.shields.io/badge/License-MIT-9ece6a?style=for-the-badge)](https://github.com/nertwork/bluepill/blob/main/LICENSE)
 [![Stack](https://img.shields.io/badge/C%2B%2B20_%E2%80%A2_Qt6%2FQML-Wayland_%2F_Hyprland_%2F_Omarchy-bb9af7?style=for-the-badge&logo=qt&logoColor=white)](https://github.com/nertwork/bluepill)
@@ -83,7 +84,7 @@ brew tap nertwork/tap && brew install nertwork/tap/bluepill
 
 ## Upstream Open Source Contributions (Auto-Updated)
 
-> *Automatically synchronized via GitHub Actions (`.github/workflows/update-profile.yml`) and `sync_github_profile.py`. Last verified: **2026-11-19 20:47 UTC***
+> *Automatically synchronized via GitHub Actions (`.github/workflows/update-profile.yml`) and `sync_github_profile.py`. Last verified: **2026-11-19 21:26 UTC***
 
 ### 1. Home Assistant Core Libraries, Smart Home & Clean Energy Integrations
 
@@ -124,7 +125,7 @@ brew tap nertwork/tap && brew install nertwork/tap/bluepill
 
 | Status | Upstream Repository & Component | Pull Request & Issue | Technical Summary |
 | :--- | :--- | :--- | :--- |
-| ![Open](https://img.shields.io/badge/PR_%239-Open-2ea043?style=flat-square&logo=github) | **[HappyPathway/github-runner-image](https://github.com/HappyPathway/github-runner-image)**<br><sub>GitHub Actions Runner Image</sub> | [`#9`](https://github.com/HappyPathway/github-runner-image/pull/9) | Add Python `venv` and workflow automation updates for self-hosted GitHub Actions runner image builds. |
+| ![Merged](https://img.shields.io/badge/PR_%239-Merged-8957e5?style=flat-square&logo=github) | **[HappyPathway/github-runner-image](https://github.com/HappyPathway/github-runner-image)**<br><sub>GitHub Actions Runner Image</sub> | [`#9`](https://github.com/HappyPathway/github-runner-image/pull/9) | Add Python `venv` and workflow automation updates for self-hosted GitHub Actions runner image builds. |
 | ![Merged](https://img.shields.io/badge/PR_%23123-Merged-8957e5?style=flat-square&logo=github) | **[jarischaefer/docker-librenms](https://github.com/jarischaefer/docker-librenms)**<br><sub>Docker LibreNMS (`docker-librenms`)</sub> | [`#123`](https://github.com/jarischaefer/docker-librenms/pull/123) / [Issue `#119`](https://github.com/jarischaefer/docker-librenms/issues/119) | Release version bumps (`1.68` / `1.69`) and distributed poller memcached support. |
 | ![Merged](https://img.shields.io/badge/PR_%2356-Merged-8957e5?style=flat-square&logo=github) | **[mrlesmithjr/ansible-frr](https://github.com/mrlesmithjr/ansible-frr)**<br><sub>FRRouting Ansible Role (`ansible-frr`)</sub> | [`#56`](https://github.com/mrlesmithjr/ansible-frr/pull/56) / [Issue `#43`](https://github.com/mrlesmithjr/ansible-frr/issues/43) | Add BGP Listen Range support, OSPF distribute lists (`#28`), BGP neighbor timers (`#16`), Ubuntu 18/20 `iproute2` support (`#20`), and check-mode fixes (`#17`) across 9 merged PRs. |
 
@@ -134,6 +135,7 @@ brew tap nertwork/tap && brew install nertwork/tap/bluepill
 
 | Status | Upstream Repository | Pull Request | Title | Updated |
 | :--- | :--- | :--- | :--- | :--- |
+| ![Merged](https://img.shields.io/badge/PR_%238-Merged-8957e5?style=flat-square&logo=github) | **[HappyPathway/github-runner-image](https://github.com/HappyPathway/github-runner-image)** | [`#8`](https://github.com/HappyPathway/github-runner-image/pull/8) | add python venv | `2024-10-01` |
 | ![Merged](https://img.shields.io/badge/PR_%2355-Merged-8957e5?style=flat-square&logo=github) | **[mrlesmithjr/ansible-frr](https://github.com/mrlesmithjr/ansible-frr)** | [`#55`](https://github.com/mrlesmithjr/ansible-frr/pull/55) | Merge pull request #58 from mrlesmithjr/master | `2020-11-18` |
 | ![Merged](https://img.shields.io/badge/PR_%23122-Merged-8957e5?style=flat-square&logo=github) | **[jarischaefer/docker-librenms](https://github.com/jarischaefer/docker-librenms)** | [`#122`](https://github.com/jarischaefer/docker-librenms/pull/122) | version 1.68 | `2020-10-05` |
 | ![Merged](https://img.shields.io/badge/PR_%2344-Merged-8957e5?style=flat-square&logo=github) | **[mrlesmithjr/ansible-frr](https://github.com/mrlesmithjr/ansible-frr)** | [`#44`](https://github.com/mrlesmithjr/ansible-frr/pull/44) | Make debug option for verbose loggin | `2020-09-25` |
