@@ -638,9 +638,9 @@ def render_readme(data: dict[str, Any]) -> str:
             )
         discovered_proj_section = "\n### Additional Public Projects & Tooling (Auto-Discovered)\n\n" + "\n".join(dproj_rows) + "\n"
 
-    return f"""# James Farr Gomez (`@nertwork`)
+    return f"""# James Farr Gomez (James Gomez • James Farr • `@nertwork`)
 
-**James Farr Gomez** (**James Gomez** / **James Farr** / **James F. Gomez**, `@nertwork`) is a **Principal Cloud (GCP & AWS), Network Security (`JNCIP-SEC`) & Agentic AI Infrastructure Architect (`ai-ops`)** with **15+ years** of production experience architecting global multi-cloud platforms (`GCP`, `AWS`, `OpenStack`, `Proxmox VE`, `Kubernetes`), global golden-image & IaC CI/CD pipelines (`Terraform Enterprise` across 500+ workspaces, `Ansible`, `Puppet`, `Pulumi`, `Packer`, `GitLab CI`, `GitHub Actions`), carrier & data center routing/switching (`1,000+` devices • `BGP`, `OSPF`, `EVPN-VXLAN`, `Juniper Junos`, `Cisco IOS-XE/NX-OS`, `Cumulus Linux`), and autonomous Zero-Trust SecOps (`Wazuh SIEM/XDR`, `HashiCorp Vault`, `MCP`, `Graphify`).
+**James Farr Gomez** (also known professionally as **James Gomez**, **James Farr**, and **James F. Gomez**; GitHub & X `@nertwork`) is a **Principal Cloud (GCP & AWS), Network Security (`JNCIP-SEC`) & Agentic AI Infrastructure Architect (`ai-ops`)** with **15+ years** of production experience architecting global multi-cloud platforms (`GCP`, `AWS`, `OpenStack`, `Proxmox VE`, `Kubernetes`), global golden-image & IaC CI/CD pipelines (`Terraform Enterprise` across 500+ workspaces, `Ansible`, `Puppet`, `Pulumi`, `Packer`, `GitLab CI`, `GitHub Actions`), carrier & data center routing/switching (`1,000+` devices • `BGP`, `OSPF`, `EVPN-VXLAN`, `Juniper Junos`, `Cisco IOS-XE/NX-OS`, `Cumulus Linux`), and autonomous Zero-Trust SecOps (`Wazuh SIEM/XDR`, `HashiCorp Vault`, `MCP`, `Graphify`).
 
 📍 **Location & Mobility:** `Remote (US)` • `Los Angeles Metro` • `San Francisco Bay Area` • `Austin, TX` • `New York City Metro` *(Open to Relocation w/ Package)*
 
@@ -648,7 +648,8 @@ def render_readme(data: dict[str, Any]) -> str:
 
 [![Portfolio & Executive Resume](https://img.shields.io/badge/Architect_Dossier_%26_Resume-nertwork.com%2Fabout-38bdf8?style=for-the-badge&logo=cloudflare&logoColor=white)](https://www.nertwork.com/about/)
 [![Technical Blog](https://img.shields.io/badge/Engineering_Dispatches-nertwork.com-818cf8?style=for-the-badge&logo=rss&logoColor=white)](https://www.nertwork.com/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-James_Farr_Gomez-0a66c2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/james-farr/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-James_Gomez_%2F_James_Farr-0a66c2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/james-farr/)
+[![Medium](https://img.shields.io/badge/Medium-@nertwork-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@nertwork)
 [![DEV Community](https://img.shields.io/badge/DEV.to-@nertwork-0A0A0A?style=for-the-badge&logo=devdotto&logoColor=white)](https://dev.to/nertwork)
 [![Hashnode](https://img.shields.io/badge/Hashnode-nertwork.hashnode.dev-2962FF?style=for-the-badge&logo=hashnode&logoColor=white)](https://nertwork.hashnode.dev/)
 [![Gravatar](https://img.shields.io/badge/Gravatar-Verified_Profile-1D4FC4?style=for-the-badge&logo=gravatar&logoColor=white)](https://gravatar.com/jamesfarrgomez)
@@ -799,12 +800,12 @@ def ensure_github_user_profile(token: str) -> dict[str, Any]:
     if not token:
         return {"updated": False, "reason": "no_token"}
     desired = {
-        "name": "James Farr Gomez",
+        "name": "James Farr Gomez (James Gomez)",
         "company": "Nertwork · Advisory & Architecture",
         "blog": "https://www.nertwork.com/about/",
         "twitter_username": "nertwork",
         "hireable": True,
-        "bio": "James Farr Gomez — Principal Cloud, Network Security & Agentic AI Architect | Advisory & Consulting | Creator of BluePill | nertwork.com",
+        "bio": "James Farr Gomez (James Gomez • James Farr) — Principal Cloud, Network Security & Agentic AI Architect | Creator of BluePill & Nxtflow | nertwork.com",
     }
     curr = _gh_get("https://api.github.com/user", token)
     if "error" in curr or not curr.get("login"):
