@@ -18,8 +18,8 @@
 [![Crunchbase](https://img.shields.io/badge/Crunchbase-James_Farr_Gomez-0288D1?style=for-the-badge&logo=crunchbase&logoColor=white)](https://www.crunchbase.com/person/james-farr-gomez)
 [![X / Twitter](https://img.shields.io/badge/X-@nertwork-111827?style=for-the-badge&logo=x&logoColor=white)](https://x.com/nertwork)
 
-[![Total Pull Requests](https://img.shields.io/badge/Pull_Requests_Authored-194-2ea043?style=for-the-badge&logo=github)](https://github.com/pulls?q=is%3Apr+author%3Anertwork)
-[![Merged Pull Requests](https://img.shields.io/badge/Merged_PRs-170-8957e5?style=for-the-badge&logo=git)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Amerged)
+[![Total Pull Requests](https://img.shields.io/badge/Pull_Requests_Authored-195-2ea043?style=for-the-badge&logo=github)](https://github.com/pulls?q=is%3Apr+author%3Anertwork)
+[![Merged Pull Requests](https://img.shields.io/badge/Merged_PRs-171-8957e5?style=for-the-badge&logo=git)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Amerged)
 [![Active Open PRs](https://img.shields.io/badge/Open_Upstream_PRs-8-1f6feb?style=for-the-badge&logo=githubactions)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Aopen)
 [![Issues Reported](https://img.shields.io/badge/Upstream_Issues_Filed-64-d29922?style=for-the-badge&logo=github)](https://github.com/issues?q=is%3Aissue+author%3Anertwork)
 
@@ -36,12 +36,12 @@
 | **Zero-Trust Security, SIEM/XDR & SSOT** | `Wazuh` SIEM/XDR (`OpenSearch` CVE Indexing, MITRE ATT&CK, CIS Benchmarks), `HashiCorp Vault` Dynamic Secrets/PKI, `Authentik` SAML/OIDC SSO, Enterprise `RADIUS`/`TACACS+` AAA, Global Factory `IPsec`/`VTI`, `NetBox` SSOT, `Grafana Cloud` (`Prometheus`/`Mimir`/`Loki`) |
 | **Industry Certifications & Education** | **`JNCIP-SEC`** • **`JNCIP-DC`** • **`JNCIP-ENT`** • **`JNCDA`** • **Juniper SE Champion** • **`CCNP`** • **`CCNA`** • **`VMware VCP5-DCV`** • **Mitel CVE** • **Cypress College** (Cisco Network & Security Lab, *Grade: A*) • **Victor Valley College** (Linux Administration, *Grade: A*) |
 
-## 📌 Featured Open-Source Release: [`nertwork/bluepill`](https://github.com/nertwork/bluepill) (`v1.2.7`)
+## 📌 Featured Open-Source Release: [`nertwork/bluepill`](https://github.com/nertwork/bluepill) (`v1.2.8`)
 
-[![Release v1.2.7](https://img.shields.io/badge/Release-v1.2.7-7aa2f7?style=for-the-badge&logo=github)](https://github.com/nertwork/bluepill/releases/tag/v1.2.7)
+[![Release v1.2.8](https://img.shields.io/badge/Release-v1.2.8-7aa2f7?style=for-the-badge&logo=github)](https://github.com/nertwork/bluepill/releases/tag/v1.2.8)
 [![AUR Package](https://img.shields.io/aur/version/bluepill?style=for-the-badge&logo=archlinux&logoColor=white&label=AUR%20%7C%20bluepill&color=1793d1)](https://aur.archlinux.org/packages/bluepill)
 [![Homebrew Tap](https://img.shields.io/badge/Homebrew-nertwork%2Ftap%2Fbluepill-FBB040?style=for-the-badge&logo=homebrew&logoColor=white)](https://github.com/nertwork/homebrew-tap)
-[![CI Status](https://img.shields.io/github/actions/workflow/status/nertwork/bluepill/ci.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white&label=CI%20%26%20119%20Tests)](https://github.com/nertwork/bluepill/actions/workflows/ci.yml)
+[![CI Status](https://img.shields.io/github/actions/workflow/status/nertwork/bluepill/ci.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white&label=CI%20%26%20120%20Tests)](https://github.com/nertwork/bluepill/actions/workflows/ci.yml)
 [![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/nertwork/bluepill?utm_source=oss&utm_medium=github&utm_campaign=nertwork%2Fbluepill&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews&style=for-the-badge)](https://coderabbit.ai)
 [![License: MIT](https://img.shields.io/badge/License-MIT-9ece6a?style=for-the-badge)](https://github.com/nertwork/bluepill/blob/main/LICENSE)
 [![Stack](https://img.shields.io/badge/C%2B%2B20_%E2%80%A2_Qt6%2FQML-Wayland_%2F_Hyprland_%2F_Omarchy-bb9af7?style=for-the-badge&logo=qt&logoColor=white)](https://github.com/nertwork/bluepill)
@@ -62,11 +62,11 @@ yay -S bluepill
 brew tap nertwork/tap && brew install nertwork/tap/bluepill
 ```
 
-🔗 [**GitHub Repository (`nertwork/bluepill`)**](https://github.com/nertwork/bluepill) • [**Arch User Repository (`aur/bluepill`)**](https://aur.archlinux.org/packages/bluepill) • [**Homebrew Tap (`nertwork/homebrew-tap`)**](https://github.com/nertwork/homebrew-tap) • [**Omarchy Community Showcase (`#18422`)**](https://github.com/omacom/omarchy/discussions/18422) • [**Release `v1.2.7`**](https://github.com/nertwork/bluepill/releases/tag/v1.2.7) • [**macOS Relay & BlueBubbles Setup Guide**](https://github.com/nertwork/bluepill/blob/main/docs/BLUEBUBBLES_SETUP_GUIDE.md) • [**Configuration, Web UI & CLI Reference**](https://github.com/nertwork/bluepill/blob/main/docs/CONFIGURATION_AND_CLI.md) • [**Architecture Deep-Dive**](https://github.com/nertwork/bluepill/blob/main/docs/ARCHITECTURE.md)
+🔗 [**GitHub Repository (`nertwork/bluepill`)**](https://github.com/nertwork/bluepill) • [**Arch User Repository (`aur/bluepill`)**](https://aur.archlinux.org/packages/bluepill) • [**Homebrew Tap (`nertwork/homebrew-tap`)**](https://github.com/nertwork/homebrew-tap) • [**Omarchy Community Showcase (`#18422`)**](https://github.com/omacom/omarchy/discussions/18422) • [**Release `v1.2.8`**](https://github.com/nertwork/bluepill/releases/tag/v1.2.8) • [**macOS Relay & BlueBubbles Setup Guide**](https://github.com/nertwork/bluepill/blob/main/docs/BLUEBUBBLES_SETUP_GUIDE.md) • [**Configuration, Web UI & CLI Reference**](https://github.com/nertwork/bluepill/blob/main/docs/CONFIGURATION_AND_CLI.md) • [**Architecture Deep-Dive**](https://github.com/nertwork/bluepill/blob/main/docs/ARCHITECTURE.md)
 
 <p align="center">
   <a href="https://github.com/nertwork/bluepill">
-    <img src="https://raw.githubusercontent.com/nertwork/bluepill/main/docs/screenshots/chat-conversation.png" alt="BluePill v1.2.7 — Native Linux Qt6/QML iMessage, SMS & RCS Client" width="100%" />
+    <img src="https://raw.githubusercontent.com/nertwork/bluepill/main/docs/screenshots/chat-conversation.png" alt="BluePill v1.2.8 — Native Linux Qt6/QML iMessage, SMS & RCS Client" width="100%" />
   </a>
 </p>
 
@@ -84,7 +84,7 @@ brew tap nertwork/tap && brew install nertwork/tap/bluepill
 
 ## Upstream Open Source Contributions (Auto-Updated)
 
-> *Automatically synchronized via GitHub Actions (`.github/workflows/update-profile.yml`) and `sync_github_profile.py`. Last verified: **2026-11-22 00:08 UTC***
+> *Automatically synchronized via GitHub Actions (`.github/workflows/update-profile.yml`) and `sync_github_profile.py`. Last verified: **2026-11-22 06:04 UTC***
 
 ### 1. Home Assistant Core Libraries, Smart Home & Clean Energy Integrations
 
