@@ -36,9 +36,9 @@
 | **Zero-Trust Security, SIEM/XDR & SSOT** | `Wazuh` SIEM/XDR (`OpenSearch` CVE Indexing, MITRE ATT&CK, CIS Benchmarks), `HashiCorp Vault` Dynamic Secrets/PKI, `Authentik` SAML/OIDC SSO, Enterprise `RADIUS`/`TACACS+` AAA, Global Factory `IPsec`/`VTI`, `NetBox` SSOT, `Grafana Cloud` (`Prometheus`/`Mimir`/`Loki`) |
 | **Industry Certifications & Education** | **`JNCIP-SEC`** • **`JNCIP-DC`** • **`JNCIP-ENT`** • **`JNCDA`** • **Juniper SE Champion** • **`CCNP`** • **`CCNA`** • **`VMware VCP5-DCV`** • **Mitel CVE** • **Cypress College** (Cisco Network & Security Lab, *Grade: A*) • **Victor Valley College** (Linux Administration, *Grade: A*) |
 
-## 📌 Featured Open-Source Release: [`nertwork/bluepill`](https://github.com/nertwork/bluepill) (`v1.2.9`)
+## 📌 Featured Open-Source Release: [`nertwork/bluepill`](https://github.com/nertwork/bluepill) (`v1.2.10`)
 
-[![Release v1.2.9](https://img.shields.io/badge/Release-v1.2.9-7aa2f7?style=for-the-badge&logo=github)](https://github.com/nertwork/bluepill/releases/tag/v1.2.9)
+[![Release v1.2.10](https://img.shields.io/badge/Release-v1.2.10-7aa2f7?style=for-the-badge&logo=github)](https://github.com/nertwork/bluepill/releases/tag/v1.2.10)
 [![AUR Package](https://img.shields.io/aur/version/bluepill?style=for-the-badge&logo=archlinux&logoColor=white&label=AUR%20%7C%20bluepill&color=1793d1)](https://aur.archlinux.org/packages/bluepill)
 [![Homebrew Tap](https://img.shields.io/badge/Homebrew-nertwork%2Ftap%2Fbluepill-FBB040?style=for-the-badge&logo=homebrew&logoColor=white)](https://github.com/nertwork/homebrew-tap)
 [![CI Status](https://img.shields.io/github/actions/workflow/status/nertwork/bluepill/ci.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white&label=CI%20%26%20120%20Tests)](https://github.com/nertwork/bluepill/actions/workflows/ci.yml)
@@ -62,11 +62,11 @@ yay -S bluepill
 brew tap nertwork/tap && brew install nertwork/tap/bluepill
 ```
 
-🔗 [**GitHub Repository (`nertwork/bluepill`)**](https://github.com/nertwork/bluepill) • [**Arch User Repository (`aur/bluepill`)**](https://aur.archlinux.org/packages/bluepill) • [**Homebrew Tap (`nertwork/homebrew-tap`)**](https://github.com/nertwork/homebrew-tap) • [**Omarchy Community Showcase (`#18422`)**](https://github.com/omacom/omarchy/discussions/18422) • [**Release `v1.2.9`**](https://github.com/nertwork/bluepill/releases/tag/v1.2.9) • [**macOS Relay & BlueBubbles Setup Guide**](https://github.com/nertwork/bluepill/blob/main/docs/BLUEBUBBLES_SETUP_GUIDE.md) • [**Configuration, Web UI & CLI Reference**](https://github.com/nertwork/bluepill/blob/main/docs/CONFIGURATION_AND_CLI.md) • [**Architecture Deep-Dive**](https://github.com/nertwork/bluepill/blob/main/docs/ARCHITECTURE.md)
+🔗 [**GitHub Repository (`nertwork/bluepill`)**](https://github.com/nertwork/bluepill) • [**Arch User Repository (`aur/bluepill`)**](https://aur.archlinux.org/packages/bluepill) • [**Homebrew Tap (`nertwork/homebrew-tap`)**](https://github.com/nertwork/homebrew-tap) • [**Omarchy Community Showcase (`#18422`)**](https://github.com/omacom/omarchy/discussions/18422) • [**Release `v1.2.10`**](https://github.com/nertwork/bluepill/releases/tag/v1.2.10) • [**macOS Relay & BlueBubbles Setup Guide**](https://github.com/nertwork/bluepill/blob/main/docs/BLUEBUBBLES_SETUP_GUIDE.md) • [**Configuration, Web UI & CLI Reference**](https://github.com/nertwork/bluepill/blob/main/docs/CONFIGURATION_AND_CLI.md) • [**Architecture Deep-Dive**](https://github.com/nertwork/bluepill/blob/main/docs/ARCHITECTURE.md)
 
 <p align="center">
   <a href="https://github.com/nertwork/bluepill">
-    <img src="https://raw.githubusercontent.com/nertwork/bluepill/main/docs/screenshots/chat-conversation.png" alt="BluePill v1.2.9 — Native Linux Qt6/QML iMessage, SMS & RCS Client" width="100%" />
+    <img src="https://raw.githubusercontent.com/nertwork/bluepill/main/docs/screenshots/chat-conversation.png" alt="BluePill v1.2.10 — Native Linux Qt6/QML iMessage, SMS & RCS Client" width="100%" />
   </a>
 </p>
 
@@ -84,7 +84,7 @@ brew tap nertwork/tap && brew install nertwork/tap/bluepill
 
 ## Upstream Open Source Contributions (Auto-Updated)
 
-> *Automatically synchronized via GitHub Actions (`.github/workflows/update-profile.yml`) and `sync_github_profile.py`. Last verified: **2026-11-23 00:08 UTC***
+> *Automatically synchronized via GitHub Actions (`.github/workflows/update-profile.yml`) and `sync_github_profile.py`. Last verified: **2026-11-23 06:06 UTC***
 
 ### 1. Home Assistant Core Libraries, Smart Home & Clean Energy Integrations
 
