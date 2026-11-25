@@ -15,8 +15,8 @@
 [![Wikidata](https://img.shields.io/badge/Wikidata-Q142189612-006699?style=for-the-badge&logo=wikidata&logoColor=white)](https://www.wikidata.org/wiki/Q142189612)
 [![X / Twitter](https://img.shields.io/badge/X-@nertwork-111827?style=for-the-badge&logo=x&logoColor=white)](https://x.com/nertwork)
 
-[![Total Pull Requests](https://img.shields.io/badge/Pull_Requests_Authored-198-2ea043?style=for-the-badge&logo=github)](https://github.com/pulls?q=is%3Apr+author%3Anertwork)
-[![Merged Pull Requests](https://img.shields.io/badge/Merged_PRs-174-8957e5?style=for-the-badge&logo=git)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Amerged)
+[![Total Pull Requests](https://img.shields.io/badge/Pull_Requests_Authored-199-2ea043?style=for-the-badge&logo=github)](https://github.com/pulls?q=is%3Apr+author%3Anertwork)
+[![Merged Pull Requests](https://img.shields.io/badge/Merged_PRs-175-8957e5?style=for-the-badge&logo=git)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Amerged)
 [![Active Open PRs](https://img.shields.io/badge/Open_Upstream_PRs-8-1f6feb?style=for-the-badge&logo=githubactions)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Aopen)
 [![Issues Reported](https://img.shields.io/badge/Upstream_Issues_Filed-85-d29922?style=for-the-badge&logo=github)](https://github.com/issues?q=is%3Aissue+author%3Anertwork)
 
@@ -33,23 +33,23 @@
 | **Zero-Trust Security, SIEM/XDR & SSOT** | `Wazuh` SIEM/XDR (`OpenSearch` CVE Indexing, MITRE ATT&CK, CIS Benchmarks), `HashiCorp Vault` Dynamic Secrets/PKI, `Authentik` SAML/OIDC SSO, Enterprise `RADIUS`/`TACACS+` AAA, Global Factory `IPsec`/`VTI`, `NetBox` SSOT, `Grafana Cloud` (`Prometheus`/`Mimir`/`Loki`) |
 | **Industry Certifications & Education** | **`JNCIP-SEC`** • **`JNCIP-DC`** • **`JNCIP-ENT`** • **`JNCDA`** • **Juniper SE Champion** • **`CCNP`** • **`CCNA`** • **`VMware VCP5-DCV`** • **Mitel CVE** • **Cypress College** (Cisco Network & Security Lab, *Grade: A*) • **Victor Valley College** (Linux Administration, *Grade: A*) |
 
-## 📌 Featured Open-Source Release: [`nertwork/bluepill`](https://github.com/nertwork/bluepill) (`v1.2.15`)
+## 📌 Featured Open-Source Release: [`BluePill` (`nertwork/bluepill`)](https://bluepill.app) (`v1.2.15`)
 
+[![bluepill.app](https://img.shields.io/badge/Website-bluepill.app-0ea5e9?style=for-the-badge&logo=googlechrome&logoColor=white)](https://bluepill.app)
 [![Release v1.2.15](https://img.shields.io/badge/Release-v1.2.15-7aa2f7?style=for-the-badge&logo=github)](https://github.com/nertwork/bluepill/releases/tag/v1.2.15)
 [![AUR Package](https://img.shields.io/aur/version/bluepill?style=for-the-badge&logo=archlinux&logoColor=white&label=AUR%20%7C%20bluepill&color=1793d1)](https://aur.archlinux.org/packages/bluepill)
 [![Homebrew Tap](https://img.shields.io/badge/Homebrew-nertwork%2Ftap%2Fbluepill-FBB040?style=for-the-badge&logo=homebrew&logoColor=white)](https://github.com/nertwork/homebrew-tap)
-[![CI Status](https://img.shields.io/github/actions/workflow/status/nertwork/bluepill/ci.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white&label=CI%20%26%20130%20Tests)](https://github.com/nertwork/bluepill/actions/workflows/ci.yml)
+[![CI Status](https://img.shields.io/github/actions/workflow/status/nertwork/bluepill/ci.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white&label=CI%20%26%20139%20Tests)](https://github.com/nertwork/bluepill/actions/workflows/ci.yml)
 [![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/nertwork/bluepill?utm_source=oss&utm_medium=github&utm_campaign=nertwork%2Fbluepill&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews&style=for-the-badge)](https://coderabbit.ai)
 [![License: MIT](https://img.shields.io/badge/License-MIT-9ece6a?style=for-the-badge)](https://github.com/nertwork/bluepill/blob/main/LICENSE)
-[![Stack](https://img.shields.io/badge/C%2B%2B20_%E2%80%A2_Qt6%2FQML-Wayland_%2F_Hyprland_%2F_Omarchy-bb9af7?style=for-the-badge&logo=qt&logoColor=white)](https://github.com/nertwork/bluepill)
+[![Stack](https://img.shields.io/badge/C%2B%2B20_%E2%80%A2_Qt6%2FQML-Linux_%2F_Windows_%2F_macOS-bb9af7?style=for-the-badge&logo=qt&logoColor=white)](https://bluepill.app)
 
-**[`BluePill` (`bluepill`)](https://github.com/nertwork/bluepill)** is a unified, native **C++20 and Qt6/QML** desktop and CLI client for **Apple iMessage, RCS, and SMS** on Linux (`x86_64` & `aarch64` — Arch Linux, Omarchy, Wayland/Hyprland) paired with a **zero-Electron macOS `chat.db` relay daemon & Web UI** (`bluepill-server`) and 100% backward compatibility with legacy [BlueBubbles](https://bluebubbles.app/) servers:
+**[`BluePill` (`bluepill.app`)](https://bluepill.app)** is a unified, native **C++20 and Qt6/QML** desktop and CLI client for **Apple iMessage, RCS, and SMS** across Linux (`x86_64` & `aarch64` — Arch/Omarchy, Debian/Ubuntu, Fedora) and Windows (`x64` installer) paired with a **zero-Electron macOS `chat.db` relay daemon & Web UI** (`bluepill-server`). Built with **[BlueBubbles](https://bluebubbles.app/)** as its starting point and inspiration, BluePill remains 100% backward compatible with BlueBubbles servers while delivering a fast, native desktop and cloud experience:
 
-- **Pinned Conversations Avatar Bar & 1-Click 2FA OTP Copy Pill:** Native circular avatar row synced with macOS `com.apple.messages.pinning.plist` plus automatic `🔑 Copy <code>` extraction pills on incoming verification codes.
-- **Zero-Electron macOS Relay (`bluepill-server`) & Built-In Web UI (`/web`):** Single-file Python 3 stdlib macOS daemon (`brew install nertwork/tap/bluepill`) reading `chat.db` WAL, `AddressBook-v22.abcddb`, and binary `NSAttributedString` `streamtyped` blobs directly, with a built-in responsive dark-slate Web UI (`http://localhost:1235/web` or `bluepill --webui`) and Direct SSH (`ssh://user@mac-host`) transport.
-- **Edited, Expressive Send & Delivery Failure Badges:** Inline `· Edited`, `· sent with confetti/slam/lasers`, and `⚠ Not Delivered` badges alongside `Ctrl+V` clipboard screenshot paste.
-- **Real-Time Socket.IO v4 Push & Multi-Channel HTTP Isolation:** Dedicated `QNetworkAccessManager` pools (`m_sendNam`, `m_mediaNam`, `m_socketNam`) prevent multi-photo downloads from blocking outbound message sends or typing indicators.
-- **Native HEIC/AVIF Magic-Byte Decoding & Full-Window Photo Viewer:** Automatically detects disguised Apple `ftyp` (`heic`, `heix`, `mif1`, `avif`) attachments and converts them via `libheif` (`heif-convert`) / ImageMagick.
+- **Native Desktop UX, Spellcheck & Multi-Message Copy:** Real-time composer spellcheck with custom dictionary and macOS `NSSpellChecker` grammar assist, `Ctrl+Click` / `Shift+Click` multi-message selection & **Copy with Names**, right-click tapbacks, expressive effects (`Lasers`, `Echo`, `Confetti`, `Slam`), and proportional Photo/Calendar/Notes viewers.
+- **Multi-Recipient Group Chats & System Tray Integration:** Chip/token `To:` group chat creation (`POST /api/v1/chat/new`), minimize-to-tray on close with single-instance wake, notification click-to-focus, pinned conversations bar, and 1-click 2FA OTP copy pills.
+- **Native Windows Voice Memos & Silent Auto-Updates:** `Qt6::Multimedia` voice memo capture with bundled `ffmpeg.exe`, silent in-place Windows Inno Setup updates, and default-on SHA-256-verified updates across Linux, Windows, and macOS (`bluepill-server`).
+- **Zero-Electron macOS Relay (`bluepill-server`) & Cloud Portal (`bluepill.app`):** Single-file Python 3 stdlib macOS daemon (`brew install nertwork/tap/bluepill`) reading `chat.db` WAL, `AddressBook-v22.abcddb`, and `NSAttributedString` `streamtyped` blobs directly, with a built-in Web UI (`/web`), Cloud Relay (`https://bluepill.app`), and Direct SSH (`ssh://user@mac-host`) transport.
 
 ```bash
 # Linux Desktop & CLI Client (Arch Linux / Omarchy — AUR):
@@ -59,11 +59,11 @@ yay -S bluepill
 brew tap nertwork/tap && brew install nertwork/tap/bluepill
 ```
 
-🔗 [**GitHub Repository (`nertwork/bluepill`)**](https://github.com/nertwork/bluepill) • [**Arch User Repository (`aur/bluepill`)**](https://aur.archlinux.org/packages/bluepill) • [**Homebrew Tap (`nertwork/homebrew-tap`)**](https://github.com/nertwork/homebrew-tap) • [**Omarchy Community Showcase (`#18422`)**](https://github.com/omacom/omarchy/discussions/18422) • [**Release `v1.2.15`**](https://github.com/nertwork/bluepill/releases/tag/v1.2.15) • [**macOS Relay & BlueBubbles Setup Guide**](https://github.com/nertwork/bluepill/blob/main/docs/BLUEBUBBLES_SETUP_GUIDE.md) • [**Configuration, Web UI & CLI Reference**](https://github.com/nertwork/bluepill/blob/main/docs/CONFIGURATION_AND_CLI.md) • [**Architecture Deep-Dive**](https://github.com/nertwork/bluepill/blob/main/docs/ARCHITECTURE.md)
+🔗 [**BluePill Portal (`bluepill.app`)**](https://bluepill.app) • [**Live Demo**](https://bluepill.app/demo) • [**GitHub Repository (`nertwork/bluepill`)**](https://github.com/nertwork/bluepill) • [**Arch User Repository (`aur/bluepill`)**](https://aur.archlinux.org/packages/bluepill) • [**Homebrew Tap (`nertwork/homebrew-tap`)**](https://github.com/nertwork/homebrew-tap) • [**Release `v1.2.15`**](https://github.com/nertwork/bluepill/releases/tag/v1.2.15) • [**macOS Relay & BlueBubbles Setup Guide**](https://github.com/nertwork/bluepill/blob/main/docs/BLUEBUBBLES_SETUP_GUIDE.md) • [**Architecture Deep-Dive**](https://github.com/nertwork/bluepill/blob/main/docs/ARCHITECTURE.md)
 
 <p align="center">
-  <a href="https://github.com/nertwork/bluepill">
-    <img src="https://raw.githubusercontent.com/nertwork/bluepill/main/docs/screenshots/chat-conversation.png" alt="BluePill v1.2.15 — Native Linux Qt6/QML iMessage, SMS & RCS Client" width="100%" />
+  <a href="https://bluepill.app">
+    <img src="https://raw.githubusercontent.com/nertwork/bluepill/main/docs/screenshots/chat-conversation.png" alt="BluePill v1.2.15 — Native Qt6/QML iMessage, SMS & RCS Client (bluepill.app)" width="100%" />
   </a>
 </p>
 
@@ -81,7 +81,7 @@ brew tap nertwork/tap && brew install nertwork/tap/bluepill
 
 ## Upstream Open Source Contributions (Auto-Updated)
 
-> *Automatically synchronized via GitHub Actions (`.github/workflows/update-profile.yml`) and `sync_github_profile.py`. Last verified: **2026-11-25 04:39 UTC***
+> *Automatically synchronized via GitHub Actions (`.github/workflows/update-profile.yml`) and `sync_github_profile.py`. Last verified: **2026-11-25 05:41 UTC***
 
 ### 1. Home Assistant Core Libraries, Smart Home & Clean Energy Integrations
 
