@@ -1,6 +1,6 @@
-# James Farr Gomez (James Gomez • James Farr • `@nertwork`)
+# James Farr Gomez (`@nertwork`)
 
-**James Farr Gomez** (also known professionally as **James Gomez**, **James Farr**, and **James F. Gomez**; GitHub & X `@nertwork`) is a **Principal Cloud (GCP & AWS), Network Security (`JNCIP-SEC`) & Agentic AI Infrastructure Architect (`ai-ops`)** with **15+ years** of production experience architecting global multi-cloud platforms (`GCP`, `AWS`, `OpenStack`, `Proxmox VE`, `Kubernetes`), global golden-image & IaC CI/CD pipelines (`Terraform Enterprise` across 500+ workspaces, `Ansible`, `Puppet`, `Pulumi`, `Packer`, `GitLab CI`, `GitHub Actions`), carrier & data center routing/switching (`1,000+` devices • `BGP`, `OSPF`, `EVPN-VXLAN`, `Juniper Junos`, `Cisco IOS-XE/NX-OS`, `Cumulus Linux`), and autonomous Zero-Trust SecOps (`Wazuh SIEM/XDR`, `HashiCorp Vault`, `MCP`, `Graphify`).
+**James Farr Gomez** (**James Gomez** / **James Farr** / **James F. Gomez**, `@nertwork`) is a **Principal Cloud (GCP & AWS), Network Security (`JNCIP-SEC`) & Agentic AI Infrastructure Architect (`ai-ops`)** with **15+ years** of production experience architecting global multi-cloud platforms (`GCP`, `AWS`, `OpenStack`, `Proxmox VE`, `Kubernetes`), global golden-image & IaC CI/CD pipelines (`Terraform Enterprise` across 500+ workspaces, `Ansible`, `Puppet`, `Pulumi`, `Packer`, `GitLab CI`, `GitHub Actions`), carrier & data center routing/switching (`1,000+` devices • `BGP`, `OSPF`, `EVPN-VXLAN`, `Juniper Junos`, `Cisco IOS-XE/NX-OS`, `Cumulus Linux`), and autonomous Zero-Trust SecOps (`Wazuh SIEM/XDR`, `HashiCorp Vault`, `MCP`, `Graphify`).
 
 📍 **Location & Mobility:** `Remote (US)` • `Los Angeles Metro` • `San Francisco Bay Area` • `Austin, TX` • `New York City Metro` *(Open to Relocation w/ Package)*
 
@@ -8,20 +8,17 @@
 
 [![Portfolio & Executive Resume](https://img.shields.io/badge/Architect_Dossier_%26_Resume-nertwork.com%2Fabout-38bdf8?style=for-the-badge&logo=cloudflare&logoColor=white)](https://www.nertwork.com/about/)
 [![Technical Blog](https://img.shields.io/badge/Engineering_Dispatches-nertwork.com-818cf8?style=for-the-badge&logo=rss&logoColor=white)](https://www.nertwork.com/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-James_Gomez_%2F_James_Farr-0a66c2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/james-farr/)
-[![Medium](https://img.shields.io/badge/Medium-@nertwork-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@nertwork)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-James_Farr_Gomez-0a66c2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/james-farr/)
 [![DEV Community](https://img.shields.io/badge/DEV.to-@nertwork-0A0A0A?style=for-the-badge&logo=devdotto&logoColor=white)](https://dev.to/nertwork)
 [![Hashnode](https://img.shields.io/badge/Hashnode-nertwork.hashnode.dev-2962FF?style=for-the-badge&logo=hashnode&logoColor=white)](https://nertwork.hashnode.dev/)
 [![Gravatar](https://img.shields.io/badge/Gravatar-Verified_Profile-1D4FC4?style=for-the-badge&logo=gravatar&logoColor=white)](https://gravatar.com/jamesfarrgomez)
 [![Wikidata](https://img.shields.io/badge/Wikidata-Q142189612-006699?style=for-the-badge&logo=wikidata&logoColor=white)](https://www.wikidata.org/wiki/Q142189612)
-[![ORCID](https://img.shields.io/badge/ORCID-0009--0005--2123--9648-A6CE39?style=for-the-badge&logo=orcid&logoColor=white)](https://orcid.org/0009-0005-2123-9648)
-[![Crunchbase](https://img.shields.io/badge/Crunchbase-James_Farr_Gomez-0288D1?style=for-the-badge&logo=crunchbase&logoColor=white)](https://www.crunchbase.com/person/james-farr-gomez)
 [![X / Twitter](https://img.shields.io/badge/X-@nertwork-111827?style=for-the-badge&logo=x&logoColor=white)](https://x.com/nertwork)
 
-[![Total Pull Requests](https://img.shields.io/badge/Pull_Requests_Authored-197-2ea043?style=for-the-badge&logo=github)](https://github.com/pulls?q=is%3Apr+author%3Anertwork)
-[![Merged Pull Requests](https://img.shields.io/badge/Merged_PRs-173-8957e5?style=for-the-badge&logo=git)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Amerged)
+[![Total Pull Requests](https://img.shields.io/badge/Pull_Requests_Authored-203-2ea043?style=for-the-badge&logo=github)](https://github.com/pulls?q=is%3Apr+author%3Anertwork)
+[![Merged Pull Requests](https://img.shields.io/badge/Merged_PRs-179-8957e5?style=for-the-badge&logo=git)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Amerged)
 [![Active Open PRs](https://img.shields.io/badge/Open_Upstream_PRs-8-1f6feb?style=for-the-badge&logo=githubactions)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Aopen)
-[![Issues Reported](https://img.shields.io/badge/Upstream_Issues_Filed-72-d29922?style=for-the-badge&logo=github)](https://github.com/issues?q=is%3Aissue+author%3Anertwork)
+[![Issues Reported](https://img.shields.io/badge/Upstream_Issues_Filed-85-d29922?style=for-the-badge&logo=github)](https://github.com/issues?q=is%3Aissue+author%3Anertwork)
 
 ---
 
@@ -36,12 +33,12 @@
 | **Zero-Trust Security, SIEM/XDR & SSOT** | `Wazuh` SIEM/XDR (`OpenSearch` CVE Indexing, MITRE ATT&CK, CIS Benchmarks), `HashiCorp Vault` Dynamic Secrets/PKI, `Authentik` SAML/OIDC SSO, Enterprise `RADIUS`/`TACACS+` AAA, Global Factory `IPsec`/`VTI`, `NetBox` SSOT, `Grafana Cloud` (`Prometheus`/`Mimir`/`Loki`) |
 | **Industry Certifications & Education** | **`JNCIP-SEC`** • **`JNCIP-DC`** • **`JNCIP-ENT`** • **`JNCDA`** • **Juniper SE Champion** • **`CCNP`** • **`CCNA`** • **`VMware VCP5-DCV`** • **Mitel CVE** • **Cypress College** (Cisco Network & Security Lab, *Grade: A*) • **Victor Valley College** (Linux Administration, *Grade: A*) |
 
-## 📌 Featured Open-Source Release: [`nertwork/bluepill`](https://github.com/nertwork/bluepill) (`v1.2.14`)
+## 📌 Featured Open-Source Release: [`nertwork/bluepill`](https://github.com/nertwork/bluepill) (`v1.2.15`)
 
-[![Release v1.2.14](https://img.shields.io/badge/Release-v1.2.14-7aa2f7?style=for-the-badge&logo=github)](https://github.com/nertwork/bluepill/releases/tag/v1.2.14)
+[![Release v1.2.15](https://img.shields.io/badge/Release-v1.2.15-7aa2f7?style=for-the-badge&logo=github)](https://github.com/nertwork/bluepill/releases/tag/v1.2.15)
 [![AUR Package](https://img.shields.io/aur/version/bluepill?style=for-the-badge&logo=archlinux&logoColor=white&label=AUR%20%7C%20bluepill&color=1793d1)](https://aur.archlinux.org/packages/bluepill)
 [![Homebrew Tap](https://img.shields.io/badge/Homebrew-nertwork%2Ftap%2Fbluepill-FBB040?style=for-the-badge&logo=homebrew&logoColor=white)](https://github.com/nertwork/homebrew-tap)
-[![CI Status](https://img.shields.io/github/actions/workflow/status/nertwork/bluepill/ci.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white&label=CI%20%26%20128%20Tests)](https://github.com/nertwork/bluepill/actions/workflows/ci.yml)
+[![CI Status](https://img.shields.io/github/actions/workflow/status/nertwork/bluepill/ci.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white&label=CI%20%26%20130%20Tests)](https://github.com/nertwork/bluepill/actions/workflows/ci.yml)
 [![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/nertwork/bluepill?utm_source=oss&utm_medium=github&utm_campaign=nertwork%2Fbluepill&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews&style=for-the-badge)](https://coderabbit.ai)
 [![License: MIT](https://img.shields.io/badge/License-MIT-9ece6a?style=for-the-badge)](https://github.com/nertwork/bluepill/blob/main/LICENSE)
 [![Stack](https://img.shields.io/badge/C%2B%2B20_%E2%80%A2_Qt6%2FQML-Wayland_%2F_Hyprland_%2F_Omarchy-bb9af7?style=for-the-badge&logo=qt&logoColor=white)](https://github.com/nertwork/bluepill)
@@ -62,11 +59,11 @@ yay -S bluepill
 brew tap nertwork/tap && brew install nertwork/tap/bluepill
 ```
 
-🔗 [**GitHub Repository (`nertwork/bluepill`)**](https://github.com/nertwork/bluepill) • [**Arch User Repository (`aur/bluepill`)**](https://aur.archlinux.org/packages/bluepill) • [**Homebrew Tap (`nertwork/homebrew-tap`)**](https://github.com/nertwork/homebrew-tap) • [**Omarchy Community Showcase (`#18422`)**](https://github.com/omacom/omarchy/discussions/18422) • [**Release `v1.2.14`**](https://github.com/nertwork/bluepill/releases/tag/v1.2.14) • [**macOS Relay & BlueBubbles Setup Guide**](https://github.com/nertwork/bluepill/blob/main/docs/BLUEBUBBLES_SETUP_GUIDE.md) • [**Configuration, Web UI & CLI Reference**](https://github.com/nertwork/bluepill/blob/main/docs/CONFIGURATION_AND_CLI.md) • [**Architecture Deep-Dive**](https://github.com/nertwork/bluepill/blob/main/docs/ARCHITECTURE.md)
+🔗 [**GitHub Repository (`nertwork/bluepill`)**](https://github.com/nertwork/bluepill) • [**Arch User Repository (`aur/bluepill`)**](https://aur.archlinux.org/packages/bluepill) • [**Homebrew Tap (`nertwork/homebrew-tap`)**](https://github.com/nertwork/homebrew-tap) • [**Omarchy Community Showcase (`#18422`)**](https://github.com/omacom/omarchy/discussions/18422) • [**Release `v1.2.15`**](https://github.com/nertwork/bluepill/releases/tag/v1.2.15) • [**macOS Relay & BlueBubbles Setup Guide**](https://github.com/nertwork/bluepill/blob/main/docs/BLUEBUBBLES_SETUP_GUIDE.md) • [**Configuration, Web UI & CLI Reference**](https://github.com/nertwork/bluepill/blob/main/docs/CONFIGURATION_AND_CLI.md) • [**Architecture Deep-Dive**](https://github.com/nertwork/bluepill/blob/main/docs/ARCHITECTURE.md)
 
 <p align="center">
   <a href="https://github.com/nertwork/bluepill">
-    <img src="https://raw.githubusercontent.com/nertwork/bluepill/main/docs/screenshots/chat-conversation.png" alt="BluePill v1.2.14 — Native Linux Qt6/QML iMessage, SMS & RCS Client" width="100%" />
+    <img src="https://raw.githubusercontent.com/nertwork/bluepill/main/docs/screenshots/chat-conversation.png" alt="BluePill v1.2.15 — Native Linux Qt6/QML iMessage, SMS & RCS Client" width="100%" />
   </a>
 </p>
 
@@ -84,7 +81,7 @@ brew tap nertwork/tap && brew install nertwork/tap/bluepill
 
 ## Upstream Open Source Contributions (Auto-Updated)
 
-> *Automatically synchronized via GitHub Actions (`.github/workflows/update-profile.yml`) and `sync_github_profile.py`. Last verified: **2026-11-25 00:07 UTC***
+> *Automatically synchronized via GitHub Actions (`.github/workflows/update-profile.yml`) and `sync_github_profile.py`. Last verified: **2026-11-25 04:39 UTC***
 
 ### 1. Home Assistant Core Libraries, Smart Home & Clean Energy Integrations
 
@@ -106,6 +103,7 @@ brew tap nertwork/tap && brew install nertwork/tap/bluepill
 | ![Incorporated Upstream](https://img.shields.io/badge/PR_%23643-Incorporated_Upstream-8957e5?style=flat-square&logo=github) | **[thomluther/ha-anker-solix](https://github.com/thomluther/ha-anker-solix)**<br><sub>Anker SOLIX HA Integration (`ha-anker-solix`)</sub> | [`#643`](https://github.com/thomluther/ha-anker-solix/pull/643) | Support Storm Guard and backup usage mode entities (`select.py`, `datetime.py`) for `A1782` (`F3000`, incorporated into upstream `SB_PPS` support). |
 | ![Merged](https://img.shields.io/badge/PR_%23709-Merged-8957e5?style=flat-square&logo=github) | **[FunkeyFlo/ps5-mqtt](https://github.com/FunkeyFlo/ps5-mqtt)**<br><sub>PlayStation 5 MQTT (`ps5-mqtt`)</sub> | [`#709`](https://github.com/FunkeyFlo/ps5-mqtt/pull/709) / [Issue `#708`](https://github.com/FunkeyFlo/ps5-mqtt/issues/708) | Debounce single transient UDP `playactor.check` failures during out-of-band console wake, clear `transitioning` in `UPDATE_HOME_ASSISTANT`, and deduplicate offline MQTT state updates. |
 | ![Merged](https://img.shields.io/badge/PR_%23164-Merged-8957e5?style=flat-square&logo=github) | **[apetrycki/daikinskyport](https://github.com/apetrycki/daikinskyport)**<br><sub>Daikin Skyport (`daikinskyport`)</sub> | [`#164`](https://github.com/apetrycki/daikinskyport/pull/164) / [Issue `#163`](https://github.com/apetrycki/daikinskyport/issues/163) | Scope `TARGET_TEMPERATURE` vs `TARGET_TEMPERATURE_RANGE` by active `hvac_mode` and implement `turn_on`/`turn_off` on `Thermostat` for Alexa Smart Home compatibility. |
+| ![Open](https://img.shields.io/badge/PR_%23684-Open-2ea043?style=flat-square&logo=github) | **[thomluther/ha-anker-solix](https://github.com/thomluther/ha-anker-solix)**<br><sub>Anker SOLIX HA Integration</sub> | [`#684`](https://github.com/thomluther/ha-anker-solix/pull/684) / [Issue `#683`](https://github.com/thomluther/ha-anker-solix/issues/683) | Guard MQTT update_callback against closed event loop during Home Assistant shutdown. |
 
 ---
 
@@ -125,7 +123,7 @@ brew tap nertwork/tap && brew install nertwork/tap/bluepill
 
 | Status | Upstream Repository & Component | Pull Request & Issue | Technical Summary |
 | :--- | :--- | :--- | :--- |
-| ![Open](https://img.shields.io/badge/PR_%239-Open-2ea043?style=flat-square&logo=github) | **[HappyPathway/github-runner-image](https://github.com/HappyPathway/github-runner-image)**<br><sub>GitHub Actions Runner Image</sub> | [`#9`](https://github.com/HappyPathway/github-runner-image/pull/9) | Add Python `venv` and workflow automation updates for self-hosted GitHub Actions runner image builds. |
+| ![Merged](https://img.shields.io/badge/PR_%239-Merged-8957e5?style=flat-square&logo=github) | **[HappyPathway/github-runner-image](https://github.com/HappyPathway/github-runner-image)**<br><sub>GitHub Actions Runner Image</sub> | [`#9`](https://github.com/HappyPathway/github-runner-image/pull/9) | Add Python `venv` and workflow automation updates for self-hosted GitHub Actions runner image builds. |
 | ![Merged](https://img.shields.io/badge/PR_%23123-Merged-8957e5?style=flat-square&logo=github) | **[jarischaefer/docker-librenms](https://github.com/jarischaefer/docker-librenms)**<br><sub>Docker LibreNMS (`docker-librenms`)</sub> | [`#123`](https://github.com/jarischaefer/docker-librenms/pull/123) / [Issue `#119`](https://github.com/jarischaefer/docker-librenms/issues/119) | Release version bumps (`1.68` / `1.69`) and distributed poller memcached support. |
 | ![Merged](https://img.shields.io/badge/PR_%2356-Merged-8957e5?style=flat-square&logo=github) | **[mrlesmithjr/ansible-frr](https://github.com/mrlesmithjr/ansible-frr)**<br><sub>FRRouting Ansible Role (`ansible-frr`)</sub> | [`#56`](https://github.com/mrlesmithjr/ansible-frr/pull/56) / [Issue `#43`](https://github.com/mrlesmithjr/ansible-frr/issues/43) | Add BGP Listen Range support, OSPF distribute lists (`#28`), BGP neighbor timers (`#16`), Ubuntu 18/20 `iproute2` support (`#20`), and check-mode fixes (`#17`) across 9 merged PRs. |
 
@@ -135,6 +133,7 @@ brew tap nertwork/tap && brew install nertwork/tap/bluepill
 
 | Status | Upstream Repository | Pull Request | Title | Updated |
 | :--- | :--- | :--- | :--- | :--- |
+| ![Merged](https://img.shields.io/badge/PR_%238-Merged-8957e5?style=flat-square&logo=github) | **[HappyPathway/github-runner-image](https://github.com/HappyPathway/github-runner-image)** | [`#8`](https://github.com/HappyPathway/github-runner-image/pull/8) | add python venv | `2024-10-01` |
 | ![Merged](https://img.shields.io/badge/PR_%2355-Merged-8957e5?style=flat-square&logo=github) | **[mrlesmithjr/ansible-frr](https://github.com/mrlesmithjr/ansible-frr)** | [`#55`](https://github.com/mrlesmithjr/ansible-frr/pull/55) | Merge pull request #58 from mrlesmithjr/master | `2020-11-18` |
 | ![Merged](https://img.shields.io/badge/PR_%23122-Merged-8957e5?style=flat-square&logo=github) | **[jarischaefer/docker-librenms](https://github.com/jarischaefer/docker-librenms)** | [`#122`](https://github.com/jarischaefer/docker-librenms/pull/122) | version 1.68 | `2020-10-05` |
 | ![Merged](https://img.shields.io/badge/PR_%2344-Merged-8957e5?style=flat-square&logo=github) | **[mrlesmithjr/ansible-frr](https://github.com/mrlesmithjr/ansible-frr)** | [`#44`](https://github.com/mrlesmithjr/ansible-frr/pull/44) | Make debug option for verbose loggin | `2020-09-25` |
