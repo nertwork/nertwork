@@ -17,7 +17,7 @@
 
 [![Total Pull Requests](https://img.shields.io/badge/Pull_Requests_Authored-199-2ea043?style=for-the-badge&logo=github)](https://github.com/pulls?q=is%3Apr+author%3Anertwork)
 [![Merged Pull Requests](https://img.shields.io/badge/Merged_PRs-175-8957e5?style=for-the-badge&logo=git)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Amerged)
-[![Active Open PRs](https://img.shields.io/badge/Open_Upstream_PRs-8-1f6feb?style=for-the-badge&logo=githubactions)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Aopen)
+[![Active Open PRs](https://img.shields.io/badge/Open_Upstream_PRs-7-1f6feb?style=for-the-badge&logo=githubactions)](https://github.com/pulls?q=is%3Apr+author%3Anertwork+is%3Aopen)
 [![Issues Reported](https://img.shields.io/badge/Upstream_Issues_Filed-85-d29922?style=for-the-badge&logo=github)](https://github.com/issues?q=is%3Aissue+author%3Anertwork)
 
 ---
@@ -81,7 +81,7 @@ brew tap nertwork/tap && brew install nertwork/tap/bluepill
 
 ## Upstream Open Source Contributions (Auto-Updated)
 
-> *Automatically synchronized via GitHub Actions (`.github/workflows/update-profile.yml`) and `sync_github_profile.py`. Last verified: **2026-11-25 06:05 UTC***
+> *Automatically synchronized via GitHub Actions (`.github/workflows/update-profile.yml`) and `sync_github_profile.py`. Last verified: **2026-11-25 12:04 UTC***
 
 ### 1. Home Assistant Core Libraries, Smart Home & Clean Energy Integrations
 
@@ -103,7 +103,7 @@ brew tap nertwork/tap && brew install nertwork/tap/bluepill
 | ![Incorporated Upstream](https://img.shields.io/badge/PR_%23643-Incorporated_Upstream-8957e5?style=flat-square&logo=github) | **[thomluther/ha-anker-solix](https://github.com/thomluther/ha-anker-solix)**<br><sub>Anker SOLIX HA Integration (`ha-anker-solix`)</sub> | [`#643`](https://github.com/thomluther/ha-anker-solix/pull/643) | Support Storm Guard and backup usage mode entities (`select.py`, `datetime.py`) for `A1782` (`F3000`, incorporated into upstream `SB_PPS` support). |
 | ![Merged](https://img.shields.io/badge/PR_%23709-Merged-8957e5?style=flat-square&logo=github) | **[FunkeyFlo/ps5-mqtt](https://github.com/FunkeyFlo/ps5-mqtt)**<br><sub>PlayStation 5 MQTT (`ps5-mqtt`)</sub> | [`#709`](https://github.com/FunkeyFlo/ps5-mqtt/pull/709) / [Issue `#708`](https://github.com/FunkeyFlo/ps5-mqtt/issues/708) | Debounce single transient UDP `playactor.check` failures during out-of-band console wake, clear `transitioning` in `UPDATE_HOME_ASSISTANT`, and deduplicate offline MQTT state updates. |
 | ![Merged](https://img.shields.io/badge/PR_%23164-Merged-8957e5?style=flat-square&logo=github) | **[apetrycki/daikinskyport](https://github.com/apetrycki/daikinskyport)**<br><sub>Daikin Skyport (`daikinskyport`)</sub> | [`#164`](https://github.com/apetrycki/daikinskyport/pull/164) / [Issue `#163`](https://github.com/apetrycki/daikinskyport/issues/163) | Scope `TARGET_TEMPERATURE` vs `TARGET_TEMPERATURE_RANGE` by active `hvac_mode` and implement `turn_on`/`turn_off` on `Thermostat` for Alexa Smart Home compatibility. |
-| ![Open](https://img.shields.io/badge/PR_%23684-Open-2ea043?style=flat-square&logo=github) | **[thomluther/ha-anker-solix](https://github.com/thomluther/ha-anker-solix)**<br><sub>Anker SOLIX HA Integration</sub> | [`#684`](https://github.com/thomluther/ha-anker-solix/pull/684) / [Issue `#683`](https://github.com/thomluther/ha-anker-solix/issues/683) | Guard MQTT update_callback against closed event loop during Home Assistant shutdown. |
+| ![Closed](https://img.shields.io/badge/PR_%23684-Closed-6e7681?style=flat-square&logo=github) | **[thomluther/ha-anker-solix](https://github.com/thomluther/ha-anker-solix)**<br><sub>Anker SOLIX HA Integration</sub> | [`#684`](https://github.com/thomluther/ha-anker-solix/pull/684) / [Issue `#683`](https://github.com/thomluther/ha-anker-solix/issues/683) | Guard MQTT update_callback against closed event loop during Home Assistant shutdown. |
 
 ---
 
